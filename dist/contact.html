@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Contact SKY QUANTECH AI</title>
+<meta content="Have a business challenge, technology requirement or idea to explore? Start a conversation with SKY QUANTECH AI." name="description">
+<meta content="Contact SKY QUANTECH AI" property="og:title">
+<meta content="Have a business challenge, technology requirement or idea to explore? Start a conversation with SKY QUANTECH AI." property="og:description">
+<meta content="website" property="og:type">
+<meta content="SKY QUANTECH AI" property="og:site_name">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap" rel="stylesheet">
+<style>
+  @layer base {
+    html, body { margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { overscroll-behavior-x: none; overflow-x: hidden; }
+    main > :first-child { margin-top: 0 !important; }
+    main > :last-child { margin-bottom: 0 !important; }
+  }
+  /* Decorative glow layers are absolutely positioned and overhang their section.
+     Clip on the x-axis only: unlike overflow:hidden this creates no scroll
+     container, so sticky/nested scrolling still behave. */
+  main > div > section, main > section { overflow-x: clip; }
+
+  /* --- Contrast corrections ---------------------------------------------
+     The Stitch export reused container tokens as text colors, which failed
+     WCAG AA in several places. These rules fix the pairings without altering
+     the brand palette. `html` prefixes raise specificity above the Tailwind
+     CDN's own utilities, which are injected after this block.
+     [data-on-dark] is stamped at build time onto dark-background elements. */
+
+  /* Accent text on deep navy: #0078FF and #0050F0 only reach ~3.9:1 there,
+     and on-tertiary-container shipped as teal (#0090ad), which is off-brand. */
+  html [data-on-dark] .text-highlight-blue,
+  html [data-on-dark] .text-brand-highlight,
+  html [data-on-dark] .text-electric-blue,
+  html [data-on-dark] .text-accent-blue,
+  html .text-on-tertiary-container { color: #8FC2FF; }
+
+  /* on-primary-container (#7484a3) is too faint on light and too dark on navy. */
+  html .text-on-primary-container { color: #2D486A; }
+  html [data-on-dark] .text-on-primary-container { color: #B6C7E8; }
+
+  /* secondary-container (#BBD6FF) is a container fill. As text it is only
+     1.4:1 on white, so default it to the brand blue and restore the light
+     tint only where it genuinely sits on dark. */
+  html .text-secondary-container { color: #0020A0; }
+  html [data-on-dark] .text-secondary-container { color: #BBD6FF; }
+
+  /* Light-blue chips and buttons need dark text, not white. */
+  html [data-chip-light].text-on-primary,
+  html [data-chip-light].text-on-secondary,
+  html [data-chip-light] .text-on-primary,
+  html [data-chip-light] .text-on-secondary,
+  html [data-chip-light] .text-white,
+  html [data-chip-light] .material-symbols-outlined { color: #001060; }
+
+  /* Keyboard focus stays visible everywhere, including inside dark sections. */
+  :focus-visible { outline: 2px solid #0078FF; outline-offset: 2px; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"boxShadow":{"subtle-card":"0 1px 3px 0 rgba(0,16,96,0.04), 0 1px 2px -1px rgba(0,16,96,0.04)","elevated-card":"0 4px 12px -2px rgba(0,16,96,0.08), 0 2px 6px -2px rgba(0,32,160,0.06)","accent-blue":"0 4px 14px 0 rgba(0,80,240,0.25)"},"colors":{"accent-blue":"#0050F0","ice-blue":"#F5F8FF","brand-textSecondary":"#2D486A","brand-textMuted":"#60728F","brand-deep":"#001060","brand-dark":"#001070","brand-primary":"#0020A0","brand-electric":"#0050F0","brand-bright":"#0060F0","brand-highlight":"#0078FF","brand-light":"#F5F8FF","brand-text":"#2D486A","brand-border":"#D8E3FB","background":"#FFFFFF","border-strong":"#B6C7E8","border-subtle":"#D8E3FB","bright-blue":"#0060F0","dark-blue":"#001070","deep-blue":"#001060","electric-blue":"#0050F0","error":"#ba1a1a","error-container":"#ffdad6","highlight-blue":"#0078FF","inverse-on-surface":"#ecf1ff","inverse-primary":"#b6c7e8","inverse-surface":"#263143","on-background":"#111c2d","on-error":"#ffffff","on-error-container":"#93000a","on-primary":"#FFFFFF","on-primary-container":"#7484a3","on-primary-fixed":"#091c35","on-primary-fixed-variant":"#374762","on-secondary":"#ffffff","on-secondary-container":"#435d80","on-secondary-fixed":"#001c38","on-secondary-fixed-variant":"#2d486a","on-surface":"#001060","on-surface-variant":"#2D486A","on-tertiary":"#ffffff","on-tertiary-container":"#0090ad","on-tertiary-fixed":"#001f27","on-tertiary-fixed-variant":"#004e5f","outline":"#75777e","outline-variant":"#D8E3FB","primary":"#001060","primary-blue":"#0020A0","primary-container":"#0020A0","primary-fixed":"#d5e3ff","primary-fixed-dim":"#b6c7e8","secondary":"#2D486A","secondary-container":"#bbd6ff","secondary-fixed":"#d3e4ff","secondary-fixed-dim":"#aec8f0","surface":"#FFFFFF","surface-base":"#FFFFFF","surface-bright":"#f9f9ff","surface-container":"#EEF3FF","surface-container-high":"#E2ECFD","surface-container-highest":"#d8e3fb","surface-container-low":"#F5F8FF","surface-container-lowest":"#FFFFFF","surface-dim":"#cfdaf2","surface-slate":"#F5F8FF","surface-tint":"#4e5f7b","surface-variant":"#d8e3fb","tertiary":"#000000","tertiary-container":"#001f27","tertiary-fixed":"#b3ebff","tertiary-fixed-dim":"#5dd5f8","text-muted":"#60728F","text-primary":"#001060","text-secondary":"#2D486A"},"borderRadius":{"DEFAULT":"0.25rem","full":"0.75rem","lg":"0.375rem","xl":"0.5rem"},"spacing":{"gutter-desktop":"1.5rem","gutter-mobile":"1rem","margin-desktop":"3rem","margin-mobile":"1.25rem","space-2xl":"3rem","space-2xs":"0.25rem","space-3xl":"4.5rem","space-4xl":"6rem","space-lg":"1.5rem","space-md":"1rem","space-sm":"0.75rem","space-xl":"2rem","space-xs":"0.5rem"},"fontFamily":{"body-lg":["Inter","sans-serif"],"body-md":["Inter","sans-serif"],"body-sm":["Inter","sans-serif"],"display-xl":["Plus Jakarta Sans","sans-serif"],"display-xl-mobile":["Plus Jakarta Sans","sans-serif"],"eyebrow-tracking":["Inter","sans-serif"],"headline-lg":["Plus Jakarta Sans","sans-serif"],"headline-lg-mobile":["Plus Jakarta Sans","sans-serif"],"headline-md":["Plus Jakarta Sans","sans-serif"],"headline-sm":["Plus Jakarta Sans","sans-serif"],"label-md":["Inter","sans-serif"],"tabular-numerical":["Inter","sans-serif"],"title-lg":["Plus Jakarta Sans","sans-serif"],"title-md":["Plus Jakarta Sans","sans-serif"]},"fontSize":{"body-lg":["16px",{"lineHeight":"26px","letterSpacing":"-0.005em","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"22px","letterSpacing":"0em","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"18px","letterSpacing":"0.005em","fontWeight":"400"}],"display-xl":["54px",{"lineHeight":"62px","letterSpacing":"-0.025em","fontWeight":"700"}],"display-xl-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"eyebrow-tracking":["11px",{"lineHeight":"16px","letterSpacing":"0.12em","fontWeight":"600"}],"headline-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-md":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-md":["13px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"500"}],"tabular-numerical":["14px",{"lineHeight":"20px","letterSpacing":"0.02em","fontWeight":"500"}],"title-lg":["18px",{"lineHeight":"26px","letterSpacing":"-0.005em","fontWeight":"600"}],"title-md":["16px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"600"}]}}}};</script>
+
+</head>
+<body class="bg-white font-body-md text-text-primary antialiased selection:bg-electric-blue selection:text-white">
+<a class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-4 focus:py-2 focus:rounded focus:bg-deep-blue focus:text-white focus:outline-none focus:ring-2 focus:ring-highlight-blue focus:ring-offset-2" href="#main">Skip to main content</a>
+
+<header class="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur-md border-b border-border-subtle shadow-sm">
+  <div class="h-20 max-w-[1440px] mx-auto px-margin-mobile lg:px-margin-desktop flex items-center justify-between">
+
+    <a class="flex items-center gap-space-sm group rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue focus-visible:ring-offset-2" href="/index.html">
+      <img alt="SKY QUANTECH AI" class="h-9 w-auto object-contain transition-transform group-hover:scale-105" src="assets/logo.png" width="512" height="512" decoding="async" fetchpriority="high">
+    </a>
+
+    <nav aria-label="Primary" class="hidden xl:flex items-center gap-space-lg">
+      <a class="font-label-md text-label-md transition-colors py-1 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue focus-visible:ring-offset-2 text-text-secondary hover:text-electric-blue" href="/index.html">Home</a>
+      <a class="font-label-md text-label-md transition-colors py-1 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue focus-visible:ring-offset-2 text-text-secondary hover:text-electric-blue" href="/about.html">About</a>
+      <a class="font-label-md text-label-md transition-colors py-1 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue focus-visible:ring-offset-2 text-text-secondary hover:text-electric-blue" href="/solutions.html">Solutions</a>
+      <a class="font-label-md text-label-md transition-colors py-1 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue focus-visible:ring-offset-2 text-text-secondary hover:text-electric-blue" href="/industries.html">Industries</a>
+      <a class="font-label-md text-label-md transition-colors py-1 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue focus-visible:ring-offset-2 text-text-secondary hover:text-electric-blue" href="/why-us.html">Why Us</a>
+      <a class="font-label-md text-label-md transition-colors py-1 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue focus-visible:ring-offset-2 text-text-secondary hover:text-electric-blue" href="/process.html">Process</a>
+      <a class="font-label-md text-label-md transition-colors py-1 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue focus-visible:ring-offset-2 text-text-secondary hover:text-electric-blue" href="/case-studies.html">Case Studies</a>
+      <a class="font-label-md text-label-md transition-colors py-1 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue focus-visible:ring-offset-2 text-text-secondary hover:text-electric-blue" href="/careers.html">Careers</a>
+      <a class="font-label-md text-label-md transition-colors py-1 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue focus-visible:ring-offset-2 text-deep-blue font-semibold relative after:content-[''] after:absolute after:bottom-[-8px] after:left-0 after:w-full after:h-[2px] after:bg-electric-blue" href="/contact.html" aria-current="page">Contact</a>
+    </nav>
+
+    <div class="flex items-center gap-space-md">
+      <a class="hidden sm:inline-flex items-center justify-center h-10 px-space-md bg-deep-blue text-white font-label-md text-label-md rounded hover:bg-electric-blue transition-colors shadow-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue focus-visible:ring-offset-2" href="/contact.html" data-on-dark>Talk to Us</a>
+
+      <button aria-controls="mobile-nav" aria-expanded="false" aria-label="Open menu" class="xl:hidden inline-flex items-center justify-center w-10 h-10 rounded text-deep-blue hover:bg-surface-slate transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue focus-visible:ring-offset-2" data-menu-toggle type="button">
+        <span aria-hidden="true" class="material-symbols-outlined text-[24px]" data-menu-icon>menu</span>
+      </button>
+    </div>
+  </div>
+
+  <nav aria-label="Primary mobile" class="xl:hidden hidden border-t border-border-subtle bg-white max-h-[calc(100vh-5rem)] overflow-y-auto" id="mobile-nav">
+    <ul class="px-margin-mobile py-space-md space-y-space-2xs">
+      <li><a class="flex items-center px-space-sm py-space-sm rounded text-text-secondary hover:bg-surface-slate hover:text-electric-blue font-label-md text-label-md transition-colors" href="/index.html">Home</a></li>
+      <li><a class="flex items-center px-space-sm py-space-sm rounded text-text-secondary hover:bg-surface-slate hover:text-electric-blue font-label-md text-label-md transition-colors" href="/about.html">About</a></li>
+      <li><a class="flex items-center px-space-sm py-space-sm rounded text-text-secondary hover:bg-surface-slate hover:text-electric-blue font-label-md text-label-md transition-colors" href="/solutions.html">Solutions</a></li>
+      <li><a class="flex items-center px-space-sm py-space-sm rounded text-text-secondary hover:bg-surface-slate hover:text-electric-blue font-label-md text-label-md transition-colors" href="/industries.html">Industries</a></li>
+      <li><a class="flex items-center px-space-sm py-space-sm rounded text-text-secondary hover:bg-surface-slate hover:text-electric-blue font-label-md text-label-md transition-colors" href="/why-us.html">Why Us</a></li>
+      <li><a class="flex items-center px-space-sm py-space-sm rounded text-text-secondary hover:bg-surface-slate hover:text-electric-blue font-label-md text-label-md transition-colors" href="/process.html">Process</a></li>
+      <li><a class="flex items-center px-space-sm py-space-sm rounded text-text-secondary hover:bg-surface-slate hover:text-electric-blue font-label-md text-label-md transition-colors" href="/case-studies.html">Case Studies</a></li>
+      <li><a class="flex items-center px-space-sm py-space-sm rounded text-text-secondary hover:bg-surface-slate hover:text-electric-blue font-label-md text-label-md transition-colors" href="/careers.html">Careers</a></li>
+      <li><a class="flex items-center px-space-sm py-space-sm rounded bg-surface-slate text-deep-blue font-semibold font-label-md text-label-md" href="/contact.html" aria-current="page">Contact</a></li>
+      <li class="pt-space-sm">
+        <a class="flex items-center justify-center h-11 px-space-md bg-deep-blue text-white font-label-md text-label-md rounded hover:bg-electric-blue transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue focus-visible:ring-offset-2" href="/contact.html" data-on-dark>Talk to Us</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main class="w-full pt-20 bg-white" id="main">
+<section class="relative bg-gradient-to-b from-deep-blue via-[#001070] to-[#00144d] text-white pt-16 pb-24 lg:pt-24 lg:pb-32 overflow-hidden border-b border-blue-900/40" data-purpose="contact-hero">
+
+<div class="absolute inset-0 grid-pattern-dark pointer-events-none opacity-40"></div>
+
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-electric-blue/15 blur-[120px] rounded-full pointer-events-none" data-on-dark></div>
+<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+
+<div class="lg:col-span-6 space-y-6 text-left">
+
+<div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-blue-950/80 border border-electric-blue/40 text-xs font-semibold uppercase tracking-widest text-accent-blue shadow-inner" data-on-dark>
+<span class="w-2 h-2 rounded-full bg-accent-blue shadow-[0_0_8px_#0078FF]"></span>
+              CONTACT SKY QUANTECH AI
+            </div>
+
+<h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12]">
+              Let's Build <br class="hidden sm:inline">
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-accent-blue">
+                What's Next
+              </span>
+</h1>
+
+<p class="text-lg text-slate-300 font-normal leading-relaxed max-w-xl">
+              Have a business challenge, technology requirement or idea you'd like to explore? Let's start a conversation with our engineering leaders.
+            </p>
+
+<div class="pt-2 flex flex-wrap items-center gap-4">
+<a class="inline-flex items-center gap-2 px-7 py-3.5 rounded-md text-base font-semibold bg-electric-blue hover:bg-accent-blue text-white shadow-lg shadow-electric-blue/30 hover:shadow-accent-blue/40 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-deep-blue focus:ring-accent-blue" href="#enquiry-form" data-on-dark>
+<span>Start a Conversation</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19 14l-7 7m0 0l-7-7m7 7V3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+<a class="inline-flex items-center gap-2 px-6 py-3.5 rounded-md text-base font-medium text-slate-300 hover:text-white bg-blue-900/30 hover:bg-blue-900/60 border border-blue-700/50 transition-colors" href="#channels-info" data-on-dark>
+<span>Direct Channels</span>
+</a>
+</div>
+
+<div class="pt-6 border-t border-blue-900/60 flex items-center gap-3 text-xs sm:text-sm font-mono uppercase tracking-wider text-slate-400">
+<span class="text-accent-blue font-semibold">IDEA</span>
+<span class="text-slate-600">→</span>
+<span class="text-white font-semibold">CONVERSATION</span>
+<span class="text-slate-600">→</span>
+<span class="text-accent-blue font-semibold">SOLUTION</span>
+</div>
+</div>
+
+<div class="lg:col-span-6">
+<div class="relative rounded-2xl p-2 bg-gradient-to-b from-blue-700/40 via-blue-900/20 to-transparent border border-blue-600/30 shadow-2xl backdrop-blur-sm">
+
+<div class="absolute -top-3.5 right-6 z-10 hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#001060] border border-blue-500/40 text-[11px] font-mono text-accent-blue tracking-wider uppercase shadow-md" data-on-dark>
+<span class="w-1.5 h-1.5 rounded-full bg-accent-blue"></span>
+                CONVERGENCE ARCHITECTURE • COLLABORATIVE ENGAGEMENT
+              </div>
+<div class="relative overflow-hidden rounded-xl bg-deep-blue aspect-[16/10] sm:aspect-[16/9]" data-on-dark>
+
+<img alt="Sophisticated modern corporate communication and technology convergence visual for a premier enterprise artificial intelligence firm. In a pristine, deep luminous navy and midnight blue (#001060, #001070) architectural environment, clean glowing electric blue (#0050F0, #0078FF) digital network pathways and subtle luminous data threads gracefully converge toward a central focal point representing collaboration, conversation, and technology solutions. Elegant abstract geometry, subtle interactive node points, refined light gradients, photorealistic, dignified, high-end Palantir or IBM Research aesthetic. No cartoon robots, no glowing brains, no generic stock handshake photography, no fake smiles." class="w-full h-full object-cover object-center transform hover:scale-102 transition-transform duration-700 ease-out" height="768" loading="eager" src="assets/img/img-4c2661dad6.jpg" width="1376">
+
+<div class="absolute inset-0 bg-gradient-to-t from-[#001060]/70 via-transparent to-transparent pointer-events-none"></div>
+
+<div class="absolute bottom-4 left-4 right-4 sm:left-6 sm:right-6 p-3 rounded-lg bg-deep-blue/80 border border-blue-500/30 backdrop-blur-md flex items-center justify-between" data-on-dark>
+<div class="flex items-center gap-3">
+<div class="w-2.5 h-2.5 rounded-full bg-emerald-400 ring-4 ring-emerald-400/20 animate-pulse"></div>
+<div>
+<p class="text-xs font-semibold text-white">Contact</p>
+<p class="text-[11px] text-slate-400 font-mono">We read every enquiry.</p>
+</div>
+</div>
+<span class="text-[10px] font-mono uppercase bg-blue-900/60 text-slate-300 px-2 py-0.5 rounded border border-blue-700/40" data-on-dark></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<section class="py-20 lg:py-28 bg-white relative" data-purpose="core-enquiry-and-channels" id="enquiry-form">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+<div class="lg:col-span-5 space-y-8" id="channels-info">
+<div>
+<div class="inline-flex items-center gap-2 text-xs font-bold font-heading tracking-widest text-electric-blue uppercase mb-2">
+<span class="w-1.5 h-1.5 rounded-full bg-electric-blue" data-on-dark></span>
+                DIRECT CHANNELS
+              </div>
+<h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Get in Touch</h2>
+<p class="mt-3 text-base text-slate-600 leading-relaxed">
+                Connect directly with our engineering and solution teams to discuss how artificial intelligence, software, and automation can address your operational needs.
+              </p>
+</div>
+
+<div class="space-y-4">
+
+<div class="p-4 rounded-xl border border-slate-200 bg-slate-50/70 hover:bg-ice-blue/60 transition-colors flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-electric-blue/10 border border-electric-blue/20 flex items-center justify-center text-electric-blue shrink-0 mt-0.5" data-on-dark>
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Email Inquiry</p>
+<p class="text-sm font-semibold text-slate-900 mt-0.5 font-mono">contact@skyquantech.ai</p>
+<p class="text-xs text-slate-500 mt-0.5">The best way to reach us</p>
+</div>
+</div>
+
+<div class="p-4 rounded-xl border border-slate-200 bg-slate-50/70 hover:bg-ice-blue/60 transition-colors flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-electric-blue/10 border border-electric-blue/20 flex items-center justify-center text-electric-blue shrink-0 mt-0.5" data-on-dark>
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Telephone</p>
+<p class="text-sm font-semibold text-slate-900 mt-0.5 font-mono">9985383863</p>
+<p class="text-xs text-slate-500 mt-0.5">Monday through Friday, standard corporate hours</p>
+</div>
+</div>
+
+<div class="p-4 rounded-xl border border-slate-200 bg-slate-50/70 hover:bg-ice-blue/60 transition-colors flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-electric-blue/10 border border-electric-blue/20 flex items-center justify-center text-electric-blue shrink-0 mt-0.5" data-on-dark>
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Corporate Headquarters</p>
+<p class="text-sm font-semibold text-slate-900 mt-0.5 font-mono">Madhapur, Hyderabad</p>
+<p class="text-xs text-slate-500 mt-0.5">Our office</p>
+</div>
+</div>
+
+<div class="p-4 rounded-xl border border-slate-200 bg-slate-50/70 hover:bg-ice-blue/60 transition-colors flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-electric-blue/10 border border-electric-blue/20 flex items-center justify-center text-electric-blue shrink-0 mt-0.5" data-on-dark>
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Official Domain</p>
+<p class="text-sm font-semibold text-slate-900 mt-0.5 font-mono">www.skyquantech.ai</p>
+<p class="text-xs text-slate-500 mt-0.5">Our official website</p>
+</div>
+</div>
+</div>
+<p class="text-xs text-slate-500 italic bg-slate-100/70 p-3 rounded-lg border border-slate-200">
+              Official corporate contact channels. For custom inquiries, please submit the form or reach out directly.
+            </p>
+
+<div class="rounded-xl border border-slate-200 bg-slate-50 overflow-hidden" data-purpose="location-card">
+<div class="h-32 bg-slate-900 relative flex items-center justify-center overflow-hidden" data-on-dark>
+<div class="absolute inset-0 grid-pattern-dark opacity-30"></div>
+
+<div class="relative text-center z-10 px-4">
+<div class="inline-flex items-center gap-1.5 text-accent-blue font-mono text-xs bg-deep-blue/80 px-2.5 py-1 rounded border border-blue-700/50" data-on-dark>
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+<span>COORDINATES: PENDING CONFIRMATION</span>
+</div>
+<p class="text-[11px] text-slate-400 font-mono mt-1.5">LAT/LONG GRID ACTIVE</p>
+</div>
+</div>
+<div class="p-4 bg-white">
+<h3 class="font-heading font-bold text-slate-900 text-sm">Company Location</h3>
+<p class="text-slate-500 text-xs font-mono mt-0.5">Madhapur, Hyderabad</p>
+</div>
+</div>
+
+
+</div>
+
+<div class="lg:col-span-7">
+<div class="bg-white rounded-2xl border border-slate-200/90 shadow-elevated-card p-6 sm:p-10 relative">
+
+<div class="absolute top-0 left-8 right-8 h-1 bg-gradient-to-r from-electric-blue via-accent-blue to-primary-blue rounded-t-full"></div>
+<div class="mb-8">
+<h3 class="text-2xl font-bold font-heading text-slate-900">Tell Us About Your Requirement</h3>
+<p class="text-sm text-slate-600 mt-1.5">
+                  Provide details about your project scope or technology challenge. Our team will review your requirement and follow up promptly.
+                </p>
+</div>
+
+<form class="space-y-5" data-form="enquiry" id="contact-enquiry-form" novalidate>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+    <div>
+      <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5" for="fullName">Full Name <span aria-hidden="true" class="text-error">*</span></label>
+      <input aria-describedby="fullName-error" autocomplete="name" class="w-full rounded-lg border-slate-300 text-slate-900 text-sm shadow-sm focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 placeholder:text-slate-500 py-2.5 px-3.5" id="fullName" name="fullName" placeholder="Your name" required type="text">
+      <p class="mt-1.5 text-xs text-error font-medium" data-error-for="fullName" hidden id="fullName-error"></p>
+    </div>
+    <div>
+      <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5" for="email">Email Address <span aria-hidden="true" class="text-error">*</span></label>
+      <input aria-describedby="email-error" autocomplete="email" class="w-full rounded-lg border-slate-300 text-slate-900 text-sm shadow-sm focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 placeholder:text-slate-500 py-2.5 px-3.5" id="email" name="email" placeholder="you@company.com" required type="email">
+      <p class="mt-1.5 text-xs text-error font-medium" data-error-for="email" hidden id="email-error"></p>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+    <div>
+      <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5" for="phone">Phone Number <span class="text-slate-600 font-normal normal-case tracking-normal">(optional)</span></label>
+      <input aria-describedby="phone-error" autocomplete="tel" class="w-full rounded-lg border-slate-300 text-slate-900 text-sm shadow-sm focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 placeholder:text-slate-500 py-2.5 px-3.5" id="phone" name="phone" placeholder="Include country code" type="tel">
+      <p class="mt-1.5 text-xs text-error font-medium" data-error-for="phone" hidden id="phone-error"></p>
+    </div>
+    <div>
+      <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5" for="company">Company / Organization <span class="text-slate-600 font-normal normal-case tracking-normal">(optional)</span></label>
+      <input aria-describedby="company-error" autocomplete="organization" class="w-full rounded-lg border-slate-300 text-slate-900 text-sm shadow-sm focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 placeholder:text-slate-500 py-2.5 px-3.5" id="company" name="company" placeholder="Where you work" type="text">
+      <p class="mt-1.5 text-xs text-error font-medium" data-error-for="company" hidden id="company-error"></p>
+    </div>
+  </div>
+
+  <div>
+    <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5" for="interest">Area of Interest <span aria-hidden="true" class="text-error">*</span></label>
+    <select aria-describedby="interest-error" class="w-full rounded-lg border-slate-300 text-slate-900 text-sm shadow-sm focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 py-2.5 px-3.5 bg-white" id="interest" name="interest" required>
+      <option disabled selected value="">Select an area of interest</option>
+      <option value="AI Solutions">AI Solutions</option>
+      <option value="Software Development">Software Development</option>
+      <option value="Automation">Automation</option>
+      <option value="Technology Consulting">Technology Consulting</option>
+      <option value="Other">Other</option>
+    </select>
+    <p class="mt-1.5 text-xs text-error font-medium" data-error-for="interest" hidden id="interest-error"></p>
+  </div>
+
+  <div>
+    <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5" for="message">Message <span aria-hidden="true" class="text-error">*</span></label>
+    <textarea aria-describedby="message-error" class="w-full rounded-lg border-slate-300 text-slate-900 text-sm shadow-sm focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 placeholder:text-slate-500 py-2.5 px-3.5" id="message" name="message" placeholder="Tell us about the challenge or requirement you'd like to explore." required rows="5"></textarea>
+    <p class="mt-1.5 text-xs text-error font-medium" data-error-for="message" hidden id="message-error"></p>
+  </div>
+
+  <div class="pt-2">
+    <button class="w-full py-3.5 px-6 rounded-lg bg-electric-blue hover:bg-bright-blue text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-electric-blue" type="submit" data-on-dark>Send Enquiry</button>
+  </div>
+
+  <p aria-live="polite" class="text-sm rounded-lg px-3.5 py-3 hidden" data-form-status role="status"></p>
+</form>
+
+
+
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<section class="py-20 bg-ice-blue border-y border-slate-200 relative" data-purpose="enquiry-framework">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<div class="inline-flex items-center gap-2 text-xs font-bold font-heading tracking-widest text-electric-blue uppercase mb-2">
+<span class="w-1.5 h-1.5 rounded-full bg-electric-blue" data-on-dark></span>
+            PROJECT SCOPING
+          </div>
+<h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Have a Specific Technology Challenge?
+          </h2>
+<p class="mt-3 text-base sm:text-lg text-slate-600 leading-relaxed">
+            Tell us what you are trying to solve, and we can explore the technology approach that best fits your requirements.
+          </p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+<div class="bg-white rounded-xl p-8 border border-slate-200/80 shadow-subtle-card hover:shadow-md transition-shadow relative group">
+<div class="text-xs font-mono font-bold text-electric-blue tracking-wider mb-3">
+              PHASE // 01
+            </div>
+<div class="w-10 h-10 rounded-lg bg-blue-50 border border-blue-200/60 flex items-center justify-center text-electric-blue mb-5">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h3 class="text-lg font-bold font-heading text-slate-900 mb-2">THE CHALLENGE</h3>
+<p class="text-sm font-semibold text-slate-700 mb-2">What are you trying to solve?</p>
+<p class="text-sm text-slate-600 leading-relaxed">
+              Defining operational friction, data bottlenecks, manual inspection complexity, or system latency within your current environment.
+            </p>
+</div>
+
+<div class="bg-white rounded-xl p-8 border border-slate-200/80 shadow-subtle-card hover:shadow-md transition-shadow relative group">
+<div class="text-xs font-mono font-bold text-electric-blue tracking-wider mb-3">
+              PHASE // 02
+            </div>
+<div class="w-10 h-10 rounded-lg bg-blue-50 border border-blue-200/60 flex items-center justify-center text-electric-blue mb-5">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h3 class="text-lg font-bold font-heading text-slate-900 mb-2">THE REQUIREMENT</h3>
+<p class="text-sm font-semibold text-slate-700 mb-2">What does the solution need to achieve?</p>
+<p class="text-sm text-slate-600 leading-relaxed">
+              Identifying the technical constraints, integration points and what a good result looks like.
+            </p>
+</div>
+
+<div class="bg-white rounded-xl p-8 border border-slate-200/80 shadow-subtle-card hover:shadow-md transition-shadow relative group">
+<div class="text-xs font-mono font-bold text-electric-blue tracking-wider mb-3">
+              PHASE // 03
+            </div>
+<div class="w-10 h-10 rounded-lg bg-blue-50 border border-blue-200/60 flex items-center justify-center text-electric-blue mb-5">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h3 class="text-lg font-bold font-heading text-slate-900 mb-2">THE OPPORTUNITY</h3>
+<p class="text-sm font-semibold text-slate-700 mb-2">Where could technology help?</p>
+<p class="text-sm text-slate-600 leading-relaxed">
+              Evaluating practical deployment of computer vision, enterprise software systems, or workflow automation engineered for your domain.
+            </p>
+</div>
+</div>
+</div>
+</section>
+
+
+<section class="py-20 bg-white" data-purpose="solution-shortcuts">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12">
+<div>
+<h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-slate-900">Explore Relevant Capabilities</h2>
+<p class="text-slate-600 text-sm sm:text-base mt-2">Targeted technical disciplines engineered to solve complex operational challenges.</p>
+</div>
+<a class="mt-4 sm:mt-0 inline-flex items-center gap-1.5 text-sm font-semibold text-electric-blue hover:text-accent-blue transition-colors" href="/solutions.html">
+<span>View all solution domains</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+<a class="p-6 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-ice-blue/70 hover:border-blue-300 transition-all duration-200 group block" href="/solutions.html">
+<div class="w-8 h-8 rounded-md bg-electric-blue/10 text-electric-blue flex items-center justify-center mb-4 group-hover:scale-110 transition-transform" data-on-dark>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h3 class="font-heading font-bold text-slate-900 group-hover:text-electric-blue transition-colors">AI Solutions</h3>
+<p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Computer vision inspection, predictive models, multimodal analytics, and automated data extraction.
+            </p>
+</a>
+
+<a class="p-6 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-ice-blue/70 hover:border-blue-300 transition-all duration-200 group block" href="/solutions.html">
+<div class="w-8 h-8 rounded-md bg-electric-blue/10 text-electric-blue flex items-center justify-center mb-4 group-hover:scale-110 transition-transform" data-on-dark>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h3 class="font-heading font-bold text-slate-900 group-hover:text-electric-blue transition-colors">Software Development</h3>
+<p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Modern enterprise web platforms, scalable backend services, API frameworks, and operational interfaces.
+            </p>
+</a>
+
+<a class="p-6 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-ice-blue/70 hover:border-blue-300 transition-all duration-200 group block" href="/solutions.html">
+<div class="w-8 h-8 rounded-md bg-electric-blue/10 text-electric-blue flex items-center justify-center mb-4 group-hover:scale-110 transition-transform" data-on-dark>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h3 class="font-heading font-bold text-slate-900 group-hover:text-electric-blue transition-colors">Automation</h3>
+<p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Workflow pipelines, process efficiency engines, repetitive task handling, and real-time data orchestration.
+            </p>
+</a>
+
+<a class="p-6 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-ice-blue/70 hover:border-blue-300 transition-all duration-200 group block" href="/solutions.html">
+<div class="w-8 h-8 rounded-md bg-electric-blue/10 text-electric-blue flex items-center justify-center mb-4 group-hover:scale-110 transition-transform" data-on-dark>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h3 class="font-heading font-bold text-slate-900 group-hover:text-electric-blue transition-colors">Technology Consulting</h3>
+<p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Technical feasibility analysis, architectural roadmapping, infrastructure modernization, and evaluation.
+            </p>
+</a>
+</div>
+</div>
+</section>
+
+
+<section class="py-12 bg-white" data-purpose="careers-cross-link">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="rounded-2xl bg-ice-blue border border-blue-200/80 p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="max-w-2xl">
+<h3 class="text-xl sm:text-2xl font-bold font-heading text-slate-900">Interested in Building With Us?</h3>
+<p class="text-slate-600 text-sm sm:text-base mt-2">
+              If you're interested in technology, AI and building practical solutions, explore opportunities with SKY QUANTECH AI.
+            </p>
+</div>
+<div class="shrink-0">
+<a class="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold text-deep-blue bg-white border border-slate-300 hover:bg-slate-50 hover:border-slate-400 shadow-sm transition-all" href="/careers.html">
+<span>Explore Careers</span>
+<svg class="w-4 h-4 text-electric-blue" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</section>
+
+
+<section class="py-20 bg-deep-blue text-white relative overflow-hidden border-t border-blue-900/60" data-purpose="final-call-to-action" data-on-dark>
+<div class="absolute inset-0 grid-pattern-dark opacity-30 pointer-events-none"></div>
+<div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950/80 border border-electric-blue/30 text-xs font-mono tracking-wider text-accent-blue mb-4" data-on-dark>
+          ENGAGEMENT READY
+        </div>
+<h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading tracking-tight text-white">
+          Let's Start the Conversation
+        </h2>
+<p class="mt-4 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          Tell us what you're working on. We'll start by understanding the challenge.
+        </p>
+<div class="mt-8 flex justify-center">
+<a class="inline-flex items-center gap-2.5 px-8 py-4 rounded-md text-base font-semibold bg-electric-blue hover:bg-accent-blue text-white shadow-lg shadow-electric-blue/30 hover:shadow-accent-blue/40 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent-blue focus:ring-offset-2 focus:ring-offset-deep-blue" href="#enquiry-form" data-on-dark>
+<span>Send an Enquiry</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M5 10l7-7m0 0l7 7m-7-7v18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+</div>
+</div>
+</section>
+
+</main>
+<footer class="w-full bg-dark-blue border-t border-border-strong/20 text-blue-100 py-space-3xl" data-on-dark>
+  <div class="max-w-[1440px] mx-auto px-margin-mobile lg:px-margin-desktop">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-xl mb-space-3xl">
+
+      <div class="lg:col-span-4 flex flex-col items-start pr-0 lg:pr-space-lg">
+        <div class="flex items-center gap-space-xs mb-space-sm bg-white p-1.5 rounded">
+          <img alt="SKY QUANTECH AI" class="h-8 w-auto object-contain" src="assets/logo.png" width="512" height="512" loading="lazy" decoding="async">
+        </div>
+        <p class="font-body-sm text-body-sm text-blue-200 leading-relaxed max-w-[46ch]">
+          SKY QUANTECH AI Pvt. Ltd. works across artificial intelligence, software development, automation and technology consulting.
+        </p>
+      </div>
+
+      <nav aria-labelledby="footer-nav-heading" class="lg:col-span-3">
+        <h2 class="font-eyebrow-tracking text-eyebrow-tracking text-highlight-blue uppercase font-semibold mb-space-md" id="footer-nav-heading">Navigation</h2>
+        <ul class="grid grid-cols-2 gap-x-space-md gap-y-space-xs font-body-sm text-body-sm text-blue-200">
+          <li><a class="hover:text-white transition-colors rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue" href="/index.html">Home</a></li>
+          <li><a class="hover:text-white transition-colors rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue" href="/about.html">About</a></li>
+          <li><a class="hover:text-white transition-colors rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue" href="/solutions.html">Solutions</a></li>
+          <li><a class="hover:text-white transition-colors rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue" href="/industries.html">Industries</a></li>
+          <li><a class="hover:text-white transition-colors rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue" href="/why-us.html">Why Us</a></li>
+          <li><a class="hover:text-white transition-colors rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue" href="/process.html">Process</a></li>
+          <li><a class="hover:text-white transition-colors rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue" href="/case-studies.html">Case Studies</a></li>
+          <li><a class="hover:text-white transition-colors rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue" href="/careers.html">Careers</a></li>
+          <li><a class="hover:text-white transition-colors rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue" href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="lg:col-span-3">
+        <h2 class="font-eyebrow-tracking text-eyebrow-tracking text-highlight-blue uppercase font-semibold mb-space-md" id="footer-solutions-heading">Solutions</h2>
+        <ul aria-labelledby="footer-solutions-heading" class="space-y-space-xs font-body-sm text-body-sm text-blue-200">
+          <li><a class="hover:text-white transition-colors rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue" href="/solutions.html">AI Solutions</a></li>
+          <li><a class="hover:text-white transition-colors rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue" href="/solutions.html">Software Development</a></li>
+          <li><a class="hover:text-white transition-colors rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue" href="/solutions.html">Automation</a></li>
+          <li><a class="hover:text-white transition-colors rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue" href="/solutions.html">IT / Technology Consulting</a></li>
+        </ul>
+      </div>
+
+      <div class="lg:col-span-2">
+        <h2 class="font-eyebrow-tracking text-eyebrow-tracking text-highlight-blue uppercase font-semibold mb-space-md">Contact</h2>
+        <address class="not-italic space-y-space-sm font-body-sm text-body-sm text-blue-200">
+          <div>
+            <div class="text-label-md text-blue-300 font-semibold">Email</div>
+            <a class="text-body-md text-white hover:underline rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue" href="mailto:contact@skyquantech.ai">contact@skyquantech.ai</a>
+          </div>
+          <div>
+            <div class="text-label-md text-blue-300 font-semibold">Phone</div>
+            <a class="text-body-md text-white hover:underline rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue" href="tel:9985383863">9985383863</a>
+          </div>
+          <div>
+            <div class="text-label-md text-blue-300 font-semibold">Address</div>
+            <span class="text-body-sm text-blue-100">Madhapur, Hyderabad</span>
+          </div>
+          <div>
+            <div class="text-label-md text-blue-300 font-semibold">Website</div>
+            <a class="text-body-sm text-blue-100 hover:text-white hover:underline rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue" href="https://www.skyquantech.ai">www.skyquantech.ai</a>
+          </div>
+        </address>
+      </div>
+    </div>
+
+    <div class="pt-space-lg border-t border-white/10">
+      <p class="font-body-sm text-body-sm text-blue-200 text-center md:text-left">
+        © <span data-current-year>2026</span> SKY QUANTECH AI Pvt. Ltd. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js" defer></script>
+<script>window.SKY_FORMS={"endpoint":null,"method":"POST","unconfiguredMessage":"This form is not connected to a mail service yet. Please contact us directly while we finish setup.","resumeMaxBytes":null};</script>
+<script src="assets/forms.js" defer></script>
+
+</body>
+</html>

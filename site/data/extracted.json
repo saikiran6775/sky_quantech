@@ -1,0 +1,56 @@
+{
+  "index": {
+    "source": "sky_quantech_ai_corporate_homepage_locked_final",
+    "mainClass": "w-full pt-20 bg-white",
+    "hasScript": false,
+    "hasStyle": false
+  },
+  "about": {
+    "source": "sky_quantech_ai_about_us",
+    "mainClass": "",
+    "hasScript": false,
+    "hasStyle": false
+  },
+  "solutions": {
+    "source": "sky_quantech_ai_solutions",
+    "mainClass": "w-full pt-20 bg-surface-container-lowest",
+    "hasScript": true,
+    "hasStyle": false
+  },
+  "industries": {
+    "source": "sky_quantech_ai_industries_content_locked",
+    "mainClass": "w-full pt-20 bg-surface-container-lowest",
+    "hasScript": false,
+    "hasStyle": false
+  },
+  "why-us": {
+    "source": "sky_quantech_ai_why_choose_us",
+    "mainClass": "w-full pt-20 bg-surface-container-lowest",
+    "hasScript": false,
+    "hasStyle": false
+  },
+  "process": {
+    "source": "sky_quantech_ai_process",
+    "mainClass": "w-full pt-20 bg-surface-container-lowest",
+    "hasScript": false,
+    "hasStyle": false
+  },
+  "case-studies": {
+    "source": "sky_quantech_ai_case_studies",
+    "mainClass": "w-full pt-20 bg-surface-container-lowest",
+    "hasScript": true,
+    "hasStyle": false
+  },
+  "careers": {
+    "source": "sky_quantech_ai_careers",
+    "mainClass": "w-full pt-20 bg-surface-container-lowest",
+    "hasScript": true,
+    "hasStyle": false
+  },
+  "contact": {
+    "source": "sky_quantech_ai_contact",
+    "mainClass": "",
+    "hasScript": true,
+    "hasStyle": false
+  }
+}

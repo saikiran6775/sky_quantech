@@ -1,0 +1,52 @@
+<form class="space-y-5" data-form="enquiry" id="contact-enquiry-form" novalidate>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+    <div>
+      <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5" for="fullName">Full Name <span aria-hidden="true" class="text-error">*</span></label>
+      <input aria-describedby="fullName-error" autocomplete="name" class="w-full rounded-lg border-slate-300 text-slate-900 text-sm shadow-sm focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 placeholder:text-slate-500 py-2.5 px-3.5" id="fullName" name="fullName" placeholder="Your name" required type="text">
+      <p class="mt-1.5 text-xs text-error font-medium" data-error-for="fullName" hidden id="fullName-error"></p>
+    </div>
+    <div>
+      <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5" for="email">Email Address <span aria-hidden="true" class="text-error">*</span></label>
+      <input aria-describedby="email-error" autocomplete="email" class="w-full rounded-lg border-slate-300 text-slate-900 text-sm shadow-sm focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 placeholder:text-slate-500 py-2.5 px-3.5" id="email" name="email" placeholder="you@company.com" required type="email">
+      <p class="mt-1.5 text-xs text-error font-medium" data-error-for="email" hidden id="email-error"></p>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+    <div>
+      <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5" for="phone">Phone Number <span class="text-slate-600 font-normal normal-case tracking-normal">(optional)</span></label>
+      <input aria-describedby="phone-error" autocomplete="tel" class="w-full rounded-lg border-slate-300 text-slate-900 text-sm shadow-sm focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 placeholder:text-slate-500 py-2.5 px-3.5" id="phone" name="phone" placeholder="Include country code" type="tel">
+      <p class="mt-1.5 text-xs text-error font-medium" data-error-for="phone" hidden id="phone-error"></p>
+    </div>
+    <div>
+      <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5" for="company">Company / Organization <span class="text-slate-600 font-normal normal-case tracking-normal">(optional)</span></label>
+      <input aria-describedby="company-error" autocomplete="organization" class="w-full rounded-lg border-slate-300 text-slate-900 text-sm shadow-sm focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 placeholder:text-slate-500 py-2.5 px-3.5" id="company" name="company" placeholder="Where you work" type="text">
+      <p class="mt-1.5 text-xs text-error font-medium" data-error-for="company" hidden id="company-error"></p>
+    </div>
+  </div>
+
+  <div>
+    <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5" for="interest">Area of Interest <span aria-hidden="true" class="text-error">*</span></label>
+    <select aria-describedby="interest-error" class="w-full rounded-lg border-slate-300 text-slate-900 text-sm shadow-sm focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 py-2.5 px-3.5 bg-white" id="interest" name="interest" required>
+      <option disabled selected value="">Select an area of interest</option>
+      <option value="AI Solutions">AI Solutions</option>
+      <option value="Software Development">Software Development</option>
+      <option value="Automation">Automation</option>
+      <option value="Technology Consulting">Technology Consulting</option>
+      <option value="Other">Other</option>
+    </select>
+    <p class="mt-1.5 text-xs text-error font-medium" data-error-for="interest" hidden id="interest-error"></p>
+  </div>
+
+  <div>
+    <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5" for="message">Message <span aria-hidden="true" class="text-error">*</span></label>
+    <textarea aria-describedby="message-error" class="w-full rounded-lg border-slate-300 text-slate-900 text-sm shadow-sm focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 placeholder:text-slate-500 py-2.5 px-3.5" id="message" name="message" placeholder="Tell us about the challenge or requirement you'd like to explore." required rows="5"></textarea>
+    <p class="mt-1.5 text-xs text-error font-medium" data-error-for="message" hidden id="message-error"></p>
+  </div>
+
+  <div class="pt-2">
+    <button class="w-full py-3.5 px-6 rounded-lg bg-electric-blue hover:bg-bright-blue text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-electric-blue" type="submit">Send Enquiry</button>
+  </div>
+
+  <p aria-live="polite" class="text-sm rounded-lg px-3.5 py-3 hidden" data-form-status role="status"></p>
+</form>

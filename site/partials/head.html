@@ -1,0 +1,72 @@
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>{{TITLE}}</title>
+<meta content="{{DESCRIPTION}}" name="description">
+<meta content="{{TITLE}}" property="og:title">
+<meta content="{{DESCRIPTION}}" property="og:description">
+<meta content="website" property="og:type">
+<meta content="SKY QUANTECH AI" property="og:site_name">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap" rel="stylesheet">
+<style>
+  @layer base {
+    html, body { margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { overscroll-behavior-x: none; overflow-x: hidden; }
+    main > :first-child { margin-top: 0 !important; }
+    main > :last-child { margin-bottom: 0 !important; }
+  }
+  /* Decorative glow layers are absolutely positioned and overhang their section.
+     Clip on the x-axis only: unlike overflow:hidden this creates no scroll
+     container, so sticky/nested scrolling still behave. */
+  main > div > section, main > section { overflow-x: clip; }
+
+  /* --- Contrast corrections ---------------------------------------------
+     The Stitch export reused container tokens as text colors, which failed
+     WCAG AA in several places. These rules fix the pairings without altering
+     the brand palette. `html` prefixes raise specificity above the Tailwind
+     CDN's own utilities, which are injected after this block.
+     [data-on-dark] is stamped at build time onto dark-background elements. */
+
+  /* Accent text on deep navy: #0078FF and #0050F0 only reach ~3.9:1 there,
+     and on-tertiary-container shipped as teal (#0090ad), which is off-brand. */
+  html [data-on-dark] .text-highlight-blue,
+  html [data-on-dark] .text-brand-highlight,
+  html [data-on-dark] .text-electric-blue,
+  html [data-on-dark] .text-accent-blue,
+  html .text-on-tertiary-container { color: #8FC2FF; }
+
+  /* on-primary-container (#7484a3) is too faint on light and too dark on navy. */
+  html .text-on-primary-container { color: #2D486A; }
+  html [data-on-dark] .text-on-primary-container { color: #B6C7E8; }
+
+  /* secondary-container (#BBD6FF) is a container fill. As text it is only
+     1.4:1 on white, so default it to the brand blue and restore the light
+     tint only where it genuinely sits on dark. */
+  html .text-secondary-container { color: #0020A0; }
+  html [data-on-dark] .text-secondary-container { color: #BBD6FF; }
+
+  /* Light-blue chips and buttons need dark text, not white. */
+  html [data-chip-light].text-on-primary,
+  html [data-chip-light].text-on-secondary,
+  html [data-chip-light] .text-on-primary,
+  html [data-chip-light] .text-on-secondary,
+  html [data-chip-light] .text-white,
+  html [data-chip-light] .material-symbols-outlined { color: #001060; }
+
+  /* Keyboard focus stays visible everywhere, including inside dark sections. */
+  :focus-visible { outline: 2px solid #0078FF; outline-offset: 2px; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">tailwind.config=/*THEME*/;</script>

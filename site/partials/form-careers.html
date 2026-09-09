@@ -1,0 +1,61 @@
+<form class="p-space-xl rounded-xl bg-surface-container-lowest shadow-xl flex flex-col gap-space-md" data-form="profile" id="careers-profile-form" novalidate>
+  <div class="flex flex-col">
+    <label class="font-label-md text-label-md text-on-surface mb-space-2xs" for="cv-name">Full Name <span aria-hidden="true" class="text-error">*</span></label>
+    <input aria-describedby="cv-name-error" autocomplete="name" class="h-10 px-space-sm rounded-lg bg-surface-container-low text-on-surface font-body-md placeholder:text-on-surface-variant/40 focus:outline-none focus:ring-2 focus:ring-secondary" id="cv-name" name="fullName" placeholder="Your name" required type="text">
+    <p class="mt-space-2xs font-body-sm text-body-sm text-error" data-error-for="cv-name" hidden id="cv-name-error"></p>
+  </div>
+
+  <div class="flex flex-col">
+    <label class="font-label-md text-label-md text-on-surface mb-space-2xs" for="cv-email">Email Address <span aria-hidden="true" class="text-error">*</span></label>
+    <input aria-describedby="cv-email-error" autocomplete="email" class="h-10 px-space-sm rounded-lg bg-surface-container-low text-on-surface font-body-md placeholder:text-on-surface-variant/40 focus:outline-none focus:ring-2 focus:ring-secondary" id="cv-email" name="email" placeholder="you@domain.com" required type="email">
+    <p class="mt-space-2xs font-body-sm text-body-sm text-error" data-error-for="cv-email" hidden id="cv-email-error"></p>
+  </div>
+
+  <div class="flex flex-col">
+    <label class="font-label-md text-label-md text-on-surface mb-space-2xs" for="cv-phone">Phone Number <span class="text-on-surface-variant font-normal">(optional)</span></label>
+    <input aria-describedby="cv-phone-error" autocomplete="tel" class="h-10 px-space-sm rounded-lg bg-surface-container-low text-on-surface font-body-md placeholder:text-on-surface-variant/40 focus:outline-none focus:ring-2 focus:ring-secondary" id="cv-phone" name="phone" placeholder="Include country code" type="tel">
+    <p class="mt-space-2xs font-body-sm text-body-sm text-error" data-error-for="cv-phone" hidden id="cv-phone-error"></p>
+  </div>
+
+  <div class="flex flex-col">
+    <label class="font-label-md text-label-md text-on-surface mb-space-2xs" for="cv-interest">Area of Interest</label>
+    <select class="h-10 px-space-sm rounded-lg bg-surface-container-low text-on-surface font-body-md focus:outline-none focus:ring-2 focus:ring-secondary" id="cv-interest" name="areaOfInterest">
+      <option value="Artificial Intelligence">Artificial Intelligence</option>
+      <option value="Computer Vision">Computer Vision</option>
+      <option value="Software Development">Software Development</option>
+      <option value="Automation">Automation</option>
+      <option value="Technology Solutions">Technology Solutions</option>
+    </select>
+  </div>
+
+  <div class="flex flex-col">
+    <label class="font-label-md text-label-md text-on-surface mb-space-2xs" for="cv-experience">Years of Experience</label>
+    <select class="h-10 px-space-sm rounded-lg bg-surface-container-low text-on-surface font-body-md focus:outline-none focus:ring-2 focus:ring-secondary" id="cv-experience" name="yearsOfExperience">
+      <option value="0-2">0–2 years</option>
+      <option value="3-5">3–5 years</option>
+      <option value="5+">5+ years</option>
+    </select>
+  </div>
+
+  <div class="flex flex-col">
+    <label class="font-label-md text-label-md text-on-surface mb-space-2xs" for="cv-link">LinkedIn / Portfolio <span class="text-on-surface-variant font-normal">(optional)</span></label>
+    <input aria-describedby="cv-link-error" class="h-10 px-space-sm rounded-lg bg-surface-container-low text-on-surface font-body-md placeholder:text-on-surface-variant/40 focus:outline-none focus:ring-2 focus:ring-secondary" id="cv-link" name="profileUrl" placeholder="https://" type="url">
+    <p class="mt-space-2xs font-body-sm text-body-sm text-error" data-error-for="cv-link" hidden id="cv-link-error"></p>
+  </div>
+
+  <div class="flex flex-col">
+    <label class="font-label-md text-label-md text-on-surface mb-space-2xs" for="cv-resume">Resume <span aria-hidden="true" class="text-error">*</span></label>
+    <input accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" aria-describedby="cv-resume-hint cv-resume-error" class="w-full px-space-sm py-space-xs rounded-lg bg-surface-container-low text-on-surface font-body-md file:mr-space-sm file:py-space-2xs file:px-space-sm file:rounded file:border-0 file:bg-primary-container file:text-white file:font-label-md file:cursor-pointer focus:outline-none focus:ring-2 focus:ring-secondary" id="cv-resume" name="resume" required type="file">
+    <p class="mt-space-2xs font-body-sm text-body-sm text-on-surface-variant" id="cv-resume-hint">PDF, DOC or DOCX.</p>
+    <p class="mt-space-2xs font-body-sm text-body-sm text-error" data-error-for="cv-resume" hidden id="cv-resume-error"></p>
+  </div>
+
+  <div class="flex flex-col">
+    <label class="font-label-md text-label-md text-on-surface mb-space-2xs" for="cv-message">Message <span class="text-on-surface-variant font-normal">(optional)</span></label>
+    <textarea class="px-space-sm py-space-xs rounded-lg bg-surface-container-low text-on-surface font-body-md placeholder:text-on-surface-variant/40 focus:outline-none focus:ring-2 focus:ring-secondary" id="cv-message" name="message" placeholder="Anything you'd like us to know." rows="4"></textarea>
+  </div>
+
+  <button class="h-11 px-space-lg rounded-lg bg-primary-container text-white font-label-md text-label-md hover:bg-secondary transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-secondary" type="submit">Send Your Profile</button>
+
+  <p aria-live="polite" class="font-body-sm text-body-sm rounded-lg px-space-sm py-space-xs hidden" data-form-status role="status"></p>
+</form>

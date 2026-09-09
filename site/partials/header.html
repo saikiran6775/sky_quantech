@@ -1,0 +1,31 @@
+<a class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-4 focus:py-2 focus:rounded focus:bg-deep-blue focus:text-white focus:outline-none focus:ring-2 focus:ring-highlight-blue focus:ring-offset-2" href="#main">Skip to main content</a>
+
+<header class="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur-md border-b border-border-subtle shadow-sm">
+  <div class="h-20 max-w-[1440px] mx-auto px-margin-mobile lg:px-margin-desktop flex items-center justify-between">
+
+    <a class="flex items-center gap-space-sm group rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue focus-visible:ring-offset-2" href="{{HOME}}">
+      <img alt="SKY QUANTECH AI" class="h-9 w-auto object-contain transition-transform group-hover:scale-105" src="{{ASSETS}}/logo.png" width="512" height="512" decoding="async" fetchpriority="high">
+    </a>
+
+    <nav aria-label="Primary" class="hidden xl:flex items-center gap-space-lg">
+      {{DESKTOP_NAV}}
+    </nav>
+
+    <div class="flex items-center gap-space-md">
+      <a class="hidden sm:inline-flex items-center justify-center h-10 px-space-md bg-deep-blue text-white font-label-md text-label-md rounded hover:bg-electric-blue transition-colors shadow-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue focus-visible:ring-offset-2" href="{{CTA_HREF}}">{{CTA_LABEL}}</a>
+
+      <button aria-controls="mobile-nav" aria-expanded="false" aria-label="Open menu" class="xl:hidden inline-flex items-center justify-center w-10 h-10 rounded text-deep-blue hover:bg-surface-slate transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue focus-visible:ring-offset-2" data-menu-toggle type="button">
+        <span aria-hidden="true" class="material-symbols-outlined text-[24px]" data-menu-icon>menu</span>
+      </button>
+    </div>
+  </div>
+
+  <nav aria-label="Primary mobile" class="xl:hidden hidden border-t border-border-subtle bg-white max-h-[calc(100vh-5rem)] overflow-y-auto" id="mobile-nav">
+    <ul class="px-margin-mobile py-space-md space-y-space-2xs">
+      {{MOBILE_NAV}}
+      <li class="pt-space-sm">
+        <a class="flex items-center justify-center h-11 px-space-md bg-deep-blue text-white font-label-md text-label-md rounded hover:bg-electric-blue transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue focus-visible:ring-offset-2" href="{{CTA_HREF}}">{{CTA_LABEL}}</a>
+      </li>
+    </ul>
+  </nav>
+</header>

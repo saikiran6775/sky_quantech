@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+
+# Local tooling state (session logs, caches) — not part of the project
+.remember/
+.gstack/
+
+# OS
+.DS_Store
+
+# The original Stitch export archive. Its unpacked contents are committed as
+# stitch_sky_quantech_ai_website/, so the zip is redundant weight.
+*.zip

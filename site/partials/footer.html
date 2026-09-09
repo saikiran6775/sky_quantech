@@ -1,0 +1,57 @@
+<footer class="w-full bg-dark-blue border-t border-border-strong/20 text-blue-100 py-space-3xl">
+  <div class="max-w-[1440px] mx-auto px-margin-mobile lg:px-margin-desktop">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-xl mb-space-3xl">
+
+      <div class="lg:col-span-4 flex flex-col items-start pr-0 lg:pr-space-lg">
+        <div class="flex items-center gap-space-xs mb-space-sm bg-white p-1.5 rounded">
+          <img alt="SKY QUANTECH AI" class="h-8 w-auto object-contain" src="{{ASSETS}}/logo.png" width="512" height="512" loading="lazy" decoding="async">
+        </div>
+        <p class="font-body-sm text-body-sm text-blue-200 leading-relaxed max-w-[46ch]">
+          SKY QUANTECH AI Pvt. Ltd. works across artificial intelligence, software development, automation and technology consulting.
+        </p>
+      </div>
+
+      <nav aria-labelledby="footer-nav-heading" class="lg:col-span-3">
+        <h2 class="font-eyebrow-tracking text-eyebrow-tracking text-highlight-blue uppercase font-semibold mb-space-md" id="footer-nav-heading">Navigation</h2>
+        <ul class="grid grid-cols-2 gap-x-space-md gap-y-space-xs font-body-sm text-body-sm text-blue-200">
+          {{FOOTER_NAV}}
+        </ul>
+      </nav>
+
+      <div class="lg:col-span-3">
+        <h2 class="font-eyebrow-tracking text-eyebrow-tracking text-highlight-blue uppercase font-semibold mb-space-md" id="footer-solutions-heading">Solutions</h2>
+        <ul aria-labelledby="footer-solutions-heading" class="space-y-space-xs font-body-sm text-body-sm text-blue-200">
+          {{FOOTER_SERVICES}}
+        </ul>
+      </div>
+
+      <div class="lg:col-span-2">
+        <h2 class="font-eyebrow-tracking text-eyebrow-tracking text-highlight-blue uppercase font-semibold mb-space-md">Contact</h2>
+        <address class="not-italic space-y-space-sm font-body-sm text-body-sm text-blue-200">
+          <div>
+            <div class="text-label-md text-blue-300 font-semibold">Email</div>
+            <a class="text-body-md text-white hover:underline rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue" href="mailto:{{EMAIL}}">{{EMAIL}}</a>
+          </div>
+          <div>
+            <div class="text-label-md text-blue-300 font-semibold">Phone</div>
+            <a class="text-body-md text-white hover:underline rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue" href="tel:{{PHONE_TEL}}">{{PHONE}}</a>
+          </div>
+          <div>
+            <div class="text-label-md text-blue-300 font-semibold">Address</div>
+            <span class="text-body-sm text-blue-100">{{ADDRESS}}</span>
+          </div>
+          <div>
+            <div class="text-label-md text-blue-300 font-semibold">Website</div>
+            <a class="text-body-sm text-blue-100 hover:text-white hover:underline rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue" href="https://{{WEBSITE}}">{{WEBSITE}}</a>
+          </div>
+        </address>
+      </div>
+    </div>
+
+    <div class="pt-space-lg border-t border-white/10">
+      <p class="font-body-sm text-body-sm text-blue-200 text-center md:text-left">
+        © <span data-current-year>{{YEAR}}</span> SKY QUANTECH AI Pvt. Ltd. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>

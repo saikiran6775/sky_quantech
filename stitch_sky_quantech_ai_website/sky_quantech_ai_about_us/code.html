@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — SKY QUANTECH AI Pvt. Ltd.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              deep: '#001060',
+              dark: '#001070',
+              primary: '#0020A0',
+              electric: '#0050F0',
+              bright: '#0060F0',
+              highlight: '#0078FF',
+              light: '#F5F8FF',
+              surface: '#FFFFFF',
+              border: '#D8E3FB',
+              text: '#001060',
+              textSecondary: '#2D486A',
+              textMuted: '#60728F'
+            }
+          },
+          fontFamily: {
+            heading: ['Plus Jakarta Sans', 'sans-serif'],
+            sans: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #001060;
+      background-color: #FFFFFF;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .glow-electric {
+      box-shadow: 0 0 50px -10px rgba(0, 80, 240, 0.22);
+    }
+    .subtle-card-border {
+      border: 1px solid #D8E3FB;
+    }
+    .subtle-card-border:hover {
+      border-color: #0050F0;
+      box-shadow: 0 10px 30px -8px rgba(0, 32, 160, 0.08);
+    }
+  </style>
+</head>
+<body class="bg-white text-[#001060] antialiased selection:bg-brand-electric selection:text-white">
+
+  <!-- TOP PERSISTENT NAVIGATION -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#D8E3FB] transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+      <!-- Brand Logo / Wordmark -->
+      <a href="#" class="flex items-center gap-3 group">
+        <img src="https://lh3.googleusercontent.com/aida/AEtjO1XHHuLDDRWnhJ9DpS3ZDn2rowJE6q2Y76zFfLzd4YFBQgL-uW4D-pgRpmWEc1yW9OvYgMd3--icD2MRZtyDO5yZatY14GsFj8yu-E9RG_eS_4sl-lQyLCuEWBft4rxkAcu-j-vgB6B_-dxANJjie6-c6DpUKn-CJM4i6uH_YC1BTjWmMwc5Nb_n7q3YsxRwkB3LDOFU7zoYdEcPSl3iQbDvaWOh4Ox-xRw3ByLoC8oOfkm6I5AHq02HgBc" alt="SKY QUANTECH AI Logo" class="h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center gap-8 text-[14px] font-semibold text-[#2D486A]">
+        <a href="#" class="hover:text-brand-electric transition-colors py-1">Home</a>
+        <!-- Active Nav Item -->
+        <a href="#" class="text-brand-deep border-b-2 border-brand-electric pb-1 font-bold">About</a>
+        <a href="#" class="hover:text-brand-electric transition-colors py-1">Solutions</a>
+        <a href="#" class="hover:text-brand-electric transition-colors py-1">Industries</a>
+        <a href="#" class="hover:text-brand-electric transition-colors py-1">Why Us</a>
+        <a href="#" class="hover:text-brand-electric transition-colors py-1">Process</a>
+        <a href="#" class="hover:text-brand-electric transition-colors py-1">Case Studies</a>
+        <a href="#" class="hover:text-brand-electric transition-colors py-1">Contact</a>
+      </nav>
+
+      <!-- Right Header CTA Button -->
+      <div class="hidden sm:flex items-center gap-4">
+        <a href="#contact" class="inline-flex items-center justify-center px-6 py-2.5 rounded-sm bg-brand-deep text-white text-[14px] font-semibold hover:bg-brand-primary transition-all duration-200 shadow-sm hover:shadow-md">
+          Talk to Us
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button type="button" class="md:hidden text-brand-deep p-2 focus:outline-none" aria-label="Toggle navigation menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- SECTION 1: ABOUT HERO -->
+  <section class="relative pt-16 pb-20 lg:pt-24 lg:pb-28 overflow-hidden bg-white border-b border-[#D8E3FB]/60">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <!-- Left Hero Content -->
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-brand-light border border-brand-border text-brand-electric text-[12px] font-bold tracking-wider uppercase mb-6">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-electric"></span>
+            ABOUT SKY QUANTECH AI
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-[54px] font-extrabold text-brand-deep tracking-tight leading-[1.12] mb-6">
+            Technology Built Around Real Business Challenges
+          </h1>
+          <p class="text-lg lg:text-[20px] text-brand-textSecondary leading-relaxed font-normal max-w-2xl mb-8">
+            SKY QUANTECH AI brings together artificial intelligence, software development, automation and technology consulting to create practical solutions around real business needs.
+          </p>
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="#approach" class="inline-flex items-center justify-center px-7 py-3.5 rounded-sm bg-brand-deep text-white text-[15px] font-semibold hover:bg-brand-primary transition-all duration-200 shadow-sm hover:shadow-md gap-2 group">
+              <span>Our Approach</span>
+              <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </a>
+            <a href="#contact" class="inline-flex items-center justify-center px-7 py-3.5 rounded-sm bg-white border border-[#D8E3FB] text-brand-deep text-[15px] font-semibold hover:border-brand-electric hover:bg-brand-light transition-all duration-200">
+              Talk to Our Experts
+            </a>
+          </div>
+
+          <!-- Bottom Micro Assurance Pillar Badges -->
+          <div class="grid grid-cols-3 gap-6 pt-12 mt-12 border-t border-[#D8E3FB]/80">
+            <div>
+              <div class="text-[12px] font-bold tracking-wider uppercase text-brand-textMuted mb-1">FOUNDATION</div>
+              <div class="text-[15px] font-bold text-brand-deep">AI &amp; Software</div>
+            </div>
+            <div>
+              <div class="text-[12px] font-bold tracking-wider uppercase text-brand-textMuted mb-1">DELIVERY</div>
+              <div class="text-[15px] font-bold text-brand-deep">Practical Utility</div>
+            </div>
+            <div>
+              <div class="text-[12px] font-bold tracking-wider uppercase text-brand-textMuted mb-1">ORIENTATION</div>
+              <div class="text-[15px] font-bold text-brand-deep">Customer-Focused</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Visual Container with High-End Engineering Visual -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-sm overflow-hidden border border-[#0020A0]/40 shadow-2xl bg-brand-deep glow-electric">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeTKNen0AjGwNpkcqmow5J89CUMrfbymzyyxODodkSoQIEuZxNmggZSnDzwO6G2U4_9L1RThRNQh1I-Dw4YeYEoPa3-eF2wZg4fvSiFDt08_E47um5GtmP7-hBxUUftXssaB2Zy51rQlrPs35oqMq4PONkljPNzHD5zfajryaT9ShCARsT2us1QOvMbjsHG98N6ligpWChejRG0Fx8Q6JZROTLxRupbFAbsV_3ZdcuHp4nTwI9lifl" alt="SKY QUANTECH AI Engineering and Systems Environment" class="w-full h-[460px] object-cover object-center transform hover:scale-[1.02] transition-transform duration-500">
+            
+            <!-- Technical Overlay Watermark / Precision Indicators -->
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-deep/90 via-transparent to-transparent pointer-events-none"></div>
+            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-white/90 bg-brand-deep/80 backdrop-blur-sm px-4 py-2.5 rounded-sm border border-brand-electric/30">
+              <div class="flex items-center gap-2 font-mono">
+                <span class="w-2 h-2 rounded-full bg-brand-highlight animate-pulse"></span>
+                <span class="tracking-wide">AI • SOFTWARE • AUTOMATION</span>
+              </div>
+              <span class="text-brand-border text-[11px] font-mono">PRACTICAL ENGINEERING</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: WHO WE ARE (EDITORIAL TWO-COLUMN) -->
+  <section class="py-20 lg:py-28 bg-white border-b border-[#D8E3FB]/80">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div class="lg:col-span-5">
+          <div class="text-brand-electric text-[12px] font-bold tracking-wider uppercase mb-3">WHO WE ARE</div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-deep tracking-tight leading-tight">
+            A Technology Partner Built for Practical Value
+          </h2>
+        </div>
+        <div class="lg:col-span-7 space-y-6 text-brand-textSecondary text-[17px] leading-relaxed">
+          <p class="font-medium text-brand-deep text-[19px] leading-snug">
+            SKY QUANTECH AI is a technology company focused on helping organizations explore and apply artificial intelligence, software and automation to real-world business challenges.
+          </p>
+          <p>
+            Our approach combines technology capabilities with an understanding of practical business requirements, allowing solutions to be shaped around the needs of each organization.
+          </p>
+          <p>
+            Rather than introducing unnecessary technical complexity or ungrounded hype, we emphasize dependable execution, clean architecture, and practical digital initiatives that support genuine operational goals.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: OUR APPROACH (01-04 PROGRESSION) -->
+  <section id="approach" class="py-20 lg:py-28 bg-brand-light border-b border-[#D8E3FB]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="max-w-3xl mb-16">
+        <div class="text-brand-electric text-[12px] font-bold tracking-wider uppercase mb-3">SYSTEMATIC EXECUTION</div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-deep tracking-tight">Our Approach</h2>
+        <p class="text-brand-textSecondary text-[17px] mt-3">A disciplined progression designed to translate business requirements into dependable technology solutions.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- 01 Understand -->
+        <div class="bg-white p-8 rounded-sm subtle-card-border transition-all duration-200 flex flex-col justify-between">
+          <div>
+            <div class="text-2xl font-extrabold text-brand-electric mb-4 font-heading">01</div>
+            <h3 class="text-xl font-bold text-brand-deep mb-3">Understand</h3>
+            <p class="text-brand-textSecondary text-[15px] leading-relaxed">
+              Start with the business challenge, requirements and objectives.
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-[#D8E3FB]/50 text-xs font-semibold text-brand-textMuted tracking-wider uppercase">
+            Discovery &amp; Scoping
+          </div>
+        </div>
+
+        <!-- 02 Design -->
+        <div class="bg-white p-8 rounded-sm subtle-card-border transition-all duration-200 flex flex-col justify-between">
+          <div>
+            <div class="text-2xl font-extrabold text-brand-electric mb-4 font-heading">02</div>
+            <h3 class="text-xl font-bold text-brand-deep mb-3">Design</h3>
+            <p class="text-brand-textSecondary text-[15px] leading-relaxed">
+              Identify the appropriate technology and design a practical solution.
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-[#D8E3FB]/50 text-xs font-semibold text-brand-textMuted tracking-wider uppercase">
+            Architecture &amp; Blueprint
+          </div>
+        </div>
+
+        <!-- 03 Build -->
+        <div class="bg-white p-8 rounded-sm subtle-card-border transition-all duration-200 flex flex-col justify-between">
+          <div>
+            <div class="text-2xl font-extrabold text-brand-electric mb-4 font-heading">03</div>
+            <h3 class="text-xl font-bold text-brand-deep mb-3">Build</h3>
+            <p class="text-brand-textSecondary text-[15px] leading-relaxed">
+              Develop and implement the solution around the defined requirements.
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-[#D8E3FB]/50 text-xs font-semibold text-brand-textMuted tracking-wider uppercase">
+            Engineering &amp; Testing
+          </div>
+        </div>
+
+        <!-- 04 Improve -->
+        <div class="bg-white p-8 rounded-sm subtle-card-border transition-all duration-200 flex flex-col justify-between">
+          <div>
+            <div class="text-2xl font-extrabold text-brand-electric mb-4 font-heading">04</div>
+            <h3 class="text-xl font-bold text-brand-deep mb-3">Improve</h3>
+            <p class="text-brand-textSecondary text-[15px] leading-relaxed">
+              Support ongoing refinement as business and technology needs evolve.
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-[#D8E3FB]/50 text-xs font-semibold text-brand-textMuted tracking-wider uppercase">
+            Support &amp; Refinement
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: DEDICATED VISION & MISSION (DEEP BLUE ANCHOR) -->
+  <section class="py-20 lg:py-28 bg-brand-deep text-white relative overflow-hidden border-b border-brand-dark">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+        <!-- Vision -->
+        <div class="bg-[#001070]/60 p-10 lg:p-12 rounded-sm border border-brand-electric/30 backdrop-blur-sm flex flex-col justify-between">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-brand-electric/20 text-brand-highlight text-[11px] font-bold tracking-widest uppercase mb-6 border border-brand-electric/30">
+              OUR VISION
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-6">
+              Make Intelligent Technology More Practical and Accessible
+            </h2>
+            <p class="text-brand-border text-[17px] leading-relaxed">
+              To help organizations use modern technology and artificial intelligence to solve meaningful business challenges and create better ways of working.
+            </p>
+          </div>
+          <div class="pt-8 mt-8 border-t border-white/10 flex items-center gap-3 text-brand-highlight text-sm font-semibold">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+            <span>Empowering Real Business Transformation</span>
+          </div>
+        </div>
+
+        <!-- Mission -->
+        <div class="bg-[#001070]/60 p-10 lg:p-12 rounded-sm border border-brand-electric/30 backdrop-blur-sm flex flex-col justify-between">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-brand-electric/20 text-brand-highlight text-[11px] font-bold tracking-widest uppercase mb-6 border border-brand-electric/30">
+              OUR MISSION
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-6">
+              Build Technology That Creates Practical Value
+            </h2>
+            <p class="text-brand-border text-[17px] leading-relaxed">
+              To deliver reliable, customer-focused technology solutions across AI, software development, automation and technology consulting.
+            </p>
+          </div>
+          <div class="pt-8 mt-8 border-t border-white/10 flex items-center gap-3 text-brand-highlight text-sm font-semibold">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span>Dependable, Customer-Aligned Execution</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: HUMAN + TECHNOLOGY (EDITORIAL STATEMENT BREAK) -->
+  <section class="py-20 lg:py-24 bg-white border-b border-[#D8E3FB]">
+    <div class="max-w-5xl mx-auto px-6 lg:px-12 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-brand-light text-brand-electric text-[12px] font-bold tracking-wider uppercase mb-6 border border-brand-border">
+        GUIDING PHILOSOPHY
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-brand-deep tracking-tight leading-tight mb-6">
+        “Technology is not the destination. It is the means to solve the problem.”
+      </h2>
+      <p class="text-lg lg:text-[20px] text-brand-textSecondary leading-relaxed max-w-3xl mx-auto">
+        SKY QUANTECH AI focuses on understanding the challenge first, then selecting and building technology around what the organization actually needs.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 6: CORE VALUES (01-05 CLIENT SUPPLIED VALUES) -->
+  <section class="py-20 lg:py-28 bg-brand-light border-b border-[#D8E3FB]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="max-w-3xl mb-16">
+        <div class="text-brand-electric text-[12px] font-bold tracking-wider uppercase mb-3">WHAT WE VALUE</div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-deep tracking-tight">Principles Guiding Every Solution</h2>
+        <p class="text-brand-textSecondary text-[17px] mt-3">Five fundamental commitments that shape our engineering, communication, and client engagements.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- 01 Innovation -->
+        <div class="bg-white p-8 rounded-sm subtle-card-border transition-all duration-200">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold text-brand-electric tracking-wider uppercase">01</span>
+            <div class="w-8 h-8 rounded-sm bg-brand-light flex items-center justify-center text-brand-electric">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-lg font-bold text-brand-deep mb-2">Innovation</h3>
+          <p class="text-brand-textSecondary text-[15px] leading-relaxed">
+            Explore practical ways technology can solve new and existing challenges.
+          </p>
+        </div>
+
+        <!-- 02 Expertise -->
+        <div class="bg-white p-8 rounded-sm subtle-card-border transition-all duration-200">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold text-brand-electric tracking-wider uppercase">02</span>
+            <div class="w-8 h-8 rounded-sm bg-brand-light flex items-center justify-center text-brand-electric">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-lg font-bold text-brand-deep mb-2">Expertise</h3>
+          <p class="text-brand-textSecondary text-[15px] leading-relaxed">
+            Apply relevant technical knowledge to the problems our clients need to solve.
+          </p>
+        </div>
+
+        <!-- 03 Customer Focus -->
+        <div class="bg-white p-8 rounded-sm subtle-card-border transition-all duration-200">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold text-brand-electric tracking-wider uppercase">03</span>
+            <div class="w-8 h-8 rounded-sm bg-brand-light flex items-center justify-center text-brand-electric">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-lg font-bold text-brand-deep mb-2">Customer Focus</h3>
+          <p class="text-brand-textSecondary text-[15px] leading-relaxed">
+            Build around the requirements, priorities and goals of each client.
+          </p>
+        </div>
+
+        <!-- 04 Quality & Reliability -->
+        <div class="bg-white p-8 rounded-sm subtle-card-border transition-all duration-200">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold text-brand-electric tracking-wider uppercase">04</span>
+            <div class="w-8 h-8 rounded-sm bg-brand-light flex items-center justify-center text-brand-electric">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-lg font-bold text-brand-deep mb-2">Quality &amp; Reliability</h3>
+          <p class="text-brand-textSecondary text-[15px] leading-relaxed">
+            Focus on dependable solutions and thoughtful implementation.
+          </p>
+        </div>
+
+        <!-- 05 Cost Effectiveness -->
+        <div class="bg-white p-8 rounded-sm subtle-card-border transition-all duration-200 lg:col-span-2">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold text-brand-electric tracking-wider uppercase">05</span>
+            <div class="w-8 h-8 rounded-sm bg-brand-light flex items-center justify-center text-brand-electric">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-lg font-bold text-brand-deep mb-2">Cost Effectiveness</h3>
+          <p class="text-brand-textSecondary text-[15px] leading-relaxed">
+            Seek practical technology solutions that provide meaningful value.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: TECHNOLOGY FOCUS & CAPABILITIES -->
+  <section class="py-20 lg:py-28 bg-white border-b border-[#D8E3FB]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="max-w-3xl mb-16">
+        <div class="text-brand-electric text-[12px] font-bold tracking-wider uppercase mb-3">TECHNICAL DOMAIN</div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-deep tracking-tight">Our Technology Focus</h2>
+        <p class="text-brand-textSecondary text-[17px] mt-3">Four core technical capabilities engineered to support business execution.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Capability 1: AI Solutions with Key Areas -->
+        <div class="bg-brand-light p-8 lg:p-10 rounded-sm border border-brand-border">
+          <div class="w-10 h-10 rounded-sm bg-brand-deep text-white flex items-center justify-center mb-6">
+            <svg class="w-5 h-5 text-brand-highlight" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-brand-deep mb-3">AI Solutions</h3>
+          <p class="text-brand-textSecondary text-[15px] leading-relaxed mb-6">
+            Intelligent technology solutions designed to help organizations solve complex business and operational challenges.
+          </p>
+
+          <!-- Core AI Sub-domains (Visual mention) -->
+          <div class="pt-6 border-t border-brand-border/80">
+            <div class="text-xs font-bold text-brand-deep uppercase tracking-wider mb-3">Key Focus Areas</div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 bg-white border border-brand-border rounded-sm text-xs font-semibold text-brand-deep">Artificial Intelligence</span>
+              <span class="px-3 py-1.5 bg-white border border-brand-border rounded-sm text-xs font-semibold text-brand-deep">Computer Vision</span>
+              <span class="px-3 py-1.5 bg-white border border-brand-border rounded-sm text-xs font-semibold text-brand-deep">Machine Learning</span>
+              <span class="px-3 py-1.5 bg-white border border-brand-border rounded-sm text-xs font-semibold text-brand-deep">Intelligent Automation</span>
+              <span class="px-3 py-1.5 bg-white border border-brand-border rounded-sm text-xs font-semibold text-brand-deep">Data &amp; Analytics</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Capability 2: Software Development -->
+        <div class="bg-brand-light p-8 lg:p-10 rounded-sm border border-brand-border flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-sm bg-brand-deep text-white flex items-center justify-center mb-6">
+              <svg class="w-5 h-5 text-brand-highlight" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-brand-deep mb-3">Software Development</h3>
+            <p class="text-brand-textSecondary text-[15px] leading-relaxed">
+              Modern software applications built around business requirements, scalability and usability. Developing resilient architectures tailored to operational needs.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-brand-border/80 mt-6">
+            <div class="text-xs font-bold text-brand-deep uppercase tracking-wider mb-2">Scope</div>
+            <p class="text-xs text-brand-textMuted">Enterprise Web Applications • APIs &amp; Data Integration • Resilient Systems</p>
+          </div>
+        </div>
+
+        <!-- Capability 3: Automation -->
+        <div class="bg-brand-light p-8 lg:p-10 rounded-sm border border-brand-border flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-sm bg-brand-deep text-white flex items-center justify-center mb-6">
+              <svg class="w-5 h-5 text-brand-highlight" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-brand-deep mb-3">Automation</h3>
+            <p class="text-brand-textSecondary text-[15px] leading-relaxed">
+              Intelligent workflow and business process automation designed to improve efficiency, reduce manual friction, and accelerate repetitive operations.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-brand-border/80 mt-6">
+            <div class="text-xs font-bold text-brand-deep uppercase tracking-wider mb-2">Scope</div>
+            <p class="text-xs text-brand-textMuted">Process Automation • Workflow Orchestration • Systems Integration</p>
+          </div>
+        </div>
+
+        <!-- Capability 4: Technology Consulting -->
+        <div class="bg-brand-light p-8 lg:p-10 rounded-sm border border-brand-border flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-sm bg-brand-deep text-white flex items-center justify-center mb-6">
+              <svg class="w-5 h-5 text-brand-highlight" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-brand-deep mb-3">Technology Consulting</h3>
+            <p class="text-brand-textSecondary text-[15px] leading-relaxed">
+              Technology guidance focused on identifying practical opportunities for digital transformation and aligning tech initiatives with strategic goals.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-brand-border/80 mt-6">
+            <div class="text-xs font-bold text-brand-deep uppercase tracking-wider mb-2">Scope</div>
+            <p class="text-xs text-brand-textMuted">Feasibility Analysis • Technical Roadmapping • Practical Implementation Guidance</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: INDUSTRIES PREVIEW -->
+  <section class="py-20 lg:py-24 bg-white border-b border-[#D8E3FB]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <div class="text-brand-electric text-[12px] font-bold tracking-wider uppercase mb-2">DOMAIN ADAPTABILITY</div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-deep tracking-tight">Built for Different Business Environments</h2>
+          <p class="text-brand-textSecondary text-[16px] mt-2">Technology solutions designed to adapt to operational needs across diverse sectors.</p>
+        </div>
+        <div class="mt-6 md:mt-0">
+          <a href="#" class="inline-flex items-center gap-2 text-brand-electric font-semibold text-sm hover:text-brand-bright transition-colors group">
+            <span>Explore Industries</span>
+            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 6 Clean Pill / Compact Cards -->
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div class="p-5 rounded-sm bg-brand-light border border-brand-border text-center">
+          <div class="w-8 h-8 mx-auto mb-2 text-brand-electric flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+          </div>
+          <div class="font-bold text-sm text-brand-deep">Healthcare</div>
+        </div>
+
+        <div class="p-5 rounded-sm bg-brand-light border border-brand-border text-center">
+          <div class="w-8 h-8 mx-auto mb-2 text-brand-electric flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
+          </div>
+          <div class="font-bold text-sm text-brand-deep">Education</div>
+        </div>
+
+        <div class="p-5 rounded-sm bg-brand-light border border-brand-border text-center">
+          <div class="w-8 h-8 mx-auto mb-2 text-brand-electric flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+          </div>
+          <div class="font-bold text-sm text-brand-deep">Manufacturing</div>
+        </div>
+
+        <div class="p-5 rounded-sm bg-brand-light border border-brand-border text-center">
+          <div class="w-8 h-8 mx-auto mb-2 text-brand-electric flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+          </div>
+          <div class="font-bold text-sm text-brand-deep">Retail</div>
+        </div>
+
+        <div class="p-5 rounded-sm bg-brand-light border border-brand-border text-center">
+          <div class="w-8 h-8 mx-auto mb-2 text-brand-electric flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path></svg>
+          </div>
+          <div class="font-bold text-sm text-brand-deep">Finance</div>
+        </div>
+
+        <div class="p-5 rounded-sm bg-brand-light border border-brand-border text-center">
+          <div class="w-8 h-8 mx-auto mb-2 text-brand-electric flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path></svg>
+          </div>
+          <div class="font-bold text-sm text-brand-deep">Government</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 9: WHY SKY QUANTECH AI (TRANSITION PREVIEW) -->
+  <section class="py-16 lg:py-20 bg-brand-light border-b border-[#D8E3FB]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="bg-white p-8 lg:p-12 rounded-sm border border-brand-border flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div class="max-w-2xl">
+          <div class="text-brand-electric text-[12px] font-bold tracking-wider uppercase mb-2">RELIABLE PARTNERSHIP</div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-deep mb-3">Why Work With SKY QUANTECH AI?</h2>
+          <p class="text-brand-textSecondary text-[15px] leading-relaxed">
+            We unite innovation, technical expertise, and a disciplined customer-focused approach to engineer reliable software and automation with cost-effective value.
+          </p>
+        </div>
+        <div>
+          <a href="#" class="inline-flex items-center justify-center px-7 py-3 rounded-sm bg-brand-deep text-white text-[14px] font-semibold hover:bg-brand-primary transition-all duration-200 shadow-sm whitespace-nowrap">
+            Why Choose Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10: FINAL CTA (EXACT HOMEPAGE DESIGN) -->
+  <section class="py-20 lg:py-28 bg-brand-deep text-white relative overflow-hidden">
+    <div class="max-w-5xl mx-auto px-6 lg:px-12 text-center relative z-10">
+      <div class="text-brand-highlight text-[12px] font-bold tracking-widest uppercase mb-4">
+        START THE CONVERSATION
+      </div>
+      <h2 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-6">
+        Let's Build What's Next
+      </h2>
+      <p class="text-lg sm:text-[19px] text-brand-border max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+        Have a business challenge or technology idea? Let's explore how intelligent technology can help.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="#contact" class="inline-flex items-center justify-center px-8 py-3.5 rounded-sm bg-white text-brand-deep text-[15px] font-bold hover:bg-brand-light transition-all duration-200 shadow-lg">
+          Talk to Our Experts
+        </a>
+        <a href="#" class="inline-flex items-center justify-center px-8 py-3.5 rounded-sm bg-transparent border border-brand-electric/60 text-white text-[15px] font-semibold hover:bg-brand-dark transition-all duration-200">
+          Explore Our Solutions
+        </a>
+      </div>
+      <div class="mt-8 text-xs text-brand-border/70 flex items-center justify-center gap-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-electric"></span>
+        <span>Connect with our technology specialists to discuss your requirements.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (EXACT HOMEPAGE FOOTER DESIGN WITH PLACEHOLDERS) -->
+  <footer id="contact" class="bg-[#000c48] text-white pt-16 pb-12 border-t border-brand-dark">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-16 border-b border-white/10">
+        <!-- Col 1: Brand Info & QR Placeholder -->
+        <div class="lg:col-span-2 space-y-6">
+          <div class="text-xl font-bold tracking-tight font-heading text-white">SKY QUANTECH AI Pvt. Ltd.</div>
+          <p class="text-xs text-brand-border/70 max-w-sm leading-relaxed">
+            Pioneering Artificial Intelligence, Software Engineering, and Enterprise Automation built for practical business value.
+          </p>
+          <div class="p-4 rounded-sm bg-brand-deep/80 border border-brand-electric/30 inline-flex items-center gap-4">
+            <div class="w-10 h-10 bg-white/10 rounded-sm flex items-center justify-center text-brand-highlight">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm13-2h3v2h-3v-2zm-5 5h2v3h-2v-3zm2-3h3v2h-3v-2zm3 3h3v3h-3v-3z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="text-[12px] font-bold text-white uppercase tracking-wider">Corporate vCard</div>
+              <div class="text-[11px] text-brand-border/70">Scan for corporate brochure &amp; contact details</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Company -->
+        <div>
+          <div class="text-[12px] font-bold uppercase tracking-wider text-white mb-4">Company</div>
+          <ul class="space-y-2.5 text-xs text-brand-border/70">
+            <li><a href="#" class="text-white font-semibold">About</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Why Us</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Process</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Solutions -->
+        <div>
+          <div class="text-[12px] font-bold uppercase tracking-wider text-white mb-4">Solutions</div>
+          <ul class="space-y-2.5 text-xs text-brand-border/70">
+            <li><a href="#" class="hover:text-white transition-colors">AI Solutions</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Software Development</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Automation</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Technology Consulting</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Industries -->
+        <div>
+          <div class="text-[12px] font-bold uppercase tracking-wider text-white mb-4">Industries</div>
+          <ul class="space-y-2.5 text-xs text-brand-border/70">
+            <li><a href="#" class="hover:text-white transition-colors">Healthcare</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Education</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Manufacturing</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Retail</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Finance</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Government</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Contact Placeholders -->
+        <div>
+          <div class="text-[12px] font-bold uppercase tracking-wider text-white mb-4">Contact</div>
+          <ul class="space-y-2 text-xs text-brand-border/70">
+            <li><span class="text-brand-border/40 block text-[10px] uppercase">Email</span> [Client Email]</li>
+            <li><span class="text-brand-border/40 block text-[10px] uppercase">Phone</span> [Client Phone]</li>
+            <li><span class="text-brand-border/40 block text-[10px] uppercase">Headquarters</span> [Company Address]</li>
+            <li><span class="text-brand-border/40 block text-[10px] uppercase">Web</span> [Company Website]</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Legal Row -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-brand-border/50 gap-4">
+        <div>
+          &copy; <script>document.write(new Date().getFullYear())</script> SKY QUANTECH AI Pvt. Ltd. All rights reserved.
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+        </div>
+        <div class="flex items-center gap-4 text-brand-border/70">
+          <span class="hover:text-white cursor-pointer transition-colors" title="LinkedIn">in</span>
+          <span class="hover:text-white cursor-pointer transition-colors" title="X">𝕏</span>
+          <span class="hover:text-white cursor-pointer transition-colors" title="GitHub">gh</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
