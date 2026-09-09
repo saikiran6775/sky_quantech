@@ -1,16 +1,21 @@
 {
   "name": "sky_quantech",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Marketing website for SKY QUANTECH AI Pvt. Ltd.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node site/build.mjs",
+    "pipeline": "node tools/pipeline.mjs",
+    "serve": "python3 -m http.server 8099 --directory dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
-  "devDependencies": {
+  "dependencies": {
     "node-html-parser": "^9.0.4"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=18"
   }
 }
