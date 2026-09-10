@@ -89,6 +89,8 @@ fs.mkdirSync(path.join(OUT, ASSETS), { recursive: true });
 // Copy static assets (recursively).
 fs.rmSync(path.join(OUT, ASSETS), { recursive: true, force: true });
 fs.cpSync(path.join(ROOT, 'assets'), path.join(OUT, ASSETS), { recursive: true });
+// Browsers request /favicon.ico from the root regardless of the <link> tags.
+fs.copyFileSync(path.join(ROOT, 'assets/favicon.ico'), path.join(OUT, 'favicon.ico'));
 
 const built = [];
 for (const item of nav) {

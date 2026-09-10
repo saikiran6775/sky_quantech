@@ -7,11 +7,23 @@ import { parse } from 'node-html-parser';
 const DIR = 'site/assets/img';
 fs.mkdirSync(DIR, { recursive: true });
 
+// The CDN serves these at 512px by default, which is visibly soft at the sizes
+// the pages render them. A size suffix asks for the largest master available
+// (1408px on this set) — the same image, not a substitute.
+const SIZE = '=s2048';
+
 const EXT = { 'image/png': 'png', 'image/jpeg': 'jpg', 'image/webp': 'webp', 'image/gif': 'gif' };
 const pages = fs.readdirSync('site/pages').filter(f => f.endsWith('.html')).map(f => `site/pages/${f}`);
 const extra = ['stitch_sky_quantech_ai_website/sky_quantech_ai_corporate_homepage_locked_final/code.html'];
 
 const urls = new Set();
+
+// Pages localized on an earlier run no longer carry CDN URLs, so the recorded
+// map is what keeps this able to refresh the whole set.
+try {
+  for (const u of Object.keys(JSON.parse(fs.readFileSync('site/data/image-map.json', 'utf8')))) urls.add(u);
+} catch {}
+
 for (const f of [...pages, ...extra]) {
   for (const m of fs.readFileSync(f, 'utf8').matchAll(/https:\/\/lh3\.googleusercontent\.com\/[A-Za-z0-9_/\-]+/g)) urls.add(m[0]);
 }
@@ -21,7 +33,7 @@ const rows = [];
 await Promise.all([...urls].map(async url => {
   const id = crypto.createHash('sha1').update(url).digest('hex').slice(0, 10);
   try {
-    const res = await fetch(url, { redirect: 'follow' });
+    const res = await fetch(url + SIZE, { redirect: 'follow' });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const type = (res.headers.get('content-type') || '').split(';')[0];
     const ext = EXT[type] || 'bin';
