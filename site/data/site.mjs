@@ -15,6 +15,8 @@ export const contact = {
   phones: ['9985383863', '8885333344'],
   address: 'Silicon Valley, Madhapur, Hyderabad',
   website: 'www.skyquantech.ai',
+  // Office coordinates, client-supplied.
+  coordinates: '17.449436, 78.385698',
 };
 
 export const nav = [

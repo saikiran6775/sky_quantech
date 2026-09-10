@@ -31,5 +31,12 @@ for (const [from, to] of cards) {
   }
 }
 
+// The map badge shipped a "pending confirmation" placeholder.
+const coordFrom = '<span>COORDINATES: PENDING CONFIRMATION</span>';
+if (html.includes(coordFrom)) {
+  html = html.replace(coordFrom, '<span>COORDINATES: {{COORDINATES}}</span>');
+  changed++;
+}
+
 fs.writeFileSync(file, html);
 console.log(`contact-cards: ${changed} correction(s) applied to ${file}`);

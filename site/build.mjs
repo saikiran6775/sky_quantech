@@ -108,7 +108,8 @@ for (const item of nav) {
     .replaceAll('{{EMAIL_LINK}}', `<a class="hover:underline rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-electric-blue" href="mailto:${contact.email}">${contact.email}</a>`)
     .replaceAll('{{PHONE_LINKS_CARD}}', phoneLinks('block hover:underline rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-electric-blue'))
     .replaceAll('{{WEBSITE_LINK}}', `<a class="hover:underline rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-electric-blue" href="https://${contact.website}">${contact.website}</a>`)
-    .replaceAll('{{ADDRESS}}', contact.address);
+    .replaceAll('{{ADDRESS}}', contact.address)
+    .replaceAll('{{COORDINATES}}', contact.coordinates);
 
   const needsForms = content.includes('data-form=');
   const mainClass = meta[slug]?.mainClass || 'w-full pt-20 bg-white';
