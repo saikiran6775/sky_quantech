@@ -11,3 +11,4 @@ node_modules/
 # The original Stitch export archive. Its unpacked contents are committed as
 # stitch_sky_quantech_ai_website/, so the zip is redundant weight.
 *.zip
+Drone_video.MP4

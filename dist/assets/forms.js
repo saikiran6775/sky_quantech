@@ -98,7 +98,13 @@
       if (button) { button.disabled = true; button.textContent = 'Sending…'; }
       setStatus(form, 'Sending your message…');
 
-      fetch(CONFIG.endpoint, { method: CONFIG.method || 'POST', body: new FormData(form) })
+      fetch(CONFIG.endpoint, { 
+        method: CONFIG.method || 'POST', 
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
         .then(function (res) {
           if (!res.ok) throw new Error('HTTP ' + res.status);
           form.reset();

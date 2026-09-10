@@ -1,14 +1,14 @@
-// Submission is deliberately not wired up. No backend or email service was
-// supplied, and faking a success state would be worse than saying so.
-// To go live: set `endpoint` to the receiving URL and confirm `method`.
+// Configuration for form submission handling.
+// Use Formsubmit for simple static-site form routing without a backend yet.
+// This sends form data directly to the specified email address.
 export const forms = {
-  endpoint: null,          // e.g. 'https://api.example.com/enquiries'
+  endpoint: 'https://formsubmit.co/info@skyquantech.ai',
   method: 'POST',
-  // Shown when endpoint is null, so nobody mistakes the form for working.
-  unconfiguredMessage: 'This form is not connected to a mail service yet. Please contact us directly while we finish setup.',
+  // Message shown if submission is attempted without an endpoint.
+  unconfiguredMessage: 'Form submissions are not currently active. Please contact us directly while we finish setup.',
   resume: {
     accept: '.pdf,.doc,.docx',
-    // Enforce server-side too. Null until the receiving service defines a limit.
-    maxBytes: null,
+    // Max size for file uploads (resume) in bytes (e.g., 5MB).
+    maxBytes: 5 * 1024 * 1024,
   },
 };

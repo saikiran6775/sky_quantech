@@ -5,7 +5,7 @@ export const company = {
   name: 'SKY QUANTECH AI',
   legalName: 'SKY QUANTECH AI Pvt. Ltd.',
   // Confirmed service areas — do not extend without client sign-off.
-  services: ['AI Solutions', 'Asset Management', 'Software Development', 'Automation', 'IT / Technology Consulting'],
+  services: ['AI Solutions', 'Asset Management', 'Automation', 'Technology Consulting'],
 };
 
 // Supplied by the client.
