@@ -1,44 +1,53 @@
 <div class="flex flex-col w-full">
 
-<section class="relative w-full bg-primary text-on-primary py-space-3xl lg:py-space-4xl overflow-hidden">
-
-<div class="absolute inset-0 pointer-events-none opacity-20">
-<div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-secondary blur-3xl"></div>
-<div class="absolute bottom-0 right-10 w-[500px] h-[500px] rounded-full bg-secondary-container blur-[120px] opacity-40"></div>
+<section class="relative w-full bg-white py-space-3xl lg:py-space-4xl overflow-hidden">
+<div class="absolute right-0 top-1/4 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(0,80,240,0.14)_0%,rgba(0,16,96,0.02)_60%,transparent_80%)] pointer-events-none blur-3xl"></div>
+<div class="absolute left-0 top-0 w-96 h-96 bg-[radial-gradient(circle,rgba(0,120,255,0.06)_0%,transparent_70%)] pointer-events-none blur-2xl"></div>
+<div class="absolute inset-0 pointer-events-none opacity-40">
+<svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="48" id="hero-blue-grid-careers" patternUnits="userSpaceOnUse" width="48">
+<path d="M 48 0 L 0 0 0 48" fill="none" stroke="#D8E3FB" stroke-width="1"></path>
+</pattern>
+</defs>
+<rect fill="url(#hero-blue-grid-careers)" height="100%" width="100%"></rect>
+</svg>
 </div>
 <div class="relative max-w-[1440px] mx-auto px-margin-mobile lg:px-margin-desktop grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">
-<div class="lg:col-span-7 flex flex-col items-start">
-<div class="inline-flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-secondary/20 text-on-secondary-container font-label-sm text-label-sm uppercase tracking-wider mb-space-lg shadow-sm">
-<span class="w-1.5 h-1.5 rounded-full bg-secondary-container animate-pulse"></span>
-          Careers
-        </div>
-<h1 class="font-display text-display text-on-primary tracking-tight mb-space-md">
+<div class="lg:col-span-7 flex flex-col items-start z-10">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-slate border border-border-strong mb-space-lg">
+<span class="w-2 h-2 rounded-full bg-electric-blue animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-deep-blue font-semibold">Careers</span>
+</div>
+<h1 class="font-display text-display text-deep-blue tracking-tight mb-space-md font-bold">
           Build Technology That Solves Real Problems
         </h1>
-<p class="font-body-lg text-body-lg text-primary-fixed max-w-xl mb-space-xl">
+<p class="font-body-lg text-body-lg text-text-secondary max-w-xl mb-space-xl leading-relaxed">
           We're interested in people who enjoy solving difficult problems, exploring technology and building practical solutions.
         </p>
 <div class="flex flex-wrap items-center gap-space-md w-full sm:w-auto">
-<a class="inline-flex items-center justify-center px-space-lg py-space-sm bg-secondary-container text-on-primary font-title-md text-title-md rounded-lg shadow-md hover:bg-secondary transition-colors" href="#current-opportunities">
+<a class="inline-flex items-center justify-center px-space-lg py-space-sm bg-deep-blue text-white font-title-md text-title-md rounded-lg shadow-md hover:bg-electric-blue transition-colors duration-200" href="#current-opportunities">
             Explore Opportunities
             <span class="material-symbols-outlined ml-space-xs text-[18px]">arrow_downward</span>
 </a>
-<a class="inline-flex items-center justify-center px-space-lg py-space-sm bg-surface-container-lowest text-primary font-title-md text-title-md rounded-lg shadow-sm hover:bg-surface-container-low transition-colors" href="#speculative-application">
+<a class="inline-flex items-center justify-center px-space-lg py-space-sm bg-white text-deep-blue border border-border-strong font-title-md text-title-md rounded-lg shadow-sm hover:bg-surface-slate transition-colors duration-200" href="#speculative-application">
             Send Your Profile
             <span class="material-symbols-outlined ml-space-xs text-[18px]">send</span>
 </a>
 </div>
 </div>
-<div class="lg:col-span-5 relative mt-space-xl lg:mt-0">
-<div class="relative rounded-xl overflow-hidden shadow-2xl bg-tertiary">
-<img alt="SKY QUANTECH AI Computational R&amp;D Engineering Pod" class="w-full h-auto object-cover aspect-[4/3] opacity-95" src="assets/img/img-87dc51f04c.jpg" width="1376" height="768" fetchpriority="high" decoding="async">
-<div class="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent opacity-60"></div>
-<div class="absolute bottom-space-md left-space-md right-space-md flex items-center justify-between p-space-sm rounded-lg bg-primary/80 backdrop-blur-md">
+<div class="lg:col-span-5 relative mt-space-xl lg:mt-0 z-10">
+<div class="relative rounded-xl bg-white shadow-2xl p-space-xs border border-border-subtle backdrop-blur-md">
+<div class="relative rounded-lg overflow-hidden shadow-inner bg-surface-slate">
+<img alt="SKY QUANTECH AI Computational R&amp;D Engineering Pod" class="w-full h-auto object-cover aspect-[4/3] opacity-95 transition-all duration-700" src="assets/img/img-87dc51f04c.jpg" width="1376" height="768" fetchpriority="high" decoding="async">
+<div class="absolute inset-0 bg-gradient-to-t from-white/90 via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-space-md left-space-md right-space-md flex items-center justify-between p-space-sm rounded-lg bg-white/90 border border-border-subtle backdrop-blur-md shadow-sm">
 <div class="flex items-center gap-space-xs">
-<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
-<span class="font-label-sm text-label-sm text-on-primary tracking-widest uppercase">First-Principles Engineering</span>
+<span class="w-2 h-2 rounded-full bg-electric-blue"></span>
+<span class="font-label-sm text-label-sm text-deep-blue font-semibold tracking-widest uppercase">First-Principles Engineering</span>
 </div>
-<span class="font-code text-code text-on-primary-container">NODE.01</span>
+<span class="font-code text-code text-electric-blue font-semibold">NODE.01</span>
+</div>
 </div>
 </div>
 </div>

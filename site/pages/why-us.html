@@ -1,69 +1,78 @@
 <div class="flex flex-col w-full">
 
-<section class="relative w-full bg-primary text-on-primary overflow-hidden -mt-20 pt-28 pb-space-3xl lg:pb-space-4xl">
-<div class="absolute inset-0 bg-gradient-to-b from-primary via-primary to-primary-container opacity-95 pointer-events-none"></div>
-<div class="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-secondary-container/10 blur-3xl pointer-events-none"></div>
-<div class="absolute bottom-10 left-10 w-72 h-72 rounded-full bg-secondary/15 blur-2xl pointer-events-none"></div>
+<section class="relative w-full bg-white overflow-hidden -mt-20 pt-28 pb-space-3xl lg:pb-space-4xl">
+<div class="absolute right-0 top-1/4 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(0,80,240,0.14)_0%,rgba(0,16,96,0.02)_60%,transparent_80%)] pointer-events-none blur-3xl"></div>
+<div class="absolute left-0 top-0 w-96 h-96 bg-[radial-gradient(circle,rgba(0,120,255,0.06)_0%,transparent_70%)] pointer-events-none blur-2xl"></div>
+<div class="absolute inset-0 pointer-events-none opacity-40">
+<svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="48" id="hero-blue-grid-whyus" patternUnits="userSpaceOnUse" width="48">
+<path d="M 48 0 L 0 0 0 48" fill="none" stroke="#D8E3FB" stroke-width="1"></path>
+</pattern>
+</defs>
+<rect fill="url(#hero-blue-grid-whyus)" height="100%" width="100%"></rect>
+</svg>
+</div>
 <div class="relative max-w-[1440px] mx-auto px-margin-mobile lg:px-margin-desktop">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl lg:gap-space-2xl items-center">
 
-<div class="lg:col-span-6 flex flex-col items-start">
-<div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-secondary/20 text-on-secondary-container mb-space-md">
-<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed">WHY CHOOSE US</span>
+<div class="lg:col-span-6 flex flex-col items-start z-10">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-slate border border-border-strong mb-space-md">
+<span class="w-2 h-2 rounded-full bg-electric-blue animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-deep-blue font-semibold">WHY CHOOSE US</span>
 </div>
-<h1 class="font-display text-display lg:text-[52px] lg:leading-[60px] text-on-primary tracking-tight font-bold mb-space-md">
+<h1 class="font-display text-display lg:text-[52px] lg:leading-[60px] text-deep-blue tracking-tight font-bold mb-space-md">
             Technology Built Around What Matters
           </h1>
-<p class="font-body-lg text-body-lg text-surface-container-high max-w-xl mb-space-xl leading-relaxed">
+<p class="font-body-lg text-body-lg text-text-secondary max-w-xl mb-space-xl leading-relaxed">
             We combine innovation, technical expertise and a customer-focused approach to create practical technology solutions around real business needs.
           </p>
 <div class="flex flex-wrap items-center gap-space-md w-full sm:w-auto">
-<a class="inline-flex items-center justify-center h-12 px-space-xl bg-secondary-container text-on-primary font-title-md text-title-md rounded-lg shadow-md hover:bg-secondary transition-all transform active:scale-98" href="/contact.html">
+<a class="inline-flex items-center justify-center h-12 px-space-xl bg-deep-blue hover:bg-electric-blue text-white font-title-md text-title-md rounded-lg shadow-md transition-all duration-200" href="/contact.html">
               Talk to Our Experts
             </a>
-<a class="inline-flex items-center justify-center h-12 px-space-lg bg-surface-container-lowest/10 backdrop-blur-sm text-on-primary font-title-md text-title-md rounded-lg shadow-sm hover:bg-surface-container-lowest/20 transition-all" href="/solutions.html">
+<a class="inline-flex items-center justify-center h-12 px-space-lg bg-white hover:bg-surface-slate text-deep-blue font-title-md text-title-md rounded-lg border border-border-strong shadow-sm transition-all duration-200" href="/solutions.html">
               Explore Our Solutions
             </a>
 </div>
 
-<div class="mt-space-2xl pt-space-md flex items-center gap-space-lg text-surface-container-highest">
+<div class="mt-space-2xl pt-space-md flex items-center gap-space-lg text-text-secondary">
 <div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-secondary-container text-[18px]">verified</span>
+<span class="material-symbols-outlined text-electric-blue text-[18px]">verified</span>
 <span class="font-label-md text-label-md">Requirement-First Rigor</span>
 </div>
 <div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-secondary-container text-[18px]">deployed_code</span>
+<span class="material-symbols-outlined text-electric-blue text-[18px]">deployed_code</span>
 <span class="font-label-md text-label-md">Operational AI Stacks</span>
 </div>
 </div>
 </div>
 
-<div class="lg:col-span-6 w-full">
-<div class="relative rounded-xl bg-surface-container-highest/5 shadow-2xl p-space-xs backdrop-blur-md">
-<div class="relative rounded-lg overflow-hidden bg-primary-container shadow-inner">
-<img alt="Sky Quantech AI engineers collaborating at interactive holographic workspace" class="w-full h-80 sm:h-96 lg:h-[420px] object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-700" src="assets/img/img-0bd727e5af.jpg" width="1376" height="768" fetchpriority="high" decoding="async">
-<div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent"></div>
+<div class="lg:col-span-6 w-full z-10">
+<div class="relative rounded-xl bg-white shadow-2xl p-space-xs border border-border-subtle backdrop-blur-md">
+<div class="relative rounded-lg overflow-hidden shadow-inner bg-surface-slate">
+<img alt="Sky Quantech AI engineers collaborating at interactive holographic workspace" class="w-full h-80 sm:h-96 lg:h-[420px] object-cover transition-all duration-700" src="assets/img/img-0bd727e5af.jpg" width="1376" height="768" fetchpriority="high" decoding="async">
+<div class="absolute inset-0 bg-gradient-to-t from-white/90 via-white/20 to-transparent"></div>
 
 <div class="absolute top-space-md left-space-md right-space-md flex items-center justify-between pointer-events-none">
-<div class="flex items-center gap-space-xs px-space-sm py-1 rounded bg-primary/80 backdrop-blur-md">
-<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-primary">COLLABORATIVE INTELLIGENCE</span>
+<div class="flex items-center gap-space-xs px-space-sm py-1 rounded bg-white/90 backdrop-blur-md shadow-sm border border-border-subtle">
+<span class="w-1.5 h-1.5 rounded-full bg-electric-blue"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-deep-blue font-semibold">COLLABORATIVE INTELLIGENCE</span>
 </div>
-<div class="flex items-center gap-space-xs px-space-sm py-1 rounded bg-primary/80 backdrop-blur-md">
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed">PRACTICAL IMPLEMENTATION</span>
+<div class="flex items-center gap-space-xs px-space-sm py-1 rounded bg-white/90 backdrop-blur-md shadow-sm border border-border-subtle">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-deep-blue font-semibold">PRACTICAL IMPLEMENTATION</span>
 </div>
 </div>
 
-<div class="absolute bottom-space-md left-space-md right-space-md bg-primary-container/90 backdrop-blur-md p-space-md rounded-lg shadow-lg">
+<div class="absolute bottom-space-md left-space-md right-space-md bg-white/95 backdrop-blur-md p-space-md rounded-lg shadow-lg border border-border-subtle">
 <div class="grid grid-cols-2 gap-space-md text-left">
 <div>
-<div class="font-label-sm text-label-sm text-surface-container-highest uppercase">Deployment Focus</div>
-<div class="font-title-md text-title-md text-on-primary font-semibold">Real Business Impact</div>
+<div class="font-label-sm text-label-sm text-electric-blue uppercase font-semibold">Deployment Focus</div>
+<div class="font-title-md text-title-md text-deep-blue font-semibold">Real Business Impact</div>
 </div>
 <div>
-<div class="font-label-sm text-label-sm text-surface-container-highest uppercase">Engineering Core</div>
-<div class="font-title-md text-title-md text-on-primary font-semibold">Bespoke Enterprise AI</div>
+<div class="font-label-sm text-label-sm text-electric-blue uppercase font-semibold">Engineering Core</div>
+<div class="font-title-md text-title-md text-deep-blue font-semibold">Bespoke Enterprise AI</div>
 </div>
 </div>
 </div>
