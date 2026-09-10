@@ -16,7 +16,7 @@ export const contact = {
   address: 'Silicon Valley, Madhapur, Hyderabad',
   website: 'www.skyquantech.ai',
   // Office coordinates, client-supplied.
-  coordinates: '17.449436, 78.385698',
+  coordinates: '17.449458, 78.385876',
 };
 
 export const nav = [
