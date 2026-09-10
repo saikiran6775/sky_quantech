@@ -38,5 +38,13 @@ if (html.includes(coordFrom)) {
   changed++;
 }
 
+// "LAT/LONG GRID ACTIVE" was decorative filler beneath the placeholder
+// coordinates. With real coordinates it becomes a link to the map.
+const gridFrom = "<p class=\"text-[11px] text-slate-400 font-mono mt-1.5\">LAT/LONG GRID ACTIVE</p>";
+if (html.includes(gridFrom)) {
+  html = html.replace(gridFrom, "<a class=\"inline-flex items-center gap-1 text-[11px] text-accent-blue hover:text-white font-mono mt-1.5 underline underline-offset-2 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue\" href=\"{{MAPS_URL}}\" target=\"_blank\" rel=\"noopener noreferrer\">\n<span>View on Google Maps</span>\n<svg class=\"w-3 h-3\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\" aria-hidden=\"true\">\n<path d=\"M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"></path>\n</svg>\n</a>");
+  changed++;
+}
+
 fs.writeFileSync(file, html);
 console.log(`contact-cards: ${changed} correction(s) applied to ${file}`);
