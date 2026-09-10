@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-labelledby="ohec-title ohec-desc">
+<title id="ohec-title">AI-powered overhead equipment inspection workflow</title>
+<desc id="ohec-desc">A drone captures imagery of railway overhead catenary equipment, computer vision marks the component, and the result is recorded as an inspection finding.</desc>
+
+<!--
+  Compact companion to ohe-inspection.svg for narrow viewports. Same palette,
+  same primitives, fewer labels at a larger size: shrinking the wide artwork
+  would leave the type unreadable. Narrative kept to drone, OHE, detection,
+  finding.
+-->
+
+<defs>
+  <style>
+    .ink      { stroke: #7C99CE; }
+    .ink-soft { stroke: #3F5CA8; }
+    .live     { stroke: #0078FF; }
+    .flow     { stroke: #0050F0; }
+    .lbl      { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; fill: #8FC2FF; letter-spacing: 1.4px; }
+    .lbl-dim  { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; fill: #6483C4; letter-spacing: 1.4px; }
+    .lbl-key  { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; fill: #FFFFFF; letter-spacing: 1.4px; }
+    .panel    { fill: #001070; stroke: #27459F; }
+    .nf       { fill: none; }
+  </style>
+
+  <pattern id="c-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+    <path d="M48 0H0v48" class="nf" stroke="#0B2280" stroke-width="1"/>
+  </pattern>
+  <linearGradient id="c-sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#001C82"/><stop offset="1" stop-color="#000A40"/>
+  </linearGradient>
+  <radialGradient id="c-focus" cx=".5" cy=".5" r=".5">
+    <stop offset="0" stop-color="#0034C8" stop-opacity=".5"/><stop offset="1" stop-color="#0034C8" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="c-beam" x1="0" y1="0" x2=".7" y2="1">
+    <stop offset="0" stop-color="#0078FF" stop-opacity=".30"/><stop offset="1" stop-color="#0078FF" stop-opacity="0"/>
+  </linearGradient>
+  <marker id="c-arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M1 1 11 6 1 11Z" fill="#0050F0"/>
+  </marker>
+  <symbol id="c-corner" viewBox="0 0 100 100" preserveAspectRatio="none">
+    <path d="M0 20V0h20M80 0h20v20M100 80v20H80M20 100H0V80" class="nf live" stroke-width="4" vector-effect="non-scaling-stroke"/>
+  </symbol>
+  <g id="c-gps">
+    <path d="M0-15a10.5 10.5 0 0 1 10.5 10.5C10.5 3 0 15 0 15S-10.5 3-10.5-4.5A10.5 10.5 0 0 1 0-15Z" class="nf live" stroke-width="2"/>
+    <circle cy="-4.5" r="3.4" fill="#0078FF"/>
+  </g>
+</defs>
+
+<rect width="960" height="540" fill="url(#c-sky)"/>
+<rect width="960" height="540" fill="url(#c-grid)"/>
+<ellipse cx="470" cy="300" rx="420" ry="250" fill="url(#c-focus)"/>
+
+<!-- track and wires -->
+<g id="cohe-infrastructure">
+  <g stroke-linecap="round">
+    <path d="M40 500 920 456" class="ink-soft" stroke-width="4"/>
+    <path d="M60 528 920 476" class="ink-soft" stroke-width="4"/>
+  </g>
+  <g class="nf">
+    <path d="M40 214 920 244" class="ink-soft" stroke-width="3"/>
+    <path d="M40 292 920 316" class="ink" stroke-width="4"/>
+    <g class="ink-soft" stroke-width="2.5" opacity=".7">
+      <path d="M140 218v76"/><path d="M700 236v74"/><path d="M820 240v73"/>
+    </g>
+  </g>
+
+  <!-- OHE cantilever mast, the inspection subject -->
+  <g id="cohe-mast" transform="translate(392 500) scale(1.06)">
+    <path d="M0 0V-300" class="ink" stroke-width="8" stroke-linecap="round"/>
+    <path d="M-20 0h40" class="ink" stroke-width="6" stroke-linecap="round"/>
+    <path d="M0-268 132-236" class="ink" stroke-width="5"/>
+    <path d="M0-206 132-236" class="ink" stroke-width="4"/>
+    <path d="M132-236V-212" class="ink" stroke-width="4"/>
+    <g stroke="#A8BEE8" stroke-width="3" class="nf">
+      <path d="M123-208h18M123-200h18M123-192h18"/>
+    </g>
+    <path d="M132-188V-178" class="ink" stroke-width="4"/>
+    <path d="M114-178h36" class="ink" stroke-width="5" stroke-linecap="round"/>
+  </g>
+</g>
+
+<!-- capture -->
+<path id="cohe-beam" d="M232 150 372 196 420 356Z" fill="url(#c-beam)"/>
+<g id="cohe-drone" transform="translate(210 126)">
+  <path d="M-52-16 52-16" class="ink" stroke-width="5" stroke-linecap="round"/>
+  <rect x="-30" y="-14" width="60" height="26" rx="7" class="nf ink" stroke-width="4"/>
+  <path d="M-52-16v-13M52-16v-13" class="ink" stroke-width="4" stroke-linecap="round"/>
+  <g class="ink-soft" stroke-width="3"><path d="M-74-29h44M30-29h44"/></g>
+  <circle cy="15" r="9" class="nf live" stroke-width="3"/>
+  <circle cy="15" r="3.4" fill="#0078FF"/>
+  <text class="lbl" y="-50" font-size="22" text-anchor="middle">DRONE</text>
+</g>
+
+<g id="cohe-capture">
+  <rect x="356" y="196" width="216" height="176" rx="4" fill="#0078FF" opacity=".05"/>
+  <use href="#c-corner" x="356" y="196" width="216" height="176"/>
+  <text class="lbl-key" x="356" y="180" font-size="22">IMAGE CAPTURE</text>
+</g>
+
+<!-- detection -->
+<g id="cohe-detection">
+  <rect x="500" y="242" width="62" height="82" rx="3" class="nf live" stroke-width="2.5" stroke-dasharray="7 5"/>
+  <path d="M562 268 620 268" class="nf flow" stroke-width="2.5" marker-end="url(#c-arrow)"/>
+  <text class="lbl" x="632" y="262" font-size="22">OHE</text>
+  <text class="lbl-key" x="632" y="290" font-size="22">COMPONENT</text>
+  <text class="lbl-dim" x="632" y="316" font-size="20">DETECTED</text>
+  <path d="M700 232 700 180" class="nf flow" stroke-width="2.5" stroke-dasharray="9 7" marker-end="url(#c-arrow)"/>
+</g>
+
+<!-- finding -->
+<g id="cohe-finding" transform="translate(660 60)">
+  <rect width="248" height="108" rx="8" class="panel" stroke-width="2"/>
+  <text class="lbl-key" x="18" y="34" font-size="21">INSPECTION FINDING</text>
+  <g transform="translate(34 74)"><use href="#c-gps"/></g>
+  <text class="lbl-dim" x="60" y="72" font-size="19">IMAGE + LOCATION</text>
+  <text class="lbl" x="60" y="94" font-size="19">RECORD</text>
+</g>
+</svg>
