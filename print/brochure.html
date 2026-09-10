@@ -6,207 +6,284 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
 /*
-  A4 tri-fold, 6 panels, print-ready.
-  Page   313 x 226mm  (trim + 3mm bleed + 5mm slug for the marks)
-  Bleed    5 .. 308 x   5 .. 221
-  Trim     8 .. 305 x   8 .. 218   = 297 x 210mm A4 landscape
-  Panels  99mm each, folds at x = 107 and x = 206
-  Panel backgrounds run into the bleed; nothing readable sits within 10mm
-  of a trim edge or 7mm of a fold.
+  SKY QUANTECH AI — A4 landscape tri-fold, 6 panels.
+
+  Page   313 x 226mm  (trim + 3mm bleed + 5mm slug carrying the marks)
+  Bleed    5 .. 308  x   5 .. 221
+  Trim     8 .. 305  x   8 .. 218   = 297 x 210mm
+  Panels  99mm each; folds at 99mm and 198mm from the left trim edge
+
+  Panel order follows the brief: outside is cover, why us, contact; inside is
+  about, industries, applied work. Panel backgrounds run into the bleed, and
+  nothing readable sits within 10mm of a trim edge or 8mm of a fold.
 */
 @page { size: 313mm 226mm; margin: 0; }
 
 :root{
   --deep:#001060; --dark:#001070; --primary:#0020A0;
   --electric:#0050F0; --highlight:#0078FF;
-  --light:#F5F8FF; --border:#D8E3FB; --body:#2D486A;
+  --light:#F5F8FF; --border:#D8E3FB; --body:#2D486A; --muted:#60728F;
 }
 *{ box-sizing:border-box; margin:0; padding:0; }
 html,body{ background:#fff; }
-body{ font-family:Inter,system-ui,sans-serif; color:var(--body); -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{ font-family:Inter,system-ui,sans-serif; color:var(--body);
+      -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 
-/* Break BEFORE each sheet after the first: a trailing page-break-after on the
-   last sheet emits a blank third page, and :last-child does not match it
-   because the <script> is the last child of body. */
 .sheet{ position:relative; width:313mm; height:226mm; overflow:hidden; background:#fff; }
 .sheet + .sheet{ page-break-before:always; break-before:page; }
 
-/* panel backgrounds, drawn into the bleed */
+/* panel grounds, drawn out into the bleed */
 .bg{ position:absolute; top:5mm; height:216mm; }
 .bg1{ left:5mm;   width:102mm; }
 .bg2{ left:107mm; width:99mm;  }
 .bg3{ left:206mm; width:102mm; }
 .navy{ background:var(--deep); }
+.dark{ background:var(--dark); }
 .ice{ background:var(--light); }
 .white{ background:#fff; }
 
-/* readable area of each panel */
-.panel{ position:absolute; top:8mm; height:210mm; padding:16mm 9mm; display:flex; flex-direction:column; }
+.panel{ position:absolute; top:8mm; height:210mm; display:flex; flex-direction:column;
+        padding:15mm 10mm; }
 .p1{ left:8mm;   width:99mm; }
 .p2{ left:107mm; width:99mm; }
 .p3{ left:206mm; width:99mm; }
+.bleed-top{ padding-top:0; }
 
-/* trim, fold and registration marks: all outside the bleed, trimmed away */
+/* marks live outside the bleed and are trimmed away */
 .mark{ position:absolute; background:#000; }
-.fold{ position:absolute; background:#000; opacity:.55; }
-.slug{ position:absolute; font:5pt Inter,sans-serif; color:#000; letter-spacing:.4pt; }
+.fold{ position:absolute; background:#000; opacity:.5; }
+.slug{ position:absolute; font:5pt Inter,sans-serif; color:#000; letter-spacing:.3pt; white-space:nowrap; }
 
-h1,h2,h3,.h{ font-family:'Plus Jakarta Sans',system-ui,sans-serif; color:var(--deep); }
-.eyebrow{ font:600 6.5pt Inter,sans-serif; letter-spacing:1.6pt; text-transform:uppercase; color:var(--electric); }
-.eyebrow.on-navy{ color:#8FC2FF; }
-.rule{ height:.6mm; background:var(--electric); width:14mm; margin:3mm 0 5mm; }
-.rule.on-navy{ background:var(--highlight); }
-p{ font-size:8.4pt; line-height:1.55; }
+h1,h2,h3{ font-family:'Plus Jakarta Sans',system-ui,sans-serif; color:var(--deep); }
+.eyebrow{ font:600 6.5pt Inter,sans-serif; letter-spacing:1.7pt; text-transform:uppercase; color:var(--electric); }
+.eyebrow.light{ color:#8FC2FF; }
+.rule{ height:.6mm; width:13mm; background:var(--electric); margin:3mm 0 5mm; }
+.rule.light{ background:var(--highlight); }
+p{ font-size:8.4pt; line-height:1.58; }
+.lead{ font-size:9.2pt; line-height:1.55; }
 
-/* front cover */
+/* technical accents from the site's vector language */
+.brackets{ position:relative; }
+.brackets::before,.brackets::after{ content:''; position:absolute; width:5mm; height:5mm; }
+.brackets::before{ left:0; top:0; border-left:.4mm solid var(--highlight); border-top:.4mm solid var(--highlight); }
+.brackets::after{ right:0; bottom:0; border-right:.4mm solid var(--highlight); border-bottom:.4mm solid var(--highlight); }
+.grid-accent{ height:14mm; background-image:linear-gradient(#0A2078 .2mm,transparent .2mm),linear-gradient(90deg,#0A2078 .2mm,transparent .2mm);
+              background-size:5mm 5mm; opacity:.55; }
+
+/* ---- front cover ---- */
 .cover{ color:#fff; }
-.cover .logo{ width:34mm; height:auto; display:block; margin-bottom:9mm; }
-.cover h1{ color:#fff; font-size:24pt; font-weight:800; line-height:1.14; letter-spacing:-.3pt; }
-.cover .sub{ color:#B6C7E8; font-size:9pt; line-height:1.6; margin-top:6mm; }
-.cover .services{ margin-top:auto; border-top:.3mm solid rgba(255,255,255,.22); padding-top:5mm; }
-.cover .services li{ list-style:none; font:600 8.6pt Inter,sans-serif; color:#fff; padding:1.6mm 0; }
-.cover .services li span{ color:var(--highlight); font-family:ui-monospace,Menlo,monospace; font-size:7pt; margin-right:3mm; }
-.cover .site{ margin-top:6mm; font:600 8pt Inter,sans-serif; color:var(--highlight); letter-spacing:.5pt; }
+.cover .logo{ width:33mm; height:auto; display:block; }
+.cover h1{ color:#fff; font-size:23pt; font-weight:800; line-height:1.16; letter-spacing:-.35pt; margin-top:12mm; }
+.cover .sub{ color:#AFC3E6; font-size:8.6pt; line-height:1.6; margin-top:6mm; max-width:70mm; }
+.cover .art{ width:100%; height:auto; display:block; border-radius:1.5mm; }
+.cover .artwrap{ margin-top:auto; padding:2.5mm; border:.25mm solid rgba(143,194,255,.35); border-radius:2mm; }
+.cover .strip{ display:flex; gap:2mm; align-items:center; margin-top:5mm; font:600 6.4pt ui-monospace,Menlo,monospace;
+               letter-spacing:1.1pt; color:#8FC2FF; }
+.cover .strip i{ flex:1; height:.25mm; background:rgba(143,194,255,.4); font-style:normal; }
+.cover .site{ margin-top:5mm; font:700 8.4pt Inter,sans-serif; color:var(--highlight); letter-spacing:.4pt; }
 
-/* back cover */
-.back{ color:#fff; }
-.back h2{ color:#fff; font-size:15pt; font-weight:700; }
-.back .row{ margin-bottom:6mm; }
-.back .k{ font:600 6.5pt Inter,sans-serif; letter-spacing:1.4pt; text-transform:uppercase; color:#8FC2FF; margin-bottom:1.6mm; }
-.back .v{ font-size:9.4pt; color:#fff; line-height:1.5; }
-.back .v.small{ font-size:8pt; color:#B6C7E8; }
-.back .foot{ margin-top:auto; border-top:.3mm solid rgba(255,255,255,.22); padding-top:4mm; font-size:6.8pt; color:#8FA8D8; line-height:1.5; }
+/* ---- why us ---- */
+.why h2{ font-size:16pt; font-weight:700; line-height:1.18; }
+.why .item{ display:flex; gap:4mm; padding:4.2mm 0; border-bottom:.25mm solid var(--border); }
+.why .item:last-of-type{ border-bottom:0; }
+.why .n{ font:700 7pt ui-monospace,Menlo,monospace; color:var(--electric); padding-top:.6mm; }
+.why .t{ font:700 9.4pt 'Plus Jakarta Sans',sans-serif; color:var(--deep); }
+.why .d{ font-size:7.6pt; line-height:1.5; margin-top:.8mm; color:var(--body); }
+.why .close{ margin-top:auto; background:#fff; border:.25mm solid var(--border); border-radius:1.5mm; padding:5mm; }
+.why .close p{ font-size:7.6pt; }
 
-/* inside panels */
-.panel h2{ font-size:15pt; font-weight:700; line-height:1.2; }
-.item{ padding:3.4mm 0; border-bottom:.25mm solid var(--border); }
+/* ---- contact ---- */
+.contact{ color:#fff; }
+.contact h2{ color:#fff; font-size:18pt; font-weight:800; line-height:1.16; letter-spacing:-.2pt; }
+.contact .row{ margin-bottom:5.4mm; }
+.contact .k{ font:600 6.4pt Inter,sans-serif; letter-spacing:1.5pt; text-transform:uppercase; color:#8FC2FF; margin-bottom:1.4mm; }
+.contact .v{ font-size:9.6pt; color:#fff; line-height:1.45; }
+.contact .v.sm{ font-size:7.6pt; color:#AFC3E6; margin-top:1.2mm; font-family:ui-monospace,Menlo,monospace; }
+.qr{ margin-top:auto; display:flex; gap:4mm; align-items:center;
+     background:#fff; border-radius:2mm; padding:4mm; }
+.qr img{ width:26mm; height:26mm; display:block; }
+.qr .t{ font:700 8.4pt 'Plus Jakarta Sans',sans-serif; color:var(--deep); line-height:1.3; }
+.qr .d{ font-size:7pt; color:var(--body); margin-top:1.2mm; line-height:1.4; }
+.contact .foot{ margin-top:5mm; padding-top:4mm; border-top:.25mm solid rgba(255,255,255,.2);
+                font-size:6.6pt; color:#8FA8D8; line-height:1.55; }
+
+/* ---- inside panels ---- */
+.band{ width:100%; height:46mm; object-fit:cover; display:block; }
+.band.head{ background:var(--deep); display:flex; flex-direction:column; justify-content:flex-end;
+            padding:0 10mm 7mm; height:52mm; }
+.band.head h2{ color:#fff; font-size:15.5pt; line-height:1.2; margin-top:2.5mm; }
+.locate{ margin-top:auto; display:flex; align-items:center; gap:3mm;
+         font:600 6.6pt ui-monospace,Menlo,monospace; letter-spacing:1.2pt; color:#8FC2FF;
+         border-top:.25mm solid rgba(255,255,255,.2); padding-top:5mm; margin-bottom:5mm; }
+.locate svg{ width:4mm; height:5.6mm; flex:none; }
+.inner{ padding:9mm 10mm 15mm; display:flex; flex-direction:column; flex:1; }
+.panel h2{ font-size:15.5pt; font-weight:700; line-height:1.2; }
+.item{ padding:3.2mm 0; border-bottom:.25mm solid var(--border); }
 .item:last-child{ border-bottom:0; }
-.item .t{ font:700 9pt 'Plus Jakarta Sans',sans-serif; color:var(--deep); }
-.item .d{ font-size:7.6pt; line-height:1.5; margin-top:1mm; color:var(--body); }
-.num{ font:700 7pt ui-monospace,Menlo,monospace; color:var(--electric); margin-right:2.5mm; }
-.chips{ display:flex; flex-wrap:wrap; gap:2mm; margin-top:3mm; }
-.chip{ font:600 7.4pt Inter,sans-serif; color:var(--primary); background:#fff; border:.25mm solid var(--border); border-radius:1mm; padding:1.6mm 2.6mm; }
-.art{ width:100%; height:auto; border-radius:1.5mm; margin:4mm 0 3mm; display:block; }
-.note{ font-size:7.2pt; line-height:1.5; color:var(--body); }
-.spacer{ margin-top:auto; }
+.item .t{ font:700 8.8pt 'Plus Jakarta Sans',sans-serif; color:var(--deep); }
+.item .d{ font-size:7.4pt; line-height:1.48; margin-top:.8mm; }
+.num{ font:700 6.8pt ui-monospace,Menlo,monospace; color:var(--electric); margin-right:2.4mm; }
+
+.solutions{ margin-top:auto; background:var(--deep); border-radius:2mm; padding:5mm; color:#fff; }
+.solutions .eyebrow{ color:#8FC2FF; }
+.solutions .s{ display:flex; gap:3mm; padding:2.4mm 0; border-bottom:.2mm solid rgba(255,255,255,.14); }
+.solutions .s:last-child{ border-bottom:0; }
+.solutions .s .n{ font:700 6.6pt ui-monospace,Menlo,monospace; color:var(--highlight); padding-top:.5mm; }
+.solutions .s .t{ font:700 8.2pt 'Plus Jakarta Sans',sans-serif; color:#fff; }
+.solutions .s .d{ font-size:6.8pt; line-height:1.42; color:#AFC3E6; margin-top:.4mm; }
+
+.ind{ display:flex; gap:3.4mm; padding:3.4mm 0; border-bottom:.25mm solid var(--border); align-items:baseline; }
+.ind:last-of-type{ border-bottom:0; }
+.ind .n{ font:700 7pt ui-monospace,Menlo,monospace; color:var(--electric); }
+.ind .t{ font:700 9.6pt 'Plus Jakarta Sans',sans-serif; color:var(--deep); }
+
+.finding{ margin-top:5mm; border:.25mm solid var(--border); border-radius:2mm; padding:5mm; background:#fff; }
+.f-row{ display:flex; align-items:center; gap:3mm; padding:2.2mm 0; font:600 6.8pt ui-monospace,Menlo,monospace;
+        letter-spacing:1pt; color:var(--primary); border-bottom:.2mm solid var(--border); }
+.f-row:last-child{ border-bottom:0; }
+.f-row b{ flex:1; height:1.6mm; border-radius:1mm; background:var(--border); }
+.flow{ display:flex; align-items:center; gap:1.6mm; margin:4mm 0 1mm; font:700 5.8pt ui-monospace,Menlo,monospace;
+       letter-spacing:.7pt; color:var(--primary); }
+.flow i{ flex:1; height:.2mm; background:var(--border); font-style:normal; }
+.note{ font-size:7pt; line-height:1.5; color:var(--muted); margin-top:auto; padding-top:4mm; border-top:.25mm solid var(--border); }
 </style>
 
-<!-- ============ SHEET 1 — OUTSIDE ============ -->
-<div class="sheet">
-  <div class="bg bg1 ice"></div>
-  <div class="bg bg2 navy"></div>
-  <div class="bg bg3 navy"></div>
+<!-- ================= SHEET 1 — OUTSIDE ================= -->
+<div class="sheet" id="sheet-outside">
+  <div class="bg bg1 navy"></div>
+  <div class="bg bg2 ice"></div>
+  <div class="bg bg3 dark"></div>
 
-  <!-- Panel 1 (folds inward first): process -->
-  <section class="panel p1">
-    <div class="eyebrow">How We Work</div>
-    <h2>From First Conversation to Ongoing Support</h2>
+  <!-- PANEL 1 — FRONT COVER -->
+  <section class="panel p1 cover">
+    <img class="logo" src="assets/logo.png" alt="">
+    <h1>Building Intelligent Solutions for a Smarter Future</h1>
+    <p class="sub">Artificial intelligence, asset intelligence, automation and technology consulting, applied to real business and physical-world challenges.</p>
+    <div class="artwrap"><img class="art" src="assets/ohe-inspection.svg" alt=""></div>
+    <div class="strip"><span>PHYSICAL WORLD</span><i></i><span>AI</span><i></i><span>ACTION</span></div>
+    <div class="site">www.skyquantech.ai</div>
+  </section>
+
+  <!-- PANEL 2 — WHY CHOOSE US -->
+  <section class="panel p2 why">
+    <div class="eyebrow">Why Choose Us</div>
+    <h2>Built Around the Client</h2>
     <div class="rule"></div>
-    <div class="item"><div class="t"><span class="num">01</span>Consultation</div><div class="d">Understand the business challenge and requirements.</div></div>
-    <div class="item"><div class="t"><span class="num">02</span>Analysis</div><div class="d">Understand the workflow and identify practical technology opportunities.</div></div>
-    <div class="item"><div class="t"><span class="num">03</span>Development</div><div class="d">Build the solution around agreed requirements.</div></div>
-    <div class="item"><div class="t"><span class="num">04</span>Implementation</div><div class="d">Put the developed solution into practical use.</div></div>
-    <div class="item"><div class="t"><span class="num">05</span>Support</div><div class="d">Support improvement and maintenance as requirements evolve.</div></div>
-    <div class="spacer"></div>
-    <div class="eyebrow">Why Clients Choose Us</div>
-    <div class="chips">
-      <span class="chip">Innovation</span><span class="chip">Expertise</span>
-      <span class="chip">Customer-focused approach</span><span class="chip">Quality &amp; Reliability</span>
-      <span class="chip">Cost-effective solutions</span>
+    <div class="item"><div class="n">01</div><div><div class="t">Innovation</div><div class="d">Current technology applied to practical problems rather than for its own sake.</div></div></div>
+    <div class="item"><div class="n">02</div><div><div class="t">Expertise</div><div class="d">Artificial intelligence, computer vision, software and automation under one roof.</div></div></div>
+    <div class="item"><div class="n">03</div><div><div class="t">Customer-focused approach</div><div class="d">Solutions shaped around the requirements of each organization.</div></div></div>
+    <div class="item"><div class="n">04</div><div><div class="t">Quality &amp; Reliability</div><div class="d">Dependable execution and clear, maintainable design.</div></div></div>
+    <div class="item"><div class="n">05</div><div><div class="t">Cost-effective solutions</div><div class="d">Practical digital initiatives that support genuine operational goals.</div></div></div>
+    <div class="close brackets">
+      <div class="eyebrow">How We Work</div>
+      <p style="margin-top:2.5mm">Consultation, analysis, development, implementation and ongoing support. The right solution starts with understanding the problem; technology is selected according to the requirements of the organization.</p>
     </div>
   </section>
 
-  <!-- Panel 2: back cover -->
-  <section class="panel p2 back">
-    <div class="eyebrow on-navy">Contact</div>
+  <!-- PANEL 3 — BACK COVER / CONTACT -->
+  <section class="panel p3 contact">
+    <div class="eyebrow light">Contact</div>
     <h2>Let's Build What's Next</h2>
-    <div class="rule on-navy"></div>
+    <div class="rule light"></div>
     <div class="row"><div class="k">Email</div><div class="v">info@skyquantech.ai</div></div>
     <div class="row"><div class="k">Phone</div><div class="v">9985383863<br>8885333344</div></div>
-    <div class="row"><div class="k">Corporate Office</div><div class="v">Silicon Valley, Madhapur,<br>Hyderabad</div><div class="v small" style="margin-top:1.5mm">17.449458, 78.385876</div></div>
+    <div class="row"><div class="k">Corporate Office</div><div class="v">Silicon Valley, Madhapur,<br>Hyderabad</div><div class="v sm">17.449458, 78.385876</div></div>
     <div class="row"><div class="k">Website</div><div class="v">www.skyquantech.ai</div></div>
-    <div class="foot">SKY QUANTECH AI Pvt. Ltd.<br>Artificial intelligence · Asset management · Automation · Technology consulting</div>
-  </section>
-
-  <!-- Panel 3: front cover -->
-  <section class="panel p3 cover">
-    <img class="logo" src="logo.png" alt="">
-    <h1>Building Intelligent Solutions for a Smarter Future</h1>
-    <p class="sub">SKY QUANTECH AI combines artificial intelligence, software engineering and automation to help organizations turn complex challenges into practical digital solutions.</p>
-    <ul class="services">
-      <li><span>01</span>AI Solutions</li>
-      <li><span>02</span>Asset Management</li>
-      <li><span>03</span>Automation</li>
-      <li><span>04</span>Technology Consulting</li>
-    </ul>
-    <div class="site">www.skyquantech.ai</div>
+    <div class="locate">
+      <svg viewBox="0 0 24 34" width="100%" height="100%" aria-hidden="true">
+        <path d="M12 2a9 9 0 0 1 9 9c0 6.6-9 21-9 21S3 17.6 3 11a9 9 0 0 1 9-9Z" fill="none" stroke="#0078FF" stroke-width="1.6"/>
+        <circle cx="12" cy="11" r="3" fill="#0078FF"/>
+      </svg>
+      <span>MADHAPUR · HYDERABAD</span>
+    </div>
+    <div class="qr">
+      <img src="assets/qr-skyquantech.svg" alt="">
+      <div><div class="t">Scan to visit<br>skyquantech.ai</div><div class="d">Solutions, industries and applied AI work.</div></div>
+    </div>
+    <div class="foot">SKY QUANTECH AI Pvt. Ltd.<br>AI Solutions · Asset Management · Automation · Technology Consulting</div>
   </section>
 </div>
 
-<!-- ============ SHEET 2 — INSIDE ============ -->
-<div class="sheet">
+<!-- ================= SHEET 2 — INSIDE ================= -->
+<div class="sheet" id="sheet-inside">
   <div class="bg bg1 white"></div>
   <div class="bg bg2 white"></div>
   <div class="bg bg3 ice"></div>
 
-  <!-- Panel 4: who we are -->
-  <section class="panel p1">
-    <div class="eyebrow">Who We Are</div>
-    <h2>A Technology Partner Built for Practical Value</h2>
-    <div class="rule"></div>
-    <p>SKY QUANTECH AI is a technology company focused on helping organizations explore and apply artificial intelligence, software and automation to real-world business challenges.</p>
-    <p style="margin-top:3.5mm">Our approach combines technology capabilities with an understanding of practical business requirements, allowing solutions to be shaped around the needs of each organization.</p>
-    <p style="margin-top:3.5mm">Rather than introducing unnecessary technical complexity, we emphasize dependable execution, clear maintainable design, and practical digital initiatives that support genuine operational goals.</p>
-    <div class="spacer"></div>
-    <div class="eyebrow">Industries We Work With</div>
-    <div class="chips">
-      <span class="chip">Healthcare</span><span class="chip">Education</span><span class="chip">Manufacturing</span>
-      <span class="chip">Retail</span><span class="chip">Finance</span><span class="chip">Government</span>
+  <!-- PANEL 4 — ABOUT -->
+  <section class="panel p1 bleed-top" style="padding:0">
+    <img class="band" src="assets/about.png" alt="">
+    <div class="inner">
+      <div class="eyebrow">About SKY QUANTECH AI</div>
+      <h2>Technology Built Around Real Business Challenges</h2>
+      <div class="rule"></div>
+      <p>SKY QUANTECH AI is a technology company focused on helping organizations explore and apply artificial intelligence, software and automation to real-world business challenges.</p>
+      <p style="margin-top:3mm">Our approach combines technology capabilities with an understanding of practical business requirements, allowing solutions to be shaped around the needs of each organization.</p>
+      <div class="solutions">
+        <div class="eyebrow" style="margin-bottom:2.5mm">What We Do</div>
+        <div class="s"><div class="n">01</div><div><div class="t">AI Solutions</div><div class="d">Artificial intelligence and computer vision built around practical business needs.</div></div></div>
+        <div class="s"><div class="n">02</div><div><div class="t">Asset Management</div><div class="d">Structured visibility across asset information, records and workflows.</div></div></div>
+        <div class="s"><div class="n">03</div><div><div class="t">Automation</div><div class="d">Workflow and business process automation that reduces repetition.</div></div></div>
+        <div class="s"><div class="n">04</div><div><div class="t">Technology Consulting</div><div class="d">Choosing and applying the right technology for the problem.</div></div></div>
+      </div>
     </div>
   </section>
 
-  <!-- Panel 5: solutions -->
-  <section class="panel p2">
-    <div class="eyebrow">Solutions</div>
-    <h2>Four Ways We Help Organizations Use Technology</h2>
-    <div class="rule"></div>
-    <div class="item"><div class="t"><span class="num">01</span>AI Solutions</div><div class="d">Artificial intelligence and computer vision built around practical business needs, turning complex information into usable insight.</div></div>
-    <div class="item"><div class="t"><span class="num">02</span>Asset Management</div><div class="d">Technology that helps organizations organize asset information, keep digital records and improve workflow visibility.</div></div>
-    <div class="item"><div class="t"><span class="num">03</span>Automation</div><div class="d">Workflow and business process automation that reduces repetition and lets teams focus on higher-value work.</div></div>
-    <div class="item"><div class="t"><span class="num">04</span>Technology Consulting</div><div class="d">Choosing and applying the right technology for the problem, with roadmaps shaped around operational requirements.</div></div>
-    <div class="spacer"></div>
-    <p class="note"><strong style="color:var(--deep)">One approach, different technologies.</strong> The right solution starts with understanding the problem. Technology is selected and applied according to the requirements of the organization.</p>
+  <!-- PANEL 5 — INDUSTRIES -->
+  <section class="panel p2 bleed-top" style="padding:0">
+    <div class="band head">
+      <div class="eyebrow light">Industries</div>
+      <h2>Technology Applied Across Business Environments</h2>
+    </div>
+    <div class="inner">
+      <p style="margin-bottom:2mm">Every organization has different challenges. Our solutions are designed around the requirements, objectives and technology opportunities of each client.</p>
+      <div class="ind"><div class="n">01</div><div class="t">Healthcare</div></div>
+      <div class="ind"><div class="n">02</div><div class="t">Education</div></div>
+      <div class="ind"><div class="n">03</div><div class="t">Manufacturing</div></div>
+      <div class="ind"><div class="n">04</div><div class="t">Retail</div></div>
+      <div class="ind"><div class="n">05</div><div class="t">Finance</div></div>
+      <div class="ind"><div class="n">06</div><div class="t">Government</div></div>
+      <div class="note">One approach, different technologies. The right solution starts with understanding the problem, then selecting the technology that fits it.</div>
+    </div>
   </section>
 
-  <!-- Panel 6: applied work -->
+  <!-- PANEL 6 — APPLIED AI -->
   <section class="panel p3">
-    <div class="eyebrow">Applied Work</div>
+    <div class="eyebrow">Applied AI</div>
     <h2>AI Applied to Real-World Inspection</h2>
     <div class="rule"></div>
     <p>From railway infrastructure to rolling stock and power-grid assets, AI and computer vision can help transform visual inspection into structured digital intelligence.</p>
-    <img class="art" src="ohe-inspection-compact.svg" alt="">
-    <div class="item"><div class="t">OHE Inspection</div><div class="d">Railway overhead equipment imagery analysed to identify components and visual conditions.</div></div>
-    <div class="item"><div class="t">Rolling Stock Inspection</div><div class="d">High-speed visual inspection of rolling stock assemblies.</div></div>
-    <div class="item"><div class="t">Power Grid Inspection</div><div class="d">Drone-based inspection of transmission infrastructure in remote terrain.</div></div>
+    <div class="flow"><span>CAPTURE</span><i></i><span>DETECT</span><i></i><span>ANALYZE</span><i></i><span>RECORD</span></div>
+    <div class="item"><div class="t"><span class="num">01</span>OHE — AI-Powered Overhead Equipment Inspection</div><div class="d">AI-powered railway inspection workflow analyzing overhead equipment imagery and identifying components and visual conditions.</div></div>
+    <div class="item"><div class="t"><span class="num">02</span>Rolling Stock — High-Speed Vision Inspection</div><div class="d">High-speed cameras capture rolling stock imagery, and computer vision analyzes it for components and potential visual faults.</div></div>
+    <div class="item"><div class="t"><span class="num">03</span>Power Grid — Drone-Based Infrastructure Inspection</div><div class="d">Drones capture high-resolution imagery of transmission infrastructure, and computer vision assists visual inspection.</div></div>
+    <div class="finding brackets">
+      <div class="eyebrow">Inspection Finding</div>
+      <div class="f-row"><span>IMAGE EVIDENCE</span><b></b></div>
+      <div class="f-row"><span>LOCATION DATA</span><b></b></div>
+      <div class="f-row"><span>DIGITAL RECORD</span><b></b></div>
+    </div>
+    <div class="note" style="border-top:0; padding-top:3mm">Physical world, capture, AI, intelligence, action. Findings are recorded with image evidence and location data.</div>
   </section>
 </div>
 
 <script>
-// Marks are generated rather than hand-placed so trim, bleed and fold stay in
-// step with the page geometry above. All of it sits outside the bleed and is
+// Marks are generated from the geometry above so trim, bleed and fold cannot
+// drift out of step with it. Everything here sits outside the bleed and is
 // removed when the sheet is trimmed.
 const TRIM = { x: 8, y: 8, w: 297, h: 210 };
 const BLEED = 3, LEN = 4, W = 0.25;
 const mm = v => v + 'mm';
+const LABELS = {
+  'sheet-outside': 'SHEET 1 · OUTSIDE · panel 1 FRONT COVER | panel 2 WHY CHOOSE US | panel 3 BACK COVER / CONTACT',
+  'sheet-inside':  'SHEET 2 · INSIDE · panel 4 ABOUT | panel 5 INDUSTRIES | panel 6 APPLIED AI',
+};
 for (const sheet of document.querySelectorAll('.sheet')) {
   const add = (cls, s) => { const d = document.createElement('div'); d.className = cls; Object.assign(d.style, s); sheet.appendChild(d); };
   for (const x of [TRIM.x, TRIM.x + TRIM.w]) {
     for (const y of [TRIM.y, TRIM.y + TRIM.h]) {
-      const up = y === TRIM.y;
-      const left = x === TRIM.x;
-      // vertical arm
+      const up = y === TRIM.y, left = x === TRIM.x;
       add('mark', { left: mm(x - W / 2), top: mm(up ? y - BLEED - LEN : y + BLEED), width: mm(W), height: mm(LEN) });
-      // horizontal arm
       add('mark', { top: mm(y - W / 2), left: mm(left ? x - BLEED - LEN : x + BLEED), width: mm(LEN), height: mm(W) });
     }
   }
@@ -216,15 +293,14 @@ for (const sheet of document.querySelectorAll('.sheet')) {
       add('fold', { left: mm(fx - W / 2), top: mm(up ? y - BLEED - LEN : y + BLEED), width: mm(W), height: mm(LEN) });
     }
   }
+  // Slug sits in the top band: below the sheet it overflows the page and
+  // Chromium emits an extra blank sheet.
   const label = document.createElement('div');
   label.className = 'slug';
-  // Sits in the top slug band. Below the sheet it would overflow the page and
-  // Chromium would emit an extra blank sheet.
   label.style.left = mm(TRIM.x + 6);
-  label.style.top = mm(0.8);
-  label.textContent = sheet === document.querySelector('.sheet')
-    ? 'SKY QUANTECH AI — A4 tri-fold — SHEET 1 OUTSIDE — trim 297×210mm — 3mm bleed — folds at 99mm / 198mm — long marks = trim, short = fold'
-    : 'SKY QUANTECH AI — A4 tri-fold — SHEET 2 INSIDE — trim 297×210mm — 3mm bleed — folds at 99mm / 198mm — long marks = trim, short = fold';
+  label.style.top = mm(0.9);
+  label.textContent = 'SKY QUANTECH AI — A4 tri-fold — ' + LABELS[sheet.id]
+    + ' — trim 297×210mm — 3mm bleed — folds at 99 / 198mm — long marks trim, short marks fold — RGB';
   sheet.appendChild(label);
 }
 </script>
