@@ -10,9 +10,10 @@ export const company = {
 
 // Supplied by the client.
 export const contact = {
-  email: 'contact@skyquantech.ai',
-  phone: '9985383863',
-  address: 'Madhapur, Hyderabad',
+  email: 'info@skyquantech.ai',
+  // Both numbers are published; the first is the primary line.
+  phones: ['9985383863', '8885333344'],
+  address: 'Silicon Valley, Madhapur, Hyderabad',
   website: 'www.skyquantech.ai',
 };
 

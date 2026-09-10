@@ -9,6 +9,7 @@ const steps = [
   'tools/strip-pseudo-footers.mjs',
   'tools/fix-links.mjs',
   'tools/a11y-perf.mjs',
+  'tools/contact-cards.mjs',
   'tools/forms-placeholder.mjs',
   'tools/drop-dead-scripts.mjs',
   'tools/drop-orphan-banner.mjs',

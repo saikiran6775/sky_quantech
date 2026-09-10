@@ -21,6 +21,11 @@ const meta = JSON.parse(read('data/extracted.json'));
 const ASSETS = 'assets';
 const YEAR = new Date().getFullYear();
 
+// Every published phone number, rendered as a tel: link with the caller's classes.
+const phoneLinks = cls => contact.phones
+  .map(p => `<a class="${cls}" href="tel:${p.replace(/[^\d+]/g, '')}">${p}</a>`)
+  .join('\n');
+
 const linkBase = 'font-label-md text-label-md transition-colors py-1 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue focus-visible:ring-offset-2';
 const activeDesktop = `${linkBase} text-deep-blue font-semibold relative after:content-[''] after:absolute after:bottom-[-8px] after:left-0 after:w-full after:h-[2px] after:bg-electric-blue`;
 const idleDesktop = `${linkBase} text-text-secondary hover:text-electric-blue`;
@@ -60,8 +65,7 @@ function renderFooter() {
     .replaceAll('{{FOOTER_NAV}}', navLinks)
     .replaceAll('{{FOOTER_SERVICES}}', services)
     .replaceAll('{{EMAIL}}', contact.email)
-    .replaceAll('{{PHONE_TEL}}', contact.phone.replace(/[^\d+]/g, ''))
-    .replaceAll('{{PHONE}}', contact.phone)
+    .replaceAll('{{PHONE_LINKS_FOOTER}}', phoneLinks('block text-body-md text-white hover:underline rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight-blue'))
     .replaceAll('{{ADDRESS}}', contact.address)
     .replaceAll('{{WEBSITE}}', contact.website)
     .replaceAll('{{YEAR}}', String(YEAR))
@@ -97,10 +101,14 @@ for (const item of nav) {
   // these values live in exactly one place.
   content = content
     .replaceAll('[Client Email]', contact.email)
-    .replaceAll('[Client Phone]', contact.phone)
+    .replaceAll('[Client Phone]', contact.phones.join(' / '))
     .replaceAll('[Company Address]', contact.address)
     .replaceAll('[Address to be provided]', contact.address)
-    .replaceAll('[Company Website]', contact.website);
+    .replaceAll('[Company Website]', contact.website)
+    .replaceAll('{{EMAIL_LINK}}', `<a class="hover:underline rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-electric-blue" href="mailto:${contact.email}">${contact.email}</a>`)
+    .replaceAll('{{PHONE_LINKS_CARD}}', phoneLinks('block hover:underline rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-electric-blue'))
+    .replaceAll('{{WEBSITE_LINK}}', `<a class="hover:underline rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-electric-blue" href="https://${contact.website}">${contact.website}</a>`)
+    .replaceAll('{{ADDRESS}}', contact.address);
 
   const needsForms = content.includes('data-form=');
   const mainClass = meta[slug]?.mainClass || 'w-full pt-20 bg-white';
