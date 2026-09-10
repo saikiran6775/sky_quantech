@@ -1,0 +1,230 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>SKY QUANTECH AI — A4 tri-fold brochure</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+/*
+  A4 tri-fold, 6 panels, print-ready.
+  Page   313 x 226mm  (trim + 3mm bleed + 5mm slug for the marks)
+  Bleed    5 .. 308 x   5 .. 221
+  Trim     8 .. 305 x   8 .. 218   = 297 x 210mm A4 landscape
+  Panels  99mm each, folds at x = 107 and x = 206
+  Panel backgrounds run into the bleed; nothing readable sits within 10mm
+  of a trim edge or 7mm of a fold.
+*/
+@page { size: 313mm 226mm; margin: 0; }
+
+:root{
+  --deep:#001060; --dark:#001070; --primary:#0020A0;
+  --electric:#0050F0; --highlight:#0078FF;
+  --light:#F5F8FF; --border:#D8E3FB; --body:#2D486A;
+}
+*{ box-sizing:border-box; margin:0; padding:0; }
+html,body{ background:#fff; }
+body{ font-family:Inter,system-ui,sans-serif; color:var(--body); -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+
+/* Break BEFORE each sheet after the first: a trailing page-break-after on the
+   last sheet emits a blank third page, and :last-child does not match it
+   because the <script> is the last child of body. */
+.sheet{ position:relative; width:313mm; height:226mm; overflow:hidden; background:#fff; }
+.sheet + .sheet{ page-break-before:always; break-before:page; }
+
+/* panel backgrounds, drawn into the bleed */
+.bg{ position:absolute; top:5mm; height:216mm; }
+.bg1{ left:5mm;   width:102mm; }
+.bg2{ left:107mm; width:99mm;  }
+.bg3{ left:206mm; width:102mm; }
+.navy{ background:var(--deep); }
+.ice{ background:var(--light); }
+.white{ background:#fff; }
+
+/* readable area of each panel */
+.panel{ position:absolute; top:8mm; height:210mm; padding:16mm 9mm; display:flex; flex-direction:column; }
+.p1{ left:8mm;   width:99mm; }
+.p2{ left:107mm; width:99mm; }
+.p3{ left:206mm; width:99mm; }
+
+/* trim, fold and registration marks: all outside the bleed, trimmed away */
+.mark{ position:absolute; background:#000; }
+.fold{ position:absolute; background:#000; opacity:.55; }
+.slug{ position:absolute; font:5pt Inter,sans-serif; color:#000; letter-spacing:.4pt; }
+
+h1,h2,h3,.h{ font-family:'Plus Jakarta Sans',system-ui,sans-serif; color:var(--deep); }
+.eyebrow{ font:600 6.5pt Inter,sans-serif; letter-spacing:1.6pt; text-transform:uppercase; color:var(--electric); }
+.eyebrow.on-navy{ color:#8FC2FF; }
+.rule{ height:.6mm; background:var(--electric); width:14mm; margin:3mm 0 5mm; }
+.rule.on-navy{ background:var(--highlight); }
+p{ font-size:8.4pt; line-height:1.55; }
+
+/* front cover */
+.cover{ color:#fff; }
+.cover .logo{ width:34mm; height:auto; display:block; margin-bottom:9mm; }
+.cover h1{ color:#fff; font-size:24pt; font-weight:800; line-height:1.14; letter-spacing:-.3pt; }
+.cover .sub{ color:#B6C7E8; font-size:9pt; line-height:1.6; margin-top:6mm; }
+.cover .services{ margin-top:auto; border-top:.3mm solid rgba(255,255,255,.22); padding-top:5mm; }
+.cover .services li{ list-style:none; font:600 8.6pt Inter,sans-serif; color:#fff; padding:1.6mm 0; }
+.cover .services li span{ color:var(--highlight); font-family:ui-monospace,Menlo,monospace; font-size:7pt; margin-right:3mm; }
+.cover .site{ margin-top:6mm; font:600 8pt Inter,sans-serif; color:var(--highlight); letter-spacing:.5pt; }
+
+/* back cover */
+.back{ color:#fff; }
+.back h2{ color:#fff; font-size:15pt; font-weight:700; }
+.back .row{ margin-bottom:6mm; }
+.back .k{ font:600 6.5pt Inter,sans-serif; letter-spacing:1.4pt; text-transform:uppercase; color:#8FC2FF; margin-bottom:1.6mm; }
+.back .v{ font-size:9.4pt; color:#fff; line-height:1.5; }
+.back .v.small{ font-size:8pt; color:#B6C7E8; }
+.back .foot{ margin-top:auto; border-top:.3mm solid rgba(255,255,255,.22); padding-top:4mm; font-size:6.8pt; color:#8FA8D8; line-height:1.5; }
+
+/* inside panels */
+.panel h2{ font-size:15pt; font-weight:700; line-height:1.2; }
+.item{ padding:3.4mm 0; border-bottom:.25mm solid var(--border); }
+.item:last-child{ border-bottom:0; }
+.item .t{ font:700 9pt 'Plus Jakarta Sans',sans-serif; color:var(--deep); }
+.item .d{ font-size:7.6pt; line-height:1.5; margin-top:1mm; color:var(--body); }
+.num{ font:700 7pt ui-monospace,Menlo,monospace; color:var(--electric); margin-right:2.5mm; }
+.chips{ display:flex; flex-wrap:wrap; gap:2mm; margin-top:3mm; }
+.chip{ font:600 7.4pt Inter,sans-serif; color:var(--primary); background:#fff; border:.25mm solid var(--border); border-radius:1mm; padding:1.6mm 2.6mm; }
+.art{ width:100%; height:auto; border-radius:1.5mm; margin:4mm 0 3mm; display:block; }
+.note{ font-size:7.2pt; line-height:1.5; color:var(--body); }
+.spacer{ margin-top:auto; }
+</style>
+
+<!-- ============ SHEET 1 — OUTSIDE ============ -->
+<div class="sheet">
+  <div class="bg bg1 ice"></div>
+  <div class="bg bg2 navy"></div>
+  <div class="bg bg3 navy"></div>
+
+  <!-- Panel 1 (folds inward first): process -->
+  <section class="panel p1">
+    <div class="eyebrow">How We Work</div>
+    <h2>From First Conversation to Ongoing Support</h2>
+    <div class="rule"></div>
+    <div class="item"><div class="t"><span class="num">01</span>Consultation</div><div class="d">Understand the business challenge and requirements.</div></div>
+    <div class="item"><div class="t"><span class="num">02</span>Analysis</div><div class="d">Understand the workflow and identify practical technology opportunities.</div></div>
+    <div class="item"><div class="t"><span class="num">03</span>Development</div><div class="d">Build the solution around agreed requirements.</div></div>
+    <div class="item"><div class="t"><span class="num">04</span>Implementation</div><div class="d">Put the developed solution into practical use.</div></div>
+    <div class="item"><div class="t"><span class="num">05</span>Support</div><div class="d">Support improvement and maintenance as requirements evolve.</div></div>
+    <div class="spacer"></div>
+    <div class="eyebrow">Why Clients Choose Us</div>
+    <div class="chips">
+      <span class="chip">Innovation</span><span class="chip">Expertise</span>
+      <span class="chip">Customer-focused approach</span><span class="chip">Quality &amp; Reliability</span>
+      <span class="chip">Cost-effective solutions</span>
+    </div>
+  </section>
+
+  <!-- Panel 2: back cover -->
+  <section class="panel p2 back">
+    <div class="eyebrow on-navy">Contact</div>
+    <h2>Let's Build What's Next</h2>
+    <div class="rule on-navy"></div>
+    <div class="row"><div class="k">Email</div><div class="v">info@skyquantech.ai</div></div>
+    <div class="row"><div class="k">Phone</div><div class="v">9985383863<br>8885333344</div></div>
+    <div class="row"><div class="k">Corporate Office</div><div class="v">Silicon Valley, Madhapur,<br>Hyderabad</div><div class="v small" style="margin-top:1.5mm">17.449458, 78.385876</div></div>
+    <div class="row"><div class="k">Website</div><div class="v">www.skyquantech.ai</div></div>
+    <div class="foot">SKY QUANTECH AI Pvt. Ltd.<br>Artificial intelligence · Asset management · Automation · Technology consulting</div>
+  </section>
+
+  <!-- Panel 3: front cover -->
+  <section class="panel p3 cover">
+    <img class="logo" src="logo.png" alt="">
+    <h1>Building Intelligent Solutions for a Smarter Future</h1>
+    <p class="sub">SKY QUANTECH AI combines artificial intelligence, software engineering and automation to help organizations turn complex challenges into practical digital solutions.</p>
+    <ul class="services">
+      <li><span>01</span>AI Solutions</li>
+      <li><span>02</span>Asset Management</li>
+      <li><span>03</span>Automation</li>
+      <li><span>04</span>Technology Consulting</li>
+    </ul>
+    <div class="site">www.skyquantech.ai</div>
+  </section>
+</div>
+
+<!-- ============ SHEET 2 — INSIDE ============ -->
+<div class="sheet">
+  <div class="bg bg1 white"></div>
+  <div class="bg bg2 white"></div>
+  <div class="bg bg3 ice"></div>
+
+  <!-- Panel 4: who we are -->
+  <section class="panel p1">
+    <div class="eyebrow">Who We Are</div>
+    <h2>A Technology Partner Built for Practical Value</h2>
+    <div class="rule"></div>
+    <p>SKY QUANTECH AI is a technology company focused on helping organizations explore and apply artificial intelligence, software and automation to real-world business challenges.</p>
+    <p style="margin-top:3.5mm">Our approach combines technology capabilities with an understanding of practical business requirements, allowing solutions to be shaped around the needs of each organization.</p>
+    <p style="margin-top:3.5mm">Rather than introducing unnecessary technical complexity, we emphasize dependable execution, clear maintainable design, and practical digital initiatives that support genuine operational goals.</p>
+    <div class="spacer"></div>
+    <div class="eyebrow">Industries We Work With</div>
+    <div class="chips">
+      <span class="chip">Healthcare</span><span class="chip">Education</span><span class="chip">Manufacturing</span>
+      <span class="chip">Retail</span><span class="chip">Finance</span><span class="chip">Government</span>
+    </div>
+  </section>
+
+  <!-- Panel 5: solutions -->
+  <section class="panel p2">
+    <div class="eyebrow">Solutions</div>
+    <h2>Four Ways We Help Organizations Use Technology</h2>
+    <div class="rule"></div>
+    <div class="item"><div class="t"><span class="num">01</span>AI Solutions</div><div class="d">Artificial intelligence and computer vision built around practical business needs, turning complex information into usable insight.</div></div>
+    <div class="item"><div class="t"><span class="num">02</span>Asset Management</div><div class="d">Technology that helps organizations organize asset information, keep digital records and improve workflow visibility.</div></div>
+    <div class="item"><div class="t"><span class="num">03</span>Automation</div><div class="d">Workflow and business process automation that reduces repetition and lets teams focus on higher-value work.</div></div>
+    <div class="item"><div class="t"><span class="num">04</span>Technology Consulting</div><div class="d">Choosing and applying the right technology for the problem, with roadmaps shaped around operational requirements.</div></div>
+    <div class="spacer"></div>
+    <p class="note"><strong style="color:var(--deep)">One approach, different technologies.</strong> The right solution starts with understanding the problem. Technology is selected and applied according to the requirements of the organization.</p>
+  </section>
+
+  <!-- Panel 6: applied work -->
+  <section class="panel p3">
+    <div class="eyebrow">Applied Work</div>
+    <h2>AI Applied to Real-World Inspection</h2>
+    <div class="rule"></div>
+    <p>From railway infrastructure to rolling stock and power-grid assets, AI and computer vision can help transform visual inspection into structured digital intelligence.</p>
+    <img class="art" src="ohe-inspection-compact.svg" alt="">
+    <div class="item"><div class="t">OHE Inspection</div><div class="d">Railway overhead equipment imagery analysed to identify components and visual conditions.</div></div>
+    <div class="item"><div class="t">Rolling Stock Inspection</div><div class="d">High-speed visual inspection of rolling stock assemblies.</div></div>
+    <div class="item"><div class="t">Power Grid Inspection</div><div class="d">Drone-based inspection of transmission infrastructure in remote terrain.</div></div>
+  </section>
+</div>
+
+<script>
+// Marks are generated rather than hand-placed so trim, bleed and fold stay in
+// step with the page geometry above. All of it sits outside the bleed and is
+// removed when the sheet is trimmed.
+const TRIM = { x: 8, y: 8, w: 297, h: 210 };
+const BLEED = 3, LEN = 4, W = 0.25;
+const mm = v => v + 'mm';
+for (const sheet of document.querySelectorAll('.sheet')) {
+  const add = (cls, s) => { const d = document.createElement('div'); d.className = cls; Object.assign(d.style, s); sheet.appendChild(d); };
+  for (const x of [TRIM.x, TRIM.x + TRIM.w]) {
+    for (const y of [TRIM.y, TRIM.y + TRIM.h]) {
+      const up = y === TRIM.y;
+      const left = x === TRIM.x;
+      // vertical arm
+      add('mark', { left: mm(x - W / 2), top: mm(up ? y - BLEED - LEN : y + BLEED), width: mm(W), height: mm(LEN) });
+      // horizontal arm
+      add('mark', { top: mm(y - W / 2), left: mm(left ? x - BLEED - LEN : x + BLEED), width: mm(LEN), height: mm(W) });
+    }
+  }
+  for (const fx of [TRIM.x + 99, TRIM.x + 198]) {
+    for (const up of [true, false]) {
+      const y = up ? TRIM.y : TRIM.y + TRIM.h;
+      add('fold', { left: mm(fx - W / 2), top: mm(up ? y - BLEED - LEN : y + BLEED), width: mm(W), height: mm(LEN) });
+    }
+  }
+  const label = document.createElement('div');
+  label.className = 'slug';
+  // Sits in the top slug band. Below the sheet it would overflow the page and
+  // Chromium would emit an extra blank sheet.
+  label.style.left = mm(TRIM.x + 6);
+  label.style.top = mm(0.8);
+  label.textContent = sheet === document.querySelector('.sheet')
+    ? 'SKY QUANTECH AI — A4 tri-fold — SHEET 1 OUTSIDE — trim 297×210mm — 3mm bleed — folds at 99mm / 198mm — long marks = trim, short = fold'
+    : 'SKY QUANTECH AI — A4 tri-fold — SHEET 2 INSIDE — trim 297×210mm — 3mm bleed — folds at 99mm / 198mm — long marks = trim, short = fold';
+  sheet.appendChild(label);
+}
+</script>
