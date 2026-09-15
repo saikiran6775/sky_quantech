@@ -8,9 +8,13 @@ Available gstack skills:
 
 # Sky Quantech AI — Marketing Website
 
-Nine-page static marketing site. The visual design came from Google Stitch and is
-**approved and frozen**: do not redesign, restyle, or introduce another design
-language. Work is content, correctness, accessibility and performance.
+Nine-page static marketing site. The original visual design came from Google Stitch.
+The **homepage (`site/pages/index.html`)** was intentionally redesigned by the owner
+(2026-09) for a more minimal, premium look with photographic service visuals and
+scroll-reveal — that redesign is the current approved direction for the homepage.
+The remaining pages still follow the Stitch design; keep them consistent with the
+navy Tailwind token system in `site/theme/tailwind.theme.mjs`. Work is content,
+correctness, accessibility and performance.
 
 ## Build
 
