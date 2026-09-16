@@ -9,8 +9,20 @@ export function SiteFooter() {
     <footer className="border-t border-border bg-card">
       <Container className="grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
         <div className="lg:col-span-1">
-          <div className="font-display text-base font-bold tracking-tight">
-            SKY QUANTECH <span className="text-primary">AI</span>
+          <div className="flex items-center gap-2.5">
+            <span className="grid h-9 w-9 place-items-center overflow-hidden rounded-lg bg-white ring-1 ring-border">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/img/icon_logo.png"
+                alt=""
+                className="h-7 w-7 object-contain"
+                width={36}
+                height={36}
+              />
+            </span>
+            <span className="font-display text-base font-bold tracking-tight">
+              SKY QUANTECH <span className="text-primary">AI</span>
+            </span>
           </div>
           <p className="mt-3 max-w-xs text-sm text-muted-foreground">
             {company.legalName} works across artificial intelligence, asset management,

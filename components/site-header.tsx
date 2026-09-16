@@ -13,9 +13,15 @@ import { Container } from "@/components/container";
 function Wordmark() {
   return (
     <Link href="/" className="group flex items-center gap-2.5" aria-label={`${company.name} home`}>
-      <span className="relative grid h-9 w-9 place-items-center rounded-lg bg-accent text-accent-foreground">
-        <span className="font-display text-sm font-bold tracking-tight">SQ</span>
-        <span className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-primary ring-2 ring-background" />
+      <span className="grid h-10 w-10 place-items-center overflow-hidden rounded-lg bg-white ring-1 ring-border transition-transform group-hover:scale-105">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/img/icon_logo.png"
+          alt=""
+          className="h-8 w-8 object-contain"
+          width={40}
+          height={40}
+        />
       </span>
       <span className="font-display text-[15px] font-bold leading-none tracking-tight">
         SKY QUANTECH
