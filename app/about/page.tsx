@@ -6,6 +6,7 @@ import { Reveal } from "@/components/reveal";
 import { CtaBand } from "@/components/cta-band";
 import { StageFlow, Statement } from "@/components/sections";
 import { TagList } from "@/components/sections";
+import { Parallax } from "@/components/parallax";
 import { about } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -22,15 +23,18 @@ export default function AboutPage() {
       {/* Who we are */}
       <section className="border-b border-border py-20 lg:py-28">
         <Container className="grid items-center gap-14 lg:grid-cols-12">
-          <Reveal className="lg:col-span-6">
-            <div className="relative aspect-[5/4] overflow-hidden rounded-2xl border border-border shadow-xl">
+          <Reveal className="lg:col-span-6" variant="left">
+            <Parallax
+              strength={30}
+              className="relative aspect-[5/4] rounded-2xl border border-border shadow-xl"
+            >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/img/about_hero.png"
                 alt="Sky Quantech AI team and technology"
-                className="h-full w-full object-cover"
+                className="h-[calc(100%+60px)] w-full -translate-y-8 object-cover"
               />
-            </div>
+            </Parallax>
           </Reveal>
           <Reveal className="lg:col-span-6" delay={100}>
             <SectionHeading

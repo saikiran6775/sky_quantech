@@ -14,13 +14,17 @@ export function StageFlow({
   return (
     <ol className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {stages.map((s, i) => (
-        <Reveal key={s.label} as="li" delay={i * 70}>
+        <Reveal key={s.label} as="li" delay={i * 90} variant="rise" className="group">
           <div className="flex items-center gap-3">
-            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-primary font-display text-sm font-bold text-primary">
+            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-primary bg-background font-display text-sm font-bold text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
               {String(i + 1).padStart(2, "0")}
             </span>
             {i < stages.length - 1 && (
-              <span className="hidden h-px flex-1 bg-border sm:block" />
+              <span className="hidden h-px flex-1 overflow-hidden bg-border sm:block">
+                <span
+                  className="block h-full w-0 bg-primary transition-[width] duration-700 ease-out group-hover:w-full"
+                />
+              </span>
             )}
           </div>
           <h3 className="mt-4 font-display text-lg font-semibold">{s.label}</h3>
@@ -58,11 +62,12 @@ export function FeatureGrid({
       {items.map((it, i) => (
         <Reveal
           key={it.title}
-          delay={(i % 4) * 60}
-          className="rounded-2xl border border-border bg-card p-6"
+          delay={(i % 4) * 70}
+          variant="scale"
+          className="group rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg"
         >
           {it.icon && (
-            <span className="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-secondary text-primary">
+            <span className="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-secondary text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
               <Icon name={it.icon} className="size-5" />
             </span>
           )}

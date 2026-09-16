@@ -6,6 +6,7 @@ import { Reveal } from "@/components/reveal";
 import { CtaBand } from "@/components/cta-band";
 import { Icon } from "@/components/icon";
 import { FeatureGrid, StageFlow } from "@/components/sections";
+import { Parallax } from "@/components/parallax";
 import { industriesContent } from "@/lib/content";
 import { industries } from "@/lib/site";
 
@@ -53,6 +54,26 @@ export default function IndustriesPage() {
             ))}
           </div>
         </Container>
+      </section>
+
+      {/* Cross-domain composite banner */}
+      <section className="border-b border-border">
+        <Parallax strength={36} className="relative h-[52vh] min-h-[380px] w-full">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/img/industries_image.png"
+            alt="Cross-domain capabilities across rail, energy, manufacturing, healthcare, education and government"
+            className="h-[calc(100%+80px)] w-full -translate-y-10 object-cover"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-accent/70 via-accent/10 to-accent/30" />
+          <Container className="absolute inset-x-0 bottom-0">
+            <Reveal className="max-w-2xl pb-14 text-white">
+              <h2 className="font-display text-2xl font-bold drop-shadow sm:text-3xl">
+                One technology core, applied across six sectors
+              </h2>
+            </Reveal>
+          </Container>
+        </Parallax>
       </section>
 
       {/* Per-sector detail */}

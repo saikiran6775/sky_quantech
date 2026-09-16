@@ -3,19 +3,34 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
+type Variant = "rise" | "scale" | "blur" | "left" | "right";
+
+const hidden: Record<Variant, string> = {
+  rise: "translate-y-6 opacity-0",
+  scale: "scale-[0.96] opacity-0",
+  blur: "translate-y-4 opacity-0 blur-[6px]",
+  left: "-translate-x-6 opacity-0",
+  right: "translate-x-6 opacity-0",
+};
+
+const shownCls =
+  "translate-x-0 translate-y-0 scale-100 opacity-100 blur-0";
+
 /**
- * Reveal-on-scroll. Hidden only once mounted (so no-JS shows content),
- * then fades/rises in when it enters the viewport. Honors reduced motion.
+ * Reveal-on-scroll. Hidden only once mounted (so no-JS shows content), then
+ * animates in when it enters the viewport. Honors reduced motion.
  */
 export function Reveal({
   children,
   className,
   delay = 0,
+  variant = "rise",
   as: Tag = "div",
 }: {
   children: React.ReactNode;
   className?: string;
   delay?: number;
+  variant?: Variant;
   as?: React.ElementType;
 }) {
   const ref = React.useRef<HTMLElement | null>(null);
@@ -51,9 +66,10 @@ export function Reveal({
       ref={ref}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
       className={cn(
-        armed && "transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]",
-        armed && !shown && "translate-y-5 opacity-0",
-        armed && shown && "translate-y-0 opacity-100",
+        armed &&
+          "transition-all duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)] will-change-transform",
+        armed && !shown && hidden[variant],
+        armed && shown && shownCls,
         className
       )}
     >
