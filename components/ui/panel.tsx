@@ -114,15 +114,17 @@ export function DataRow({
   );
 }
 
-/** Horizontal meter — utilization / confidence / coverage. */
+/** Horizontal meter — utilization / confidence / coverage. Fills when `active`. */
 export function Meter({
   label,
   value,
   percent,
+  active = true,
 }: {
   label: string;
   value: string;
   percent: number;
+  active?: boolean;
 }) {
   const pct = Math.max(0, Math.min(100, percent));
   return (
@@ -139,8 +141,8 @@ export function Meter({
         aria-label={`${label}: ${value}`}
       >
         <div
-          className="h-full rounded-full bg-primary"
-          style={{ width: `${pct}%` }}
+          className="h-full rounded-full bg-primary transition-[width] duration-1000 ease-out motion-reduce:transition-none"
+          style={{ width: active ? `${pct}%` : "0%" }}
         />
       </div>
     </div>
@@ -164,11 +166,13 @@ export function DetectionImage({
   src,
   alt,
   detections = [],
+  active = true,
   className,
 }: {
   src: string;
   alt: string;
   detections?: Detection[];
+  active?: boolean;
   className?: string;
 }) {
   return (
@@ -176,15 +180,19 @@ export function DetectionImage({
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={src} alt={alt} className="h-full w-full object-cover" />
       <div className="absolute inset-0" aria-hidden="true">
-        {detections.map((d) => (
+        {detections.map((d, i) => (
           <div
             key={d.label}
-            className="absolute rounded-sm border-2 border-primary/90 bg-primary/5"
+            className={cn(
+              "absolute rounded-sm border-2 border-primary/90 bg-primary/5 transition-all duration-500 ease-out motion-reduce:transition-none",
+              active ? "scale-100 opacity-100" : "scale-90 opacity-0"
+            )}
             style={{
               left: `${d.x}%`,
               top: `${d.y}%`,
               width: `${d.w}%`,
               height: `${d.h}%`,
+              transitionDelay: active ? `${i * 160}ms` : "0ms",
             }}
           >
             <span className="absolute -top-px left-0 -translate-y-full whitespace-nowrap rounded-sm bg-primary px-1.5 py-0.5 font-mono text-[10px] font-medium leading-tight text-primary-foreground">

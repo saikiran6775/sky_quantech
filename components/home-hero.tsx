@@ -2,6 +2,8 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/container";
 import { Button } from "@/components/ui/button";
+import { PointField } from "@/components/point-field";
+import { CountUp } from "@/components/count-up";
 
 /* Cinematic full-bleed hero. Deliberately always dark (bg-accent reads dark in
    both themes), so the footage carries the frame and the type sits over it. */
@@ -29,6 +31,8 @@ export function HomeHero() {
         aria-hidden="true"
       />
       <div className="grid-bg absolute inset-0 -z-10 opacity-25" aria-hidden="true" />
+      {/* Signature: drifting point cloud / LIDAR nod */}
+      <PointField className="absolute inset-0 -z-10 h-full w-full" />
       {/* Signature moment: a single slow scanning sweep */}
       <div
         className="animate-scan pointer-events-none absolute inset-x-0 top-0 -z-10 h-40 bg-gradient-to-b from-primary/0 via-primary/25 to-primary/0"
@@ -77,13 +81,13 @@ export function HomeHero() {
         {/* Structural figures — honest counts, not performance claims */}
         <dl className="mt-20 grid max-w-2xl grid-cols-3 gap-8 border-t border-white/15 pt-8">
           {[
-            { n: "4", l: "Core capabilities" },
-            { n: "6", l: "Industries served" },
-            { n: "5", l: "Step delivery" },
+            { n: 4, l: "Core capabilities" },
+            { n: 6, l: "Industries served" },
+            { n: 5, l: "Step delivery" },
           ].map((s) => (
             <div key={s.l}>
               <dt className="font-display text-4xl font-bold tabular-nums sm:text-5xl">
-                {s.n}
+                <CountUp value={s.n} />
               </dt>
               <dd className="mt-2 text-xs uppercase tracking-wider text-accent-foreground/65">
                 {s.l}

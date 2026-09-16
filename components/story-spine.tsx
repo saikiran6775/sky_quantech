@@ -23,7 +23,7 @@ type Step = {
   kicker: string;
   title: string;
   detail: string;
-  panel: React.ReactNode;
+  panel: (active: boolean) => React.ReactNode;
 };
 
 const detections: Detection[] = [
@@ -32,7 +32,7 @@ const detections: Detection[] = [
   { label: "Conductor", x: 68, y: 16, w: 24, h: 20 },
 ];
 
-function CapturePanel() {
+function CapturePanel({ active }: { active: boolean }) {
   return (
     <Panel>
       <PanelChrome path={["Corridor", "Section 04", "Span A-17"]} />
@@ -40,6 +40,7 @@ function CapturePanel() {
         src="/img/img-f2ad7f6884.jpg"
         alt="Aerial inspection imagery with detected components highlighted"
         detections={detections}
+        active={active}
         className="aspect-[16/10]"
       />
       <div className="flex items-center justify-between gap-3 border-t border-border px-4 py-3">
@@ -52,7 +53,7 @@ function CapturePanel() {
   );
 }
 
-function AnalyzePanel() {
+function AnalyzePanel({ active }: { active: boolean }) {
   return (
     <Panel>
       <PanelChrome path={["Corridor", "Section 04", "Analysis"]} />
@@ -69,9 +70,9 @@ function AnalyzePanel() {
           </div>
         </div>
         <div className="space-y-4">
-          <Meter label="Coverage" value="100%" percent={100} />
-          <Meter label="Model confidence" value="94%" percent={94} />
-          <Meter label="Review queue" value="7 items" percent={22} />
+          <Meter label="Coverage" value="100%" percent={100} active={active} />
+          <Meter label="Model confidence" value="94%" percent={94} active={active} />
+          <Meter label="Review queue" value="7 items" percent={22} active={active} />
         </div>
       </div>
       <div className="flex items-center gap-2 border-t border-border px-4 py-3">
@@ -124,21 +125,21 @@ const steps: Step[] = [
     title: "Data Input",
     detail:
       "AI-powered computer vision can help organizations analyze visual information and support inspection and monitoring workflows.",
-    panel: <CapturePanel />,
+    panel: (active) => <CapturePanel active={active} />,
   },
   {
     kicker: "Analysis",
     title: "Processing Layer",
     detail:
       "Visual data analysis and pattern identification turn raw capture into structured, reviewable detail.",
-    panel: <AnalyzePanel />,
+    panel: (active) => <AnalyzePanel active={active} />,
   },
   {
     kicker: "Execution",
     title: "Intelligent Output",
     detail:
       "Operational workflow support and notification, built on an adaptable software architecture.",
-    panel: <ActPanel />,
+    panel: () => <ActPanel />,
   },
 ];
 
@@ -217,7 +218,7 @@ export function StorySpine() {
                 </p>
 
                 {/* Mobile: panel inline under its step */}
-                <div className="mt-6 lg:hidden">{s.panel}</div>
+                <div className="mt-6 lg:hidden">{s.panel(active === i)}</div>
               </div>
             ))}
           </div>
@@ -237,7 +238,7 @@ export function StorySpine() {
                         : "pointer-events-none absolute inset-0 translate-y-3 opacity-0"
                     )}
                   >
-                    {s.panel}
+                    {s.panel(active === i)}
                   </div>
                 ))}
               </div>

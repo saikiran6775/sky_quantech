@@ -6,6 +6,7 @@ import { Reveal } from "@/components/reveal";
 import { Icon } from "@/components/icon";
 import { SectionHeading } from "@/components/section-heading";
 import { CtaBand } from "@/components/cta-band";
+import { AnimatedLine } from "@/components/animated-line";
 import { HomeHero } from "@/components/home-hero";
 import { CapabilityAccordion } from "@/components/capability-accordion";
 import { StorySpine } from "@/components/story-spine";
@@ -126,16 +127,16 @@ function Process() {
             className="mx-auto items-center"
           />
         </Reveal>
-        <ol className="mt-14 grid gap-6 md:grid-cols-5">
+        <div className="relative mt-14">
+          {/* draw-on-scroll connector behind the step markers (desktop) */}
+          <AnimatedLine className="absolute left-[10%] right-[10%] top-5 hidden md:block" />
+          <ol className="relative grid gap-6 md:grid-cols-5">
           {process.map((p, i) => (
             <Reveal key={p.step} delay={i * 70} as="li" className="relative">
               <div className="flex items-center gap-3">
-                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-primary font-display text-sm font-bold text-primary">
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-primary bg-background font-display text-sm font-bold text-primary">
                   {i + 1}
                 </span>
-                {i < process.length - 1 && (
-                  <span className="hidden h-px flex-1 bg-border md:block" />
-                )}
               </div>
               <h3 className="mt-4 font-display text-base font-semibold">{p.step}</h3>
               <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
@@ -143,7 +144,8 @@ function Process() {
               </p>
             </Reveal>
           ))}
-        </ol>
+          </ol>
+        </div>
       </Container>
     </section>
   );
