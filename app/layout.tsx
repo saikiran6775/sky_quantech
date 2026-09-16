@@ -32,7 +32,6 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "SKY QUANTECH AI",
   },
-  icons: { icon: "/favicon.png", apple: "/apple-touch-icon.png" },
 };
 
 export default function RootLayout({
