@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/container";
 import { PageHero } from "@/components/page-hero";
+import { SectionHeading } from "@/components/section-heading";
 import { Reveal } from "@/components/reveal";
 import { LeadForm } from "@/components/lead-form";
+import { FeatureGrid, StageFlow, TagList } from "@/components/sections";
+import { careers } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Careers",
@@ -10,53 +13,109 @@ export const metadata: Metadata = {
     "Build technology that solves real problems. Share your profile with our AI, computer vision, software and automation teams.",
 };
 
-const areas = [
-  "Artificial intelligence & computer vision",
-  "Software engineering",
-  "Automation & data",
-  "Technology consulting",
-];
-
 export default function CareersPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Careers"
-        title="Build technology that solves real problems"
-        intro="We're a collaborative engineering team working across AI, software, automation and consulting. Share your profile and we'll be in touch."
-      />
+      <PageHero {...careers.hero} />
 
-      <section className="py-20 lg:py-28">
-        <Container className="grid gap-14 lg:grid-cols-12">
-          <Reveal className="lg:col-span-5">
-            <h2 className="font-display text-2xl font-bold sm:text-3xl">
-              Areas we hire across
+      {/* People */}
+      <section className="border-b border-border py-20 lg:py-28">
+        <Container>
+          <Reveal className="mx-auto max-w-3xl text-center">
+            <p className="eyebrow">{careers.people.eyebrow}</p>
+            <h2 className="mt-4 font-display text-3xl font-bold leading-tight sm:text-4xl">
+              {careers.people.title}
             </h2>
-            <ul className="mt-6 space-y-3">
-              {areas.map((a) => (
-                <li
-                  key={a}
-                  className="flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-3 text-sm font-medium"
-                >
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-primary" />
-                  {a}
-                </li>
-              ))}
-            </ul>
-            <p className="mt-6 text-sm text-muted-foreground">
-              No specific role listed? We still want to hear from strong engineers and
-              problem-solvers.
+            <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
+              {careers.people.detail}
             </p>
           </Reveal>
-          <Reveal className="lg:col-span-7" delay={100}>
-            <div className="rounded-2xl border border-border bg-card p-6 sm:p-8">
-              <h2 className="font-display text-xl font-semibold">Share your profile</h2>
-              <p className="mt-1.5 text-sm text-muted-foreground">
-                Tell us about yourself and where you'd like to contribute.
-              </p>
-              <div className="mt-6">
-                <LeadForm variant="careers" />
-              </div>
+        </Container>
+      </section>
+
+      {/* Areas of work */}
+      <section className="border-b border-border py-20 lg:py-28">
+        <Container>
+          <Reveal>
+            <SectionHeading
+              eyebrow={careers.areas.eyebrow}
+              title={careers.areas.title}
+              intro={careers.areas.intro}
+            />
+          </Reveal>
+          <div className="mt-12">
+            <FeatureGrid items={careers.areas.items} columns={3} />
+          </div>
+        </Container>
+      </section>
+
+      {/* What we look for */}
+      <section className="border-b border-border py-20 lg:py-28">
+        <Container>
+          <Reveal>
+            <SectionHeading
+              eyebrow={careers.values.eyebrow}
+              title={careers.values.title}
+              intro={careers.values.intro}
+            />
+          </Reveal>
+          <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+            {careers.values.items.map((v, i) => (
+              <Reveal key={v.title} delay={(i % 4) * 60} className="bg-card p-8">
+                <h3 className="font-display text-lg font-semibold">{v.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {v.detail}
+                </p>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Capability landscape */}
+      <section className="border-b border-border py-20 lg:py-28">
+        <Container>
+          <Reveal className="max-w-3xl">
+            <p className="eyebrow">{careers.landscape.eyebrow}</p>
+            <h2 className="mt-4 font-display text-2xl font-bold sm:text-3xl">
+              {careers.landscape.title}
+            </h2>
+            <div className="mt-7">
+              <TagList tags={careers.landscape.tags} />
+            </div>
+            <p className="mt-6 text-sm text-muted-foreground">
+              {careers.landscape.note}
+            </p>
+          </Reveal>
+        </Container>
+      </section>
+
+      {/* How we hire */}
+      <section className="border-b border-border py-20 lg:py-28">
+        <Container>
+          <Reveal>
+            <SectionHeading
+              eyebrow={careers.hiring.eyebrow}
+              title={careers.hiring.title}
+              intro={careers.hiring.intro}
+            />
+          </Reveal>
+          <div className="mt-14">
+            <StageFlow stages={careers.hiring.steps} />
+          </div>
+        </Container>
+      </section>
+
+      {/* Apply */}
+      <section className="py-20 lg:py-28">
+        <Container className="mx-auto max-w-3xl">
+          <Reveal className="rounded-2xl border border-border bg-card p-6 sm:p-10">
+            <h2 className="font-display text-2xl font-bold">Share your profile</h2>
+            <p className="mt-2 text-muted-foreground">
+              Tell us about yourself and where you&apos;d like to contribute.
+            </p>
+            <div className="mt-8">
+              <LeadForm variant="careers" />
             </div>
           </Reveal>
         </Container>

@@ -421,8 +421,44 @@ export const whyUs = {
       { label: "Listen", detail: "Understand the challenge and requirements. We dig into existing workflows, datasets, and specific constraints.", tag: "Active Discovery", icon: "Ear" },
       { label: "Collaborate", detail: "Work with the client to define the right direction. Co-design clear milestones and realistic technical roadmaps.", tag: "Iterative Design", icon: "Handshake" },
       { label: "Build", detail: "Develop the solution around the agreed requirements with rigorous test cycles and consistent quality control.", tag: "Disciplined Code", icon: "Code" },
-      { label: "Support", detail: "Continue supporting the solution as needs evolve. Ensure continuity and responsiveness as systems scale.", tag: "Sustained Delivery", icon: "LifeBuoy" },
+      { label: "Support", detail: "Continue supporting the solution as needs evolve. Ensure continuity and responsiveness as systems scale.", tag: "Continuous Partnership", icon: "LifeBuoy" },
     ],
+  },
+  trust: {
+    title: "Technology Should Earn Trust.",
+    detail:
+      "Trust comes from clear communication, thoughtful implementation and a commitment to building around what the client actually needs.",
+    points: ["Unambiguous Scopes", "Honest Feasibility", "Accountable Execution"],
+  },
+  standards: {
+    eyebrow: "Operational standards",
+    title: "What You Can Expect",
+    intro: "Clear expectations that guide every engagement from day one.",
+    detail:
+      "We treat software and AI as working enterprise infrastructure. Our collaboration principles are built around honesty, technical sanity, and direct accountability.",
+    items: [
+      { title: "Clear understanding of requirements", detail: "We take the necessary time to define problems thoroughly before recommending any technical approach." },
+      { title: "Practical technology recommendations", detail: "Solutions chosen based on operational viability, performance, and maintainability — never buzzword chasing." },
+      { title: "Customer-focused collaboration", detail: "Regular status syncs, transparent decision points, and active responsiveness to changing stakeholder contexts." },
+      { title: "Thoughtful implementation", detail: "Solid architecture, structured documentation, and modular architectures designed to integrate smoothly." },
+      { title: "Ongoing support", detail: "Commitment to systems stability and knowledgeable operational assistance throughout the solution lifetime." },
+    ],
+  },
+  applied: {
+    eyebrow: "Applied capabilities",
+    title: "Technology Applied to Real Problems",
+    intro:
+      "AI, software and automation can be applied in different ways depending on the organization's needs and operating environment.",
+    combine: [
+      { label: "AI", detail: "Machine Learning & Data Analysis", icon: "BrainCircuit" },
+      { label: "Software", detail: "Scalable Architecture & Interfaces", icon: "Code" },
+      { label: "Automation", detail: "Streamlined Workflow Pipelines", icon: "Workflow" },
+    ],
+    outcome: {
+      title: "Practical Business Need",
+      detail: "Solved with Precision & Purpose",
+      note: "See how these combined capabilities create functional outcomes for organizations navigating operational complexity.",
+    },
   },
 };
 
@@ -561,43 +597,159 @@ export const caseStudies = {
       image: "/img/img-1e9c6c7276.jpg",
     },
   ],
-  feature: {
-    kicker: "Project 01 · Railway Infrastructure · AI Inspection",
-    title: "OHE — AI-Powered Overhead Equipment Inspection",
-    intro:
-      "An AI-powered railway inspection workflow designed to analyze overhead equipment imagery and identify relevant components and visual conditions.",
-    challenge: {
-      label: "The Challenge",
-      title: "Scale & Structural Heterogeneity",
-      detail:
-        "Railway overhead equipment contains multiple components that need to be inspected across large physical environments. Manual inspection and visual review can be time-consuming and difficult to organize consistently.",
-      note: "Designed to augment existing enterprise rail asset management by categorizing visual inspection feeds for qualified engineering personnel.",
-    },
-    pipeline: {
-      eyebrow: "Technical pipeline",
-      title: "The Technology Approach Workflow",
-      steps: [
-        { label: "Capture", title: "Autonomous Drone", detail: "Flight paths programmed parallel to catenary masts." },
-        { label: "Raw Sensor", title: "RGB + Thermal", detail: "Dual optic synchronized multi-spectrum capture." },
-        { label: "Inference", title: "AI / Computer Vision", detail: "Convolutional & visual transformer model passes." },
-        { label: "Classify", title: "Component Detection", detail: "Localization of distinct mechanical assemblies." },
-        { label: "Triage", title: "Inspection Findings", detail: "Classification of surface state and geometry." },
-        { label: "Artifact", title: "GPS + Structured Report", detail: "Spatial provenance metadata bound to imagery." },
-      ],
-    },
-    components: {
-      eyebrow: "Conceptual categories",
-      title: "Understanding OHE Components",
+  /** Full write-ups for each project, as published. */
+  features: [
+    {
+      slug: "ohe",
+      kicker: "Project 01 · Railway Infrastructure · AI Inspection",
+      title: "OHE — AI-Powered Overhead Equipment Inspection",
       intro:
-        "Modular computer vision models are parameterized to recognize designated component categories within diverse electrification geometry.",
-      items: [
-        "Messenger Wire",
-        "Contact Wire",
-        "Dropper Wire",
-        "Registration Tube",
-        "Tube Clamp",
+        "An AI-powered railway inspection workflow designed to analyze overhead equipment imagery and identify relevant components and visual conditions.",
+      image: "/img/img-f2ad7f6884.jpg",
+      challenge: {
+        label: "The Challenge",
+        title: "Scale & Structural Heterogeneity",
+        detail:
+          "Railway overhead equipment contains multiple components that need to be inspected across large physical environments. Manual inspection and visual review can be time-consuming and difficult to organize consistently.",
+        note: "Designed to augment existing enterprise rail asset management by categorizing visual inspection feeds for qualified engineering personnel.",
+      },
+      pipeline: {
+        eyebrow: "Technical pipeline",
+        title: "The Technology Approach Workflow",
+        steps: [
+          { label: "Capture", title: "Autonomous Drone", detail: "Flight paths programmed parallel to catenary masts." },
+          { label: "Raw Sensor", title: "RGB + Thermal", detail: "Dual optic synchronized multi-spectrum capture." },
+          { label: "Inference", title: "AI / Computer Vision", detail: "Convolutional & visual transformer model passes." },
+          { label: "Classify", title: "Component Detection", detail: "Localization of distinct mechanical assemblies." },
+          { label: "Triage", title: "Inspection Findings", detail: "Classification of surface state and geometry." },
+          { label: "Artifact", title: "GPS + Structured Report", detail: "Spatial provenance metadata bound to imagery." },
+        ],
+      },
+      taxonomy: {
+        eyebrow: "Conceptual categories",
+        title: "Understanding OHE Components",
+        intro:
+          "Modular computer vision models are parameterized to recognize designated component categories within diverse electrification geometry.",
+        items: [
+          "Messenger Wire",
+          "Contact Wire",
+          "Dropper Wire",
+          "Registration Tube",
+          "Tube Clamp",
+          "Dropper Clip",
+          "Suspension Clamp",
+          "Parallel Groove Clamp",
+          "Porcelain Insulator",
+          "Polymer Insulator",
+          "U-Bolt Pipe Clamp",
+          "Hook Clevis",
+        ],
+      },
+      notes: [
+        {
+          eyebrow: "Multispectral modalities",
+          title: "Multiple Visual Perspectives (RGB + Thermal)",
+          detail:
+            "RGB imagery provides visual information for component inspection, while thermal imagery provides an additional inspection modality for applications where thermal information is relevant.",
+        },
+        {
+          eyebrow: "End-to-end auditability",
+          title: "From Image to Inspection Finding",
+          detail:
+            "The inspection workflow is designed to connect AI findings with image evidence, location metadata and structured reporting.",
+        },
       ],
+      chain: ["Image", "Detection", "Finding", "Location", "Evidence", "Report"],
     },
+    {
+      slug: "rolling-stock",
+      kicker: "Project 02 · Railway · Computer Vision Inspection",
+      title: "Rolling Stock — High-Speed Vision Inspection",
+      intro:
+        "High-speed cameras are used to capture images of railway rolling stock as it passes through an inspection environment. Computer vision can then analyze the captured imagery to identify components and potential visual faults.",
+      image: "/img/case_studies_new.jpg",
+      challenge: {
+        label: "Operational context",
+        title: "The Inspection Challenge",
+        detail:
+          "Railway rolling stock contains many components that need to be inspected. Capturing and analyzing large volumes of imagery requires a consistent and scalable visual inspection approach.",
+        note: "Designed to highlight images for engineer review. People make the decisions.",
+      },
+      pipeline: {
+        eyebrow: "Ingestion pipeline",
+        title: "High-Speed Visual Inspection Workflow",
+        steps: [
+          { label: "Inbound", title: "Rolling Stock Inbound", detail: "Train passes calibrated lineside track portal." },
+          { label: "Capture", title: "High-Speed Cameras", detail: "Multiview strobe illumination capture sequence." },
+          { label: "Analyze", title: "Computer Vision", detail: "Image preprocessing and component localization." },
+        ],
+      },
+      notes: [
+        {
+          eyebrow: "Inspection output architecture",
+          title: "Organized Inspection Information",
+          detail:
+            "Computer vision can analyze captured images to identify relevant components and visual conditions, helping organize inspection information for further review.",
+        },
+      ],
+      chain: ["Image", "AI analysis", "Component", "Visual condition", "Evidence"],
+    },
+    {
+      slug: "power-grid",
+      kicker: "Project 03 · Power Infrastructure · Drone Inspection",
+      title: "Power Grid — Drone-Based Infrastructure Inspection",
+      intro:
+        "Drones can capture high-resolution imagery of power transmission towers and their components, allowing computer vision to assist with visual inspection.",
+      image: "/img/img-1e9c6c7276.jpg",
+      challenge: {
+        label: "The Challenge",
+        title: "Remote & Inaccessible Terrain",
+        detail:
+          "Power transmission infrastructure covers large and difficult-to-access environments. Drone-based imagery can provide a practical way to capture visual information for inspection and analysis.",
+        note: "Intended to support field teams with pre-screened imagery, not to replace on-site inspection.",
+      },
+      pipeline: {
+        eyebrow: "Execution stages",
+        title: "Technology Workflow",
+        steps: [
+          { label: "Ingest", title: "Tower Imagery Capture", detail: "Drone image capture of transmission towers and their components." },
+          { label: "Parse", title: "Component Analysis", detail: "Classification across lattice framework and line hardware." },
+          { label: "Infer", title: "AI / Computer Vision", detail: "Flagging potential surface anomalies and wear traces." },
+          { label: "Assemble", title: "Inspection Evidence", detail: "Audit-ready visual log indexed by tower ID and coordinates." },
+        ],
+      },
+      classes: {
+        eyebrow: "Visual taxonomy",
+        title: "Target Hardware Components",
+        items: [
+          { title: "Tower Structure", detail: "Lattice steel cross-bracing, legs, and foundation gussets." },
+          { title: "Insulators", detail: "Cap-and-pin glass, porcelain disks, and composite strings." },
+          { title: "Conductors", detail: "Phase bundle strands, optical ground wire (OPGW), and jumpers." },
+          { title: "Clamps", detail: "Suspension clamps, tension strain assemblies, and spacers." },
+          { title: "Hardware", detail: "Shackles, cotter pins, damper weights, and corona rings." },
+        ],
+      },
+    },
+  ],
+  convergence: {
+    eyebrow: "Architectural convergence",
+    title: "One AI Foundation. Different Inspection Environments.",
+    detail: "The environment changes. The technology adapts to the inspection problem.",
+    environments: ["Railway OHE", "Rolling Stock", "Power Grid"],
+    core: ["Computer Vision", "Machine Learning", "Image Analysis", "Audit Workflows"],
+  },
+  ecosystem: {
+    eyebrow: "End-to-end topology",
+    title: "Inspection Technology Ecosystem",
+    note: "Conceptual workflow architecture",
+    stages: [
+      { label: "Sensor", title: "Capture", detail: "Drone UAV, high-speed lineside camera." },
+      { label: "Payload", title: "Image", detail: "RGB and thermal imagery." },
+      { label: "Core", title: "AI", detail: "Computer vision, deep learning models." },
+      { label: "Inference", title: "Analysis", detail: "Component detection, visual analysis." },
+      { label: "Triage", title: "Finding", detail: "Contextualized inspection finding." },
+      { label: "Provenance", title: "Report", detail: "Structured, location-bound inspection evidence." },
+    ],
   },
 };
 

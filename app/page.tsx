@@ -9,7 +9,74 @@ import { CtaBand } from "@/components/cta-band";
 import { HomeHero } from "@/components/home-hero";
 import { CapabilityAccordion } from "@/components/capability-accordion";
 import { StorySpine } from "@/components/story-spine";
-import { industries, process } from "@/lib/site";
+import { industries, process, differentiators } from "@/lib/site";
+import { computingDisciplines } from "@/lib/content";
+
+/* ---------------------------- Computing disciplines ---------------------------- */
+function Disciplines() {
+  return (
+    <section className="border-b border-border py-20 lg:py-28">
+      <Container>
+        <Reveal>
+          <SectionHeading
+            eyebrow="Intelligent computing"
+            title="The disciplines behind the work"
+            intro="Artificial intelligence helps us turn complex information and business challenges into practical, intelligent technology solutions."
+          />
+        </Reveal>
+        <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+          {computingDisciplines.map((d, i) => (
+            <Reveal key={d.title} delay={(i % 3) * 60} className="bg-card p-8">
+              <h3 className="font-display text-lg font-semibold">{d.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                {d.detail}
+              </p>
+            </Reveal>
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+/* --------------------------------- Why us --------------------------------- */
+function WhyUs() {
+  return (
+    <section className="border-b border-border py-20 lg:py-28">
+      <Container>
+        <Reveal className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <SectionHeading
+            eyebrow="Our value proposition"
+            title="Why choose SKY QUANTECH AI?"
+            intro="We focus on practical, dependable technology implementations tailored to solve real organizational challenges and deliver measurable business value."
+          />
+          <Button asChild variant="outline" className="shrink-0">
+            <Link href="/why-us">
+              More on our approach <ArrowUpRight />
+            </Link>
+          </Button>
+        </Reveal>
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {differentiators.map((d, i) => (
+            <Reveal
+              key={d.title}
+              delay={(i % 3) * 60}
+              className="rounded-2xl border border-border bg-card p-6"
+            >
+              <span className="font-mono text-xs tabular-nums text-primary">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 className="mt-3 font-display text-base font-semibold">{d.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                {d.detail}
+              </p>
+            </Reveal>
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+}
 
 /* ------------------------------- Industries ------------------------------- */
 function Industries() {
@@ -159,7 +226,9 @@ export default function HomePage() {
       <HomeHero />
       <CapabilityAccordion />
       <StorySpine />
+      <Disciplines />
       <Industries />
+      <WhyUs />
       <Process />
       <Applied />
       <CtaBand />

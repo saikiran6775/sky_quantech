@@ -3,6 +3,7 @@
 import * as React from "react";
 import { Button } from "@/components/ui/button";
 import { contact } from "@/lib/site";
+import { contactContent } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
 const fieldClass =
@@ -21,38 +22,79 @@ export function LeadForm({ variant = "contact" }: { variant?: "contact" | "caree
     <form onSubmit={onSubmit} className="grid gap-4" noValidate>
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="grid gap-1.5 text-sm font-medium">
-          Name
+          Full name *
           <input name="name" required autoComplete="name" className={fieldClass} />
         </label>
         <label className="grid gap-1.5 text-sm font-medium">
-          Email
-          <input name="email" type="email" required autoComplete="email" className={fieldClass} />
+          Email address *
+          <input
+            name="email"
+            type="email"
+            required
+            autoComplete="email"
+            className={fieldClass}
+          />
         </label>
       </div>
-      {variant === "careers" ? (
+
+      {variant === "contact" ? (
+        <>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <label className="grid gap-1.5 text-sm font-medium">
+              Phone number (optional)
+              <input
+                name="phone"
+                type="tel"
+                autoComplete="tel"
+                className={fieldClass}
+              />
+            </label>
+            <label className="grid gap-1.5 text-sm font-medium">
+              Company / organization (optional)
+              <input
+                name="company"
+                autoComplete="organization"
+                className={fieldClass}
+              />
+            </label>
+          </div>
+          <label className="grid gap-1.5 text-sm font-medium">
+            Area of interest *
+            <select name="interest" required defaultValue="" className={fieldClass}>
+              <option value="" disabled>
+                Select an area of interest
+              </option>
+              {contactContent.form.interests.map((i) => (
+                <option key={i} value={i}>
+                  {i}
+                </option>
+              ))}
+            </select>
+          </label>
+        </>
+      ) : (
         <label className="grid gap-1.5 text-sm font-medium">
           Role or area of interest
           <input name="role" className={fieldClass} />
         </label>
-      ) : (
-        <label className="grid gap-1.5 text-sm font-medium">
-          Organization
-          <input name="org" className={fieldClass} />
-        </label>
       )}
+
       <label className="grid gap-1.5 text-sm font-medium">
-        {variant === "careers" ? "Tell us about yourself" : "How can we help?"}
+        {variant === "careers" ? "Tell us about yourself *" : "Message *"}
         <textarea name="message" rows={5} required className={cn(fieldClass, "resize-y")} />
       </label>
 
       <div className="flex flex-wrap items-center gap-4">
         <Button type="submit" size="lg">
-          {variant === "careers" ? "Share your profile" : "Send message"}
+          {variant === "careers" ? "Share your profile" : "Send enquiry"}
         </Button>
         {status === "error" && (
           <p className="text-sm text-muted-foreground" role="status">
             Online submission isn&apos;t wired up yet — please email{" "}
-            <a href={`mailto:${contact.email}`} className="font-medium text-primary hover:underline">
+            <a
+              href={`mailto:${contact.email}`}
+              className="font-medium text-primary hover:underline"
+            >
               {contact.email}
             </a>{" "}
             and we&apos;ll respond.
