@@ -48,21 +48,17 @@ export default function WhyUsPage() {
             />
           </Reveal>
 
-          <div className="mt-14 space-y-5">
-            {whyUs.principles.items.map((p, i) => (
-              <Reveal
+          <Reveal className="mt-14 space-y-5">
+            {whyUs.principles.items.map((p) => (
+              <div
                 key={p.kicker}
-                delay={(i % 3) * 60}
                 className="grid gap-6 rounded-2xl border border-border bg-card p-8 lg:grid-cols-12 lg:p-10"
               >
                 <div className="flex items-start gap-4 lg:col-span-4">
-                  <span className="font-mono text-xs tabular-nums text-primary">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
                   <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-secondary text-primary">
                     <Icon name={p.icon} className="size-5" />
                   </span>
-                  <span className="pt-2.5 text-[11px] uppercase tracking-wider text-muted-foreground">
+                  <span className="pt-2.5 font-display text-base font-semibold">
                     {p.kicker}
                   </span>
                 </div>
@@ -75,9 +71,9 @@ export default function WhyUsPage() {
                     {p.tag}
                   </p>
                 </div>
-              </Reveal>
+              </div>
             ))}
-          </div>
+          </Reveal>
         </Container>
       </section>
 

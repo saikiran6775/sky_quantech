@@ -12,9 +12,10 @@ export function StageFlow({
   stages: { label: string; detail: string; tag?: string }[];
 }) {
   return (
-    <ol className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    <Reveal>
+      <ol className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {stages.map((s, i) => (
-        <Reveal key={s.label} as="li" delay={i * 90} variant="rise" className="group">
+        <li key={s.label} className="group">
           <div className="flex items-center gap-3">
             <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-primary bg-background font-display text-sm font-bold text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
               {String(i + 1).padStart(2, "0")}
@@ -36,9 +37,10 @@ export function StageFlow({
               {s.tag}
             </p>
           )}
-        </Reveal>
+        </li>
       ))}
-    </ol>
+      </ol>
+    </Reveal>
   );
 }
 
@@ -58,12 +60,10 @@ export function FeatureGrid({
     4: "sm:grid-cols-2 lg:grid-cols-4",
   }[columns];
   return (
-    <div className={cn("grid gap-5", cols, className)}>
-      {items.map((it, i) => (
-        <Reveal
+    <Reveal className={cn("grid gap-5", cols, className)}>
+      {items.map((it) => (
+        <div
           key={it.title}
-          delay={(i % 4) * 70}
-          variant="scale"
           className="group rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg"
         >
           {it.icon && (
@@ -80,9 +80,9 @@ export function FeatureGrid({
               {it.tag}
             </p>
           )}
-        </Reveal>
+        </div>
       ))}
-    </div>
+    </Reveal>
   );
 }
 

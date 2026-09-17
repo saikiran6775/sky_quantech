@@ -25,16 +25,16 @@ function Disciplines() {
             intro="Artificial intelligence helps us turn complex information and business challenges into practical, intelligent technology solutions."
           />
         </Reveal>
-        <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
-          {computingDisciplines.map((d, i) => (
-            <Reveal key={d.title} delay={(i % 3) * 60} className="bg-card p-8">
+        <Reveal className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+          {computingDisciplines.map((d) => (
+            <div key={d.title} className="bg-card p-8">
               <h3 className="font-display text-lg font-semibold">{d.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 {d.detail}
               </p>
-            </Reveal>
+            </div>
           ))}
-        </div>
+        </Reveal>
       </Container>
     </section>
   );
@@ -57,23 +57,19 @@ function WhyUs() {
             </Link>
           </Button>
         </Reveal>
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {differentiators.map((d, i) => (
-            <Reveal
+        <Reveal className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {differentiators.map((d) => (
+            <div
               key={d.title}
-              delay={(i % 3) * 60}
               className="rounded-2xl border border-border bg-card p-6"
             >
-              <span className="font-mono text-xs tabular-nums text-primary">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3 className="mt-3 font-display text-base font-semibold">{d.title}</h3>
+              <h3 className="font-display text-base font-semibold">{d.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 {d.detail}
               </p>
-            </Reveal>
+            </div>
           ))}
-        </div>
+        </Reveal>
       </Container>
     </section>
   );
@@ -91,11 +87,10 @@ function Industries() {
             intro="Technology solutions designed to adapt to the needs of different industries."
           />
         </Reveal>
-        <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
-          {industries.map((ind, i) => (
-            <Reveal
+        <Reveal className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+          {industries.map((ind) => (
+            <div
               key={ind.name}
-              delay={(i % 3) * 70}
               className="group flex flex-col gap-3 bg-card p-8 transition-colors hover:bg-secondary/40"
             >
               <span className="grid h-11 w-11 place-items-center rounded-xl bg-secondary text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
@@ -105,9 +100,9 @@ function Industries() {
               <p className="text-sm leading-relaxed text-muted-foreground">
                 {ind.blurb}
               </p>
-            </Reveal>
+            </div>
           ))}
-        </div>
+        </Reveal>
       </Container>
     </section>
   );
@@ -190,11 +185,10 @@ function Applied() {
           </Button>
         </Reveal>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {domains.map((d, i) => (
-            <Reveal
+        <Reveal className="mt-12 grid gap-6 lg:grid-cols-3">
+          {domains.map((d) => (
+            <div
               key={d.title}
-              delay={i * 80}
               className="group overflow-hidden rounded-2xl border border-border bg-card"
             >
               <div className="relative aspect-[16/11] overflow-hidden">
@@ -214,9 +208,9 @@ function Applied() {
                   {d.detail}
                 </p>
               </div>
-            </Reveal>
+            </div>
           ))}
-        </div>
+        </Reveal>
       </Container>
     </section>
   );
