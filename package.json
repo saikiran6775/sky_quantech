@@ -1,21 +1,33 @@
 {
-  "name": "sky_quantech",
-  "version": "1.0.0",
-  "description": "Marketing website for SKY QUANTECH AI Pvt. Ltd.",
-  "scripts": {
-    "build": "node site/build.mjs",
-    "pipeline": "node tools/pipeline.mjs",
-    "serve": "python3 -m http.server 8099 --directory dist"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "node-html-parser": "^9.0.4"
-  },
+  "name": "nextapp",
+  "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": ">=18"
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.3.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.46.0",
+    "next": "16.3.5",
+    "next-themes": "^0.4.6",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "tailwind-merge": "^3.7.0",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.5",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }

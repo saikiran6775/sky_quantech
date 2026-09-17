@@ -1,0 +1,209 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+/* Class-based dark mode driven by next-themes (adds .dark on <html>). */
+@custom-variant dark (&:is(.dark *));
+
+/* ---------------------------------------------------------------------------
+   Sky Quantech AI — navy design system
+   One accent (electric blue) over a navy/ink base. Light + dark are both
+   first-class. Tokens follow shadcn naming so primitives stay portable.
+--------------------------------------------------------------------------- */
+:root {
+  --background: #f7f9fc;
+  --foreground: #0a1024;
+
+  --card: #ffffff;
+  --card-foreground: #0a1024;
+
+  --popover: #ffffff;
+  --popover-foreground: #0a1024;
+
+  --primary: #0050f0;
+  --primary-foreground: #ffffff;
+
+  --secondary: #eaf0ff;
+  --secondary-foreground: #001060;
+
+  --muted: #eef2f9;
+  --muted-foreground: #55617a;
+
+  --accent: #001060;
+  --accent-foreground: #ffffff;
+
+  --destructive: #ba1a1a;
+  --destructive-foreground: #ffffff;
+
+  --border: #dce4f2;
+  --input: #dce4f2;
+  --ring: #0050f0;
+
+  --radius: 0.625rem;
+
+  /* signature glow + grid, tuned per theme */
+  --glow: rgba(0, 80, 240, 0.16);
+  --grid-line: rgba(0, 32, 120, 0.06);
+}
+
+.dark {
+  --background: #060a16;
+  --foreground: #e8edf7;
+
+  --card: #0d1428;
+  --card-foreground: #e8edf7;
+
+  --popover: #0b1226;
+  --popover-foreground: #e8edf7;
+
+  --primary: #3d7bff;
+  --primary-foreground: #04122e;
+
+  --secondary: #131c36;
+  --secondary-foreground: #cfdbf5;
+
+  --muted: #111a30;
+  --muted-foreground: #93a1be;
+
+  --accent: #16223f;
+  --accent-foreground: #e8edf7;
+
+  --destructive: #ff5449;
+  --destructive-foreground: #04122e;
+
+  --border: #1c2740;
+  --input: #1c2740;
+  --ring: #3d7bff;
+
+  --glow: rgba(61, 123, 255, 0.22);
+  --grid-line: rgba(120, 160, 255, 0.08);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), var(--font-inter), sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 6px);
+  --radius-2xl: calc(var(--radius) + 14px);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: var(--color-primary);
+    color: var(--color-primary-foreground);
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Eyebrow: an intentional section marker — a short leading rule plus a
+     sentence-case label, not the generic tracked all-caps tell. */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-family: var(--font-display);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.005em;
+    color: var(--color-primary);
+  }
+  .eyebrow::before {
+    content: "";
+    width: 1.5rem;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.55;
+  }
+  /* Blueprint grid backdrop for dark hero/CTA panels. */
+  .grid-bg {
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+}
+
+/* One orchestrated hero moment: a slow scanning sweep. Everything else quiet. */
+@keyframes scan-sweep {
+  0% { transform: translateY(-120%); opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { transform: translateY(120%); opacity: 0; }
+}
+.animate-scan { animation: scan-sweep 5.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+.reveal { animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+/* Slow drifting aurora for dark bands (CTA). Motion graphic, low and quiet. */
+@keyframes aurora {
+  0%   { transform: translate3d(-8%, -6%, 0) scale(1.1); }
+  50%  { transform: translate3d(8%, 6%, 0) scale(1.25); }
+  100% { transform: translate3d(-8%, -6%, 0) scale(1.1); }
+}
+.animate-aurora { animation: aurora 18s ease-in-out infinite; }
+
+/* Soft pulse for signal dots / rings. */
+@keyframes soft-pulse {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50%      { opacity: 0.7; transform: scale(1.08); }
+}
+.animate-soft-pulse { animation: soft-pulse 4s ease-in-out infinite; }
+
+/* Radar sweep rotation. */
+@keyframes radar-spin { to { transform: rotate(360deg); } }
+.animate-radar { animation: radar-spin 6s linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-scan, .reveal, [class*="animate-"] {
+    animation: none !important;
+  }
+  * { transition-duration: 0.01ms !important; }
+}
