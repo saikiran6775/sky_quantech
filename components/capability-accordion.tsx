@@ -42,14 +42,6 @@ export function CapabilityAccordion() {
                     >
                       <span
                         className={cn(
-                          "font-mono text-xs tabular-nums transition-colors",
-                          isOpen ? "text-primary" : "text-muted-foreground"
-                        )}
-                      >
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <span
-                        className={cn(
                           "grid h-10 w-10 shrink-0 place-items-center rounded-lg transition-colors",
                           isOpen
                             ? "bg-primary text-primary-foreground"
@@ -81,7 +73,7 @@ export function CapabilityAccordion() {
                     )}
                   >
                     <div className="overflow-hidden">
-                      <div className="pb-7 pl-[4.5rem]">
+                      <div className="pb-7 pl-14">
                         <p className="leading-relaxed text-muted-foreground">
                           {c.blurb}
                         </p>

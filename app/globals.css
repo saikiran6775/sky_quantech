@@ -138,14 +138,24 @@
 }
 
 @layer components {
-  /* Eyebrow: used sparingly, not above every heading. */
+  /* Eyebrow: an intentional section marker — a short leading rule plus a
+     sentence-case label, not the generic tracked all-caps tell. */
   .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
     font-family: var(--font-display);
-    font-size: 0.75rem;
+    font-size: 0.8125rem;
     font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
+    letter-spacing: 0.005em;
     color: var(--color-primary);
+  }
+  .eyebrow::before {
+    content: "";
+    width: 1.5rem;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.55;
   }
   /* Blueprint grid backdrop for dark hero/CTA panels. */
   .grid-bg {
