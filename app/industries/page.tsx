@@ -6,7 +6,6 @@ import { Reveal } from "@/components/reveal";
 import { CtaBand } from "@/components/cta-band";
 import { Icon } from "@/components/icon";
 import { FeatureGrid, StageFlow } from "@/components/sections";
-import { Parallax } from "@/components/parallax";
 import { industriesContent } from "@/lib/content";
 import { industries } from "@/lib/site";
 
@@ -56,24 +55,27 @@ export default function IndustriesPage() {
         </Container>
       </section>
 
-      {/* Cross-domain composite banner */}
-      <section className="border-b border-border">
-        <Parallax strength={36} className="relative h-[52vh] min-h-[380px] w-full">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/img/industries_image.png"
-            alt="Cross-domain capabilities across rail, energy, manufacturing, healthcare, education and government"
-            className="h-[calc(100%+80px)] w-full -translate-y-10 object-cover"
-          />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-accent/70 via-accent/10 to-accent/30" />
-          <Container className="absolute inset-x-0 bottom-0">
-            <Reveal className="max-w-2xl pb-14 text-white">
-              <h2 className="font-display text-2xl font-bold drop-shadow sm:text-3xl">
-                One technology core, applied across six sectors
-              </h2>
-            </Reveal>
-          </Container>
-        </Parallax>
+      {/* Cross-domain composite banner — shown full, at its true aspect ratio */}
+      <section className="border-b border-border bg-accent py-16 lg:py-20">
+        <Container>
+          <Reveal className="mb-8 max-w-2xl">
+            <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">
+              One technology core, applied across six sectors
+            </h2>
+          </Reveal>
+          <Reveal variant="scale" delay={80}>
+            <div className="group overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/img/industries_image.png"
+                alt="Cross-domain capabilities across rail, energy, manufacturing, healthcare, education and government"
+                width={1679}
+                height={937}
+                className="w-full transition-transform duration-[1200ms] ease-out group-hover:scale-[1.03]"
+              />
+            </div>
+          </Reveal>
+        </Container>
       </section>
 
       {/* Per-sector detail */}

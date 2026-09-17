@@ -1,5 +1,6 @@
 import { Container } from "@/components/container";
 import { PointField } from "@/components/point-field";
+import { RadarSweep } from "@/components/radar-sweep";
 import { Reveal } from "@/components/reveal";
 
 export function PageHero({
@@ -20,6 +21,7 @@ export function PageHero({
         style={{ background: "var(--glow)" }}
         aria-hidden="true"
       />
+      <RadarSweep className="absolute -right-16 top-1/2 -z-10 hidden w-[26rem] -translate-y-1/2 opacity-60 lg:block" />
       <Container className="relative py-20 lg:py-28">
         <Reveal variant="rise">
           <p className="eyebrow text-primary-foreground/70">{eyebrow}</p>
