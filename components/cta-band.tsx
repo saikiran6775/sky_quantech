@@ -13,12 +13,18 @@ export function CtaBand({
 }) {
   return (
     <section className="relative overflow-hidden bg-accent text-accent-foreground">
+      {/* Drifting aurora motion graphic */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div
+          className="animate-aurora absolute left-1/2 top-1/2 h-[42rem] w-[42rem] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl"
+          style={{ background: "var(--glow)" }}
+        />
+        <div
+          className="animate-aurora absolute right-0 top-0 h-[28rem] w-[28rem] rounded-full blur-3xl [animation-delay:-9s]"
+          style={{ background: "radial-gradient(circle, rgba(80,140,255,0.20) 0%, transparent 70%)" }}
+        />
+      </div>
       <div className="grid-bg absolute inset-0 opacity-50" aria-hidden="true" />
-      <div
-        className="pointer-events-none absolute left-1/2 top-1/2 h-[36rem] w-[36rem] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl"
-        style={{ background: "var(--glow)" }}
-        aria-hidden="true"
-      />
       <Container className="relative py-20 text-center lg:py-28">
         <Reveal className="mx-auto flex max-w-2xl flex-col items-center">
           <p className="eyebrow text-primary-foreground/70">Start the conversation</p>

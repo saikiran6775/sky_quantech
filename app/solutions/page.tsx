@@ -5,6 +5,7 @@ import { SectionHeading } from "@/components/section-heading";
 import { Reveal } from "@/components/reveal";
 import { CtaBand } from "@/components/cta-band";
 import { FeatureGrid, StageFlow } from "@/components/sections";
+import { Parallax } from "@/components/parallax";
 import { solutions } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
@@ -59,13 +60,24 @@ export default function SolutionsPage() {
           <section key={d.slug} id={d.slug} className="border-b border-border py-20 lg:py-28">
             <Container>
               <div className="grid items-center gap-14 lg:grid-cols-12">
-                <Reveal className={cn("lg:col-span-5", flip && "lg:order-2")}>
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border shadow-xl">
+                <Reveal
+                  variant={flip ? "right" : "left"}
+                  className={cn("lg:col-span-5", flip && "lg:order-2")}
+                >
+                  <Parallax
+                    strength={26}
+                    className="relative aspect-[4/3] rounded-2xl border border-border shadow-xl"
+                  >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={d.image} alt="" className="h-full w-full object-cover" />
-                  </div>
+                    <img
+                      src={d.image}
+                      alt=""
+                      className="h-[calc(100%+52px)] w-full -translate-y-7 object-cover"
+                    />
+                  </Parallax>
                 </Reveal>
                 <Reveal
+                  variant={flip ? "left" : "right"}
                   className={cn("lg:col-span-7", flip && "lg:order-1")}
                   delay={100}
                 >
